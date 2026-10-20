@@ -1,0 +1,10 @@
+{
+  "forecast_sha256": "d5ec8d5472b1fa3f27131c14f81e26d5215ccb3f96e9b58311f7d06ff747a332",
+  "csv_payload_sha256": "7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd",
+  "immutable_archive": "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.gz",
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad",
+  "rows": 43800,
+  "predictions_archived_before_scoring": true,
+  "regime": "retrospective_assumed_availability",
+  "test_previously_explored": true
+}

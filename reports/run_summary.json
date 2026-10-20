@@ -1,0 +1,11 @@
+{
+  "candidate": "rte_correction_proxy",
+  "test_MAE_MW": 832.0470298306567,
+  "rte_test_MAE_MW": 1438.982075579404,
+  "relative_improvement_percent": 42.17808241317849,
+  "absolute_improvement_MW": 606.9350457487473,
+  "coverage_90": 0.8105948167599041,
+  "operationally_validated": false,
+  "financial_savings_estimable": false,
+  "test_previously_explored": true
+}

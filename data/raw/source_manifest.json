@@ -1,0 +1,13 @@
+{
+  "sources": {
+    "france_electricity_hourly.csv": {
+      "sha256": "700cf5546f04ac1e677c0e161b2da7a0da65494d2cc350ec5a11309b68594123",
+      "read_only_original": true
+    },
+    "france_regional_electricity_hourly.csv": {
+      "sha256": "8b08abae3b0e3d92099e7411cd58a9e6d556292d43bd43e8290ead22a40bc461",
+      "read_only_original": true
+    }
+  },
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad"
+}

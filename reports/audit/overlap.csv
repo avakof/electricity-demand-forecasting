@@ -1,0 +1,5 @@
+country_present,rte_present,weather_present,regional_present,hours
+True,False,True,False,4
+True,False,True,True,3
+True,True,True,False,35060
+True,True,True,True,30643

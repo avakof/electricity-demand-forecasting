@@ -21,3 +21,6 @@ __pycache__/
 /models/
 /outputs/
 
+# Project-local execution kernel state (not the notebooks or research reports)
+.runtime/
+

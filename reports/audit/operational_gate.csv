@@ -1,0 +1,4 @@
+source,nonempty_archive_with_schema,provenance_verified,operationally_usable,rows,interval_aggregation_verified,operational_experiment_enabled
+demand,False,False,False,0,False,False
+rte,False,False,False,0,False,False
+weather,False,False,False,0,False,False

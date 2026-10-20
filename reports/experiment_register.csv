@@ -1,0 +1,11 @@
+name,hypothesis,groups,window_days,retrain_days,max_leaf_nodes,max_iter,correction,oracle,status
+calendar,Calendar alone explains recurring demand profiles.,"('calendar',)",365.0,28,15,70,False,False,retrospective
+history_365,Available demand history improves calendar-only forecasts.,"('calendar', 'history')",365.0,28,15,70,False,False,retrospective
+history_730,A two-year window improves seasonal coverage.,"('calendar', 'history')",730.0,28,15,70,False,False,retrospective
+history_expanding,Longer history outweighs structural drift.,"('calendar', 'history')",,28,15,70,False,False,retrospective
+history_weekly_fit,More frequent retraining tracks changes.,"('calendar', 'history')",365.0,7,15,70,False,False,retrospective
+history_more_leaves,Modestly higher capacity captures interactions.,"('calendar', 'history')",365.0,28,31,70,False,False,retrospective
+history_past_weather,Temperature already observed at cutoff adds information.,"('calendar', 'history', 'past_weather')",365.0,28,15,70,False,False,retrospective
+rte_correction_proxy,Calendar/history predict residual RTE errors beyond trailing bias.,"('calendar', 'history', 'rte')",365.0,28,15,70,True,False,retrospective
+weather_archive,Authentic archived weather improves demand forecasts.,"('calendar', 'history', 'forecast_weather')",365.0,28,15,70,False,False,gated_no_verified_archive
+oracle_weather_sensitivity,"Recorded future weather measures sensitivity, not deployable skill.","('calendar', 'history', 'oracle_weather')",365.0,28,15,70,False,True,oracle_sensitivity_only

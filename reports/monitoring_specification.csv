@@ -1,0 +1,9 @@
+stage,check,response
+ingestion,"file schema, checksums, duplicates, missing intervals",fail run on ambiguous keys; retain last archived forecast
+freshness,"weather issue/availability, RTE publication, demand age",reject stale runs; declared fallback or explicit no forecast
+snapshot,origin/delivery keys; maximum input availability,reject any input after cutoff
+forecast,finite positive predictions; complete delivery grid,RTE if verified/available for assisted model; weekly/comparable/latest demand
+uncertainty,"coverage, width, upper/lower exceedances, sample size",flag uncalibrated interval; do not fabricate a band
+delivery,runtime and completion before agreed deadline,publish fallback before deadline or mark missed delivery
+archive,"predictions, issue versions, model/config/source hashes",write immutable run identifier before accessing outcomes
+monitor,"MAE, cold-evening MAE, fallback frequency and drift",shadow review; refit only under frozen online policy

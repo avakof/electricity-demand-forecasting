@@ -1,0 +1,13 @@
+{
+  "forecast_sha256": "e6f779624dae1dd6411490f8ca3f4a1771d77bb9c2f44cbdab644a42e60c4d33",
+  "csv_payload_sha256": "115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b",
+  "immutable_archive": "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.gz",
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad",
+  "rows": 17544,
+  "predictions_archived_before_scoring": true,
+  "regime": "retrospective_assumed_availability",
+  "test_previously_explored": true,
+  "origin_ledger": "reports/forecasts/origin_events/history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753.jsonl.gz",
+  "origin_ledger_sha256": "e29b3a80fdd045da69620e61731ccd8589e5b0e071e0725a8765ac3bcf98b8d8",
+  "each_origin_saved_before_next_origin_fit": true
+}
