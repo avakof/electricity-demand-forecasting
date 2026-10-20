@@ -1,80 +1,106 @@
-# French electricity demand: reproducible next-day forecasting
+# Timeseries ProjectFrench Electricity Demand Forecasting
 
-Read and run the six notebooks in order. Every notebook contains executable analysis cells; shared, tested logic lives in `src/`. The original conversational notebook is preserved at `notebooks/legacy/01_data_audit_original.ipynb`.
+Forecast next-day electricity demand and compare performance
+against RTE's public day-ahead forecast.
 
-**Evidence limits:** the provided CSVs have no trustworthy issuance/publication/revision archives or hourly-conversion lineage. Current model comparisons are explicitly retrospective. Recorded future weather is a separate, ineligible oracle sensitivity experiment. Earlier EDA already inspected the full history, so the chronological test is not a pristine holdout. These limitations cannot be repaired by a new split label.
+## Project contents
 
-| Notebook | Main outputs |
-|---|---|
-| `01_data_audit.ipynb` | Forecast contract, locked source identities, dictionary, availability register, audited dataset, source reconciliation, limitations and operational gate |
-| `02_development_eda.ipynb` | Development-only calendar/holiday/temperature/delayed-temperature/structural-change investigation and hypothesis register |
-| `03_backtest_and_baselines.ipynb` | Integrity tests, origin snapshots, four baseline policies, common-observation and availability scorecards |
-| `04_model_comparison.ipynb` | Bounded ablations, chronological validation, rolling/expanding windows, retraining/capacity comparisons, input stress tests, frozen candidate, separate oracle sensitivity |
-| `05_uncertainty_and_failures.ipynb` | Frozen test predictions, quantile/empirical intervals, trajectory scenarios, segment scores, paired multi-day bootstrap, failure catalogue |
-| `06_business_and_deployment.ipynb` | Manager report, measured skill versus risk proxies, freshness/deployment assessment, monitoring and risk register |
+- notebooks/: exploration and analysis
+- data/: provided datasets
 
-## Run
+## Role
 
-Use Python 3.11 or newer. A clean project environment is recommended:
+You are a data scientist at a European energy utility: build, evaluate honestly and defend a day-ahead forecasting system for hourly electricity demand, and turn it into a one-page recommendation that a head of trading can act on.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/execute_notebooks.py
+## DATA
+
+https://drive.google.com/drive/folders/1GY9IOY_7zdZpAm5xfbzSkFa-DunAA3Ag?usp=sharing
+
+## CONTEXT
+
+Your utility supplies electricity to households and businesses and buys the corresponding energy on the day-ahead market: every day D, before the auction closes at 12:00 CET, the trading desk must know the demand of each hour of day D+1. Every MWh of forecast error is settled later at imbalance prices, and the evening peaks of cold days are where errors are most expensive. The same forecasts feed reserve planning and hedging decisions.
+
+In this project the utility's demand is represented by French national consumption (the provided dataset). Your manager asks three questions
+
+1. Can we do better than simply using RTE's public day-ahead forecast, and by how much, honestly measured?
+2. How uncertain is the forecast, and when does it fail?
+3. What should we deploy, and what are the risks ?
+
+## DELIVERABLE: 
+Source Code on Github or Gitlab with clear code and git history. + 15 minutes PowerPoint Presentation (10 minutes + 5 minutes Q&As). Group of 2 people needed 
+
+## Project plan / build order
+
+This is not everything, we can also add other data and be more creative with the models we use. 
+
+| Notebook                                       | Model                                                                                            | Depends on   | Status            | Owner |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------ | ----------------- | ----- |
+| `01_data_audit.ipynb`                          | Data audit                                                                                       | -            | done              | Ali   |
+| `02_jg_baseline_model.ipynb`                   | Naive (lag-24, lag-168) + RTE benchmark                                                          | -            | done              | Julia |
+| `03_sarimax.ipynb`                             | SARIMAX (weekly-seasonal, temperature exogenous)                                                 | -            | not started       | TBD   |
+| `04_lightgbm.ipynb`                            | LightGBM (lags &gt;=24h, calendar, temperature)                                                  | -            | not started       | TBD   |
+| `05_intervals.ipynb`                           | Probabilistic intervals wrapping the best point model                                            | 03 and/or 04 | not started       | TBD   |
+| `06_final_comparison.ipynb`                    | Loads every file in `results/`, writes the recommendation                                        | all above    | not started       | TBD   |
+| (later/stretch) deep model, e.g. N-BEATS/NHiTS | Possibly a global model over the regional series (`data/france_regional_electricity_hourly.csv`) | 03, 04       | not yet scheduled | TBD   |
+
+The deep-model row is deliberately beyond this course's own stated scope (the course's guidance is that N-BEATS/NHiTS/TFT-style models earn their keep with many related series and long histories — a single national series doesn't strictly need them). We're doing it anyway since there's time budget left, most likely framed as a global model over the 12 regional series rather than the single national one, since that's the setting where deep/global models actually have an edge. Not scheduled in detail yet — needs its own discussion once 03-06 are done.
+
+## Validation standard
+
+Every model is scored with **walk-forward, quarterly, expanding-window validation** over the same test year used by the baseline (2025-07-01 -> 2026-06-30), split into 4 quarterly folds:
+
+- fold 1: train <= 2025-06-30 23:00, test = Jul-Sep 2025
+- fold 2: train <= 2025-09-30 23:00, test = Oct-Dec 2025
+- fold 3: train <= 2025-12-31 23:00, test = Jan-Mar 2026
+- fold 4: train <= 2026-03-31 23:00, test = Apr-Jun 2026
+
+Why: a single holdout hides whether a model's score is a fluke of one period. Walk-forward with the same 4 folds for every model is the only way the models in `results/` are actually comparable to each other.
+
+**SARIMAX-specific note**: a state-space MLE fit on the full expanding history (fold 1 alone is ~57,000 hourly rows) with a weekly seasonal period (`s=168`) can be very slow to refit from scratch each fold. `scripts/evaluation.py`'s `walk_forward_folds(..., window="sliding", window_size=...)` supports a sliding/truncated training window (e.g. the last 2 years) as a tractable alternative — SARIMAX should use that. LightGBM has no such constraint and should use the full expanding history (`window="expanding"`).
+
+## Metrics standard
+
+- **Headline**: MAE (MW) — robust, easy to communicate.
+- **Also report**: RMSE (MW, penalizes large misses — relevant since evening peaks of cold days are the most expensive failure mode) and MAPE (%, safe here since load is never near zero).
+- **Always relative, not just absolute**: report the % MAE improvement vs. the naive baseline and vs. the RTE benchmark for every model — that's the actual question the manager is asking.
+- **Probabilistic models** (step 5, `05_intervals.ipynb`) additionally need coverage (does the nominal X% interval actually contain X% of outcomes), interval width, and pinball loss / Winkler score — point MAE alone isn't enough once you're forecasting a distribution.
+
+## Shared evaluation module
+
+`scripts/evaluation.py` is the shared module every model notebook should import from, so splits/metrics/results-saving stay identical across models:
+
+- `load_data(data_dir="../data")` — loads the CSV, converts to `Europe/Paris` local time, sorts, drops the 7 DST-transition NaN rows.
+- `walk_forward_folds(df, n_folds=4, window="expanding"|"sliding", window_size=None)` — yields `(fold_idx, train, test)` for the 4 quarterly folds above.
+- `mae(y, y_hat)`, `rmse(y, y_hat)`, `mape(y, y_hat)` — the metric functions.
+- `score(y, y_hat)` — aligns/dropna's a pair of series, returns `{"MAE_MW", "RMSE_MW", "MAPE_pct"}`.
+- `save_result(name, description, validation, fold_results, results_dir="../results")` — writes `results/<name>.json` with per-fold metrics plus their mean/std.
+
+Every model notebook should import these rather than redefining its own splits or metric formulas — see `02_jg_baseline_model.ipynb` for the pattern.
+
+## `results/<model_name>.json` schema
+
+```json
+{
+  "model": "<name>",
+  "description": "<description>",
+  "validation": "<validation>",
+  "folds": [
+    {
+      "fold": 1,
+      "train_start": "...",
+      "train_end": "...",
+      "test_start": "...",
+      "test_end": "...",
+      "metrics": {"MAE_MW": ..., "RMSE_MW": ..., "MAPE_pct": ...}
+    }
+  ],
+  "mean_metrics": {"MAE_MW": ..., "RMSE_MW": ..., "MAPE_pct": ...},
+  "std_metrics": {"MAE_MW": ..., "RMSE_MW": ..., "MAPE_pct": ...}
+}
 ```
 
-`requirements-validated.txt` records the direct-package versions used for validation. The runner creates a **project-local** temporary kernel specification; it does not install a global Jupyter kernel. Notebooks also work interactively with a kernel containing the requirements. Keep their execution order. The long validation cell fits a bounded model comparison; it can take several minutes on a laptop.
+Save with `save_result(...)` from `scripts/evaluation.py` so every model's file has this exact shape — `06_final_comparison.ipynb` will just load every file in `results/` and assume it.
 
-To rerun a later notebook after its upstream artifacts exist:
+## Known issue to fix (not fixed here)
 
-```bash
-python scripts/execute_notebooks.py --from-notebook 5 --to-notebook 6
-```
-
-`scripts/build_notebooks.py` is the authoring utility. Running it regenerates the six notebooks and clears their saved outputs. It never replaces the preserved legacy copy. The execution runner saves outputs and surfaces any failing cell.
-
-## Forecast contract
-
-- Origin: 11:00 Europe/Paris on D−1. Delivery: all intervals of the following local calendar day (23/24/25 hours).
-- Primary metric: MAE in MW. Point model objective: conditional median, distinct from a mean forecast.
-- Validation: July 2023–June 2025, reported as two chronological annual folds.
-- Previously explored test: July 2025–June 2026. Fresh prospective evidence remains necessary.
-- Assumed observation availability: interval end plus two hours. Finalized observations used historically are a documented vintage approximation.
-- Scheduled online refitting and calibration may consume earlier evaluation-period observations **only after** their assumed availability. Feature selection, hyperparameters and policy choice use validation only.
-- Missing evaluation targets remain missing. Peaks are retained. Incomplete days are counted and excluded only where whole-day metrics require complete trajectories.
-
-Contract/source hashes are frozen by notebook 01 in `config/evaluation_lock.json`. A mismatch fails rather than silently replacing the experiment. To revise the research specification, preserve the old config, forecasts and reports under a separate run directory, explicitly remove/recreate the lock, and treat it as a new experiment. `config/frozen_candidate.json` is chosen using validation before test replay.
-
-## Architecture
-
-```text
-config/       # Contract, source metadata, evaluation lock, frozen selection
-data/
-  *.csv       # Original provided CSVs, never rewritten
-  raw/        # Source hashes and EMPTY archive schemas; no invented vintages
-  processed/  # Audited grid and labels, preserving missingness
-  origin_snapshots/ # Available-information feature store
-notebooks/    # Six executable stages and preserved legacy notebook
-src/          # Data, calendars, availability, features, replay, scoring, uncertainty
-tests/        # Behavioral availability, leakage, DST and reproducibility checks
-reports/
-  audit/      # Dictionary, register, missingness, overlap, limitations
-  forecasts/  # Predictions archived before evaluation joins
-  scorecards/ # Raw/common-policy availability, fold and segment metrics
-  models/     # Fit origins and latest training-label availability
-  uncertainty/ # Quantile, calibration and whole-day trajectory reports
-```
-
-## Authentic archives and the operational gate
-
-The three CSV files under `data/raw/` contain **headers only**. They are interface schemas, not sample forecasts. To support an authentic replay, supply original demand observations/revisions, RTE forecast runs and weather runs with UTC `valid_time`, `issued_at` (forecasts), `available_at`, `run_id` (forecasts), and numeric `value`. Observation archives also record `revision_status`. Publication time must not precede forecast issuance. Reject duplicate version keys. Prove interval/aggregation lineage and set the evidence flags only after verification in a new research run.
-
-`select_forecast_run` selects one sufficiently fresh run available at the origin; missing intervals remain missing. `build_origin_features` supports authentic archives and as-of demand versions. `fit_at_origin` accepts an observation-vintage archive and uses the version available before fitting. No operational experiment runs on placeholder schemas or on provided D1 values disguised as issued forecasts.
-
-Adding genuine archives requires checking origin coverage and seasonal coverage again; a shorter archive means a shorter authentic test, not permission to substitute realized weather. Run the gate and the same replay/scorecard functions on that archive-supported population in a separately versioned experiment. Do not combine its scores with the CSV proxy regime.
-
-## Interpretation
-
-Use `reports/final_recommendation.md` for the manager-facing assessment. Read paired block confidence intervals alongside point differences and segment counts. The bootstrap retains actual paired-loss sums/counts on partial days, matching headline hourly MAE eligibility; whole-day energy and peak metrics require complete days. Hourly quantile intervals are not simultaneous daily-trajectory intervals. Shortage/surplus energy proxies are not euro savings. Procurement evaluation needs prices, applicable settlement rules, instruments and a shared explicit decision policy. National consumption is not a validated utility customer portfolio.
+`01_data_audit.ipynb` currently loads data via a hardcoded absolute path specific to one machine (`/Users/alivakof/Desktop/Time Series/Project/data/...`), so it won't run as-is on another machine. Whenever convenient, it'd be worth switching it to the shared `load_data()` from `scripts/evaluation.py` (now that it exists) instead of its own inline loading — same result, just portable and consistent with the rest of the project.
