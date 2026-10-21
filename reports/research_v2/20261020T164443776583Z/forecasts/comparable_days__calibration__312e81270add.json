@@ -1,0 +1,11 @@
+{
+  "sha256": "c1f9b21ca2b2d6ed077260973767a90ccfb8b05b2af366395dd15ac8dc0d5dd2",
+  "rows": 4295,
+  "ledger_sha256": "718110d9f1a8fb0c3e69a2202139b42d542f722d691a93a90605b2ef52e6f3ec",
+  "predictions_archived_before_scoring": true,
+  "signature": "312e81270add",
+  "family": "comparable_days",
+  "params": {},
+  "arm": "national",
+  "phase": "calibration"
+}

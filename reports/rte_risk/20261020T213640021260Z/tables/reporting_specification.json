@@ -1,0 +1,12 @@
+{
+  "policy_count": 98,
+  "common_origin_delivery_pairs": 8759,
+  "weighted_MAE": "sum(weight*abs(error))/sum(weight); weight=5 for realized cold evenings, else1",
+  "central_WIS": "[0.5*absolute_median_error+0.05*IS90+0.25*IS50]/2.5",
+  "asymmetric90": "q075 to q975; nominal lower7.5% and upper2.5% exceedances; endpoint pinball reported",
+  "CRPS": "Exact for specified empirical past-calibration residual distribution only; no exact sparse-grid CRPS",
+  "upper_tail_twCRPS": "Exact CRPS of outcome and empirical forecast members clipped below at a fixed 2023 national-demand 90th percentile; threshold-weight function1{x>=threshold}",
+  "conditional_severity_zero_events": "NaN; conditioning event not observed",
+  "uncertainty_scope": "Empirical residual scorecards cover all policies; native/conformal methods retain their own frozen predictor labels",
+  "selection": "Reporting consumes frozen selections and does not select from test scores"
+}

@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-20T21:49:18.466999+00:00",
+  "run_dir": "reports/rte_assisted/20261020T203527821283Z",
+  "errors": [],
+  "forecast_rows_checked": 503047,
+  "daily_origin_ledgers_checked": 20961,
+  "fit_events_checked": 817,
+  "failed_fit_events": 0,
+  "assisted_variants": 16,
+  "development_fold_replays": 128,
+  "independent_test_MAE_MW": {
+    "lightgbm_quantile__regional__rte_residual": 806.760881869323,
+    "rte_proxy": 1438.982075579404,
+    "rte_bias_proxy": 1111.048320132847
+  },
+  "independent_cold_checks": [
+    {
+      "model": "lightgbm_quantile__regional__rte_residual",
+      "method": "fixed_past_out_of_sample_residual_distribution",
+      "n": 66,
+      "days": 24,
+      "covered": 34,
+      "upper_misses": 30,
+      "coverage": 0.5151515151515151,
+      "upper_miss_rate": 0.45454545454545453,
+      "conditional_severity_MW": 1113.1871941666943
+    },
+    {
+      "model": "lightgbm_quantile__regional__rte_residual",
+      "method": "native_lightgbm_three_quantiles",
+      "n": 66,
+      "days": 24,
+      "covered": 40,
+      "upper_misses": 25,
+      "coverage": 0.6060606060606061,
+      "upper_miss_rate": 0.3787878787878788,
+      "conditional_severity_MW": 957.0817648575633
+    },
+    {
+      "model": "rte_bias_proxy",
+      "method": "fixed_past_out_of_sample_residual_distribution",
+      "n": 66,
+      "days": 24,
+      "covered": 46,
+      "upper_misses": 18,
+      "coverage": 0.696969696969697,
+      "upper_miss_rate": 0.2727272727272727,
+      "conditional_severity_MW": 1350.0526751181214
+    },
+    {
+      "model": "rte_proxy",
+      "method": "fixed_past_out_of_sample_residual_distribution",
+      "n": 66,
+      "days": 24,
+      "covered": 47,
+      "upper_misses": 18,
+      "coverage": 0.7121212121212122,
+      "upper_miss_rate": 0.2727272727272727,
+      "conditional_severity_MW": 1270.522222222225
+    },
+    {
+      "model": "lightgbm_quantile__regional__rte_residual",
+      "method": "fixed_predictor_split_conformal",
+      "n": 66,
+      "days": 24,
+      "covered": 43,
+      "upper_misses": 18,
+      "coverage": 0.6515151515151515,
+      "upper_miss_rate": 0.2727272727272727,
+      "conditional_severity_MW": 874.3955782523416
+    }
+  ],
+  "matched_test_hours": 8759,
+  "missing_targets_per_policy": 1,
+  "notebooks": [
+    {
+      "name": "07_statistical_and_boosting_models.ipynb",
+      "all_code_executed_without_errors": true
+    },
+    {
+      "name": "08_deep_learning_and_uncertainty.ipynb",
+      "all_code_executed_without_errors": true
+    }
+  ],
+  "selected_assisted_model": "lightgbm_quantile__regional__rte_residual",
+  "selected_complete_policy": "lightgbm_quantile__regional__rte_residual"
+}

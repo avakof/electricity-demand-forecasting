@@ -1,0 +1,2 @@
+model,seeds_recorded,seeds_expected,seed_MAE_mean_MW,seed_MAE_sd_MW,seed_MAE_min_MW,seed_MAE_max_MW
+dlinear__regional,3,3,4133.687322914888,126.16985101430741,4029.465785733092,4273.958369951184

@@ -1,0 +1,17 @@
+{
+  "sha256": "46dafe02be0d46ca95dcdb0b7d5fb655175c8cfb23209cc6c285164190a75b3a",
+  "rows": 8760,
+  "ledger_sha256": "8479fb24cc10650be009c9a93f79088b474f6e0214a1b7ab8cd7cc5c8f5b7ef8",
+  "predictions_archived_before_scoring": true,
+  "signature": "f4ee7d8bbdce",
+  "family": "nhits",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "test"
+}

@@ -1,0 +1,15 @@
+{
+  "old_nodes": 379,
+  "new_nodes": 1696,
+  "newly_represented_ids": 1487,
+  "retired_ids": 170,
+  "retired_classifications": {
+    "source deleted or no longer available": 5,
+    "excluded local tooling": 1,
+    "individual generated artifact represented by group": 120,
+    "changed/re-extracted document concept replaced": 44
+  },
+  "old_edges": 877,
+  "new_edges": 4702,
+  "purpose": "Source refresh, stale-node retirement and generated-artifact grouping, not a performance change."
+}

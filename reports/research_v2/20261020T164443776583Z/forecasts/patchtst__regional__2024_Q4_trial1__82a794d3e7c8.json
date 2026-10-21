@@ -1,0 +1,17 @@
+{
+  "sha256": "2a1047139f97d79119ccb37661da63399eed91af62d9b4bddda27026e1249573",
+  "rows": 2209,
+  "ledger_sha256": "dd0da6ef29949d998d88185be4a2ea2a375d480012c266e417c46a951e4e8541",
+  "predictions_archived_before_scoring": true,
+  "signature": "82a794d3e7c8",
+  "family": "patchtst",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "2024_Q4_trial1"
+}

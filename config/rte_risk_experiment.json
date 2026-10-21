@@ -1,0 +1,118 @@
+{
+  "version": "rte-risk-feature-lab-v1",
+  "reference_run": "reports/research_v2/20261020T164443776583Z",
+  "rte_reference_run": "reports/rte_assisted/20261020T203527821283Z",
+  "forecast_origin": "11:00 Europe/Paris on D; forecast every actual hourly interval of D+1, including DST",
+  "rte_policy": "Use supplied rte_forecast_d1_mw as assumed available at the origin. No D2 product or 05:00 rule. Historical issue vintages remain unverified.",
+  "arms": [
+    "national",
+    "regional_only",
+    "combined"
+  ],
+  "arm_meaning": "All targets are national consumption. Regional-only means regional historical predictors plus national RTE and known calendar; it does not mean a sum of regional targets or regional RTE.",
+  "validation_folds": [
+    {
+      "name": "2024_Q2",
+      "start": "2024-04-01",
+      "end": "2024-07-01"
+    },
+    {
+      "name": "2024_Q3",
+      "start": "2024-07-01",
+      "end": "2024-10-01"
+    },
+    {
+      "name": "2024_Q4",
+      "start": "2024-10-01",
+      "end": "2025-01-01"
+    },
+    {
+      "name": "2025_Q1",
+      "start": "2025-01-02",
+      "end": "2025-04-01"
+    }
+  ],
+  "base_forecast_burnin": "2024 Q1; historical base configurations selected only from released earlier-quarter outcomes. Final base parameters selected over 2024, as in the original study.",
+  "calibration": {
+    "start": "2025-04-02",
+    "end": "2025-06-30"
+  },
+  "test": {
+    "start": "2025-07-01",
+    "end": "2026-07-01"
+  },
+  "cold_evening": {
+    "hours_local": [
+      18,
+      19,
+      20
+    ],
+    "temperature_below_c": 5
+  },
+  "training_weight": "1 + (weight-1) * out-of-sample predicted probability of cold * known evening indicator. This is a function of available predictors; future realized cold labels are not prediction inputs.",
+  "cold_weight": 5,
+  "primary_metric": "Normalized weighted MAE: sum((1+4*realized_cold_evening)*abs(error))/sum(1+4*realized_cold_evening)",
+  "selection_guardrails": {
+    "raw_availability_min": 0.99,
+    "overall_mae_ratio_to_bias_max": 1.02,
+    "cold_mae_ratio_to_bias_max": 1.0,
+    "development_cold_hours_min": 60,
+    "development_cold_days_min": 20
+  },
+  "selection": "Freeze minimum development weighted-MAE eligible candidate passing both MAE guardrails; if none passes, report no qualified winner. Also retain all candidate scores and the best unqualified diagnostic candidate.",
+  "fit_policy": "First origin of each delivery quarter; earlier outcomes may enter scheduled later fits once released. Same schedule for all new candidates. Original references retain their declared monthly policies.",
+  "search": "Two deterministic regularization/complexity configurations per variant. This is a bounded comparison, not exhaustive hyperparameter optimization.",
+  "tabular_families": [
+    "hist_gradient_boosting",
+    "lightgbm",
+    "lightgbm_quantile",
+    "gam"
+  ],
+  "feature_ablation": "LightGBM residual: basic, engineered, engineered plus causal learned features, crossed with training weight1/5 and all three arms. Extra direct-demand LightGBM arm for each dataset view.",
+  "hybrid_scope": "All23 original model variants (13 families) receive an individually trained LightGBM RTE-residual meta-model using their causal out-of-sample base forecast and engineered/learned predictors. These are explicitly hybrids, not native exogenous neural/statistical architectures. National base variants use national predictors; prior regional variants use combined predictors. No false regional-only base architecture claim.",
+  "quantiles": [
+    0.05,
+    0.075,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95,
+    0.975
+  ],
+  "probability_selection": "For the three standalone quantile-LightGBM residual arms, use the point-selected parameters, evaluate the quantile grid on development, and select lowest WIS across central50/90 intervals before calibration/test.",
+  "uncertainty": "Native quantile grid, central90 and asymmetric90 [q.075,q.975], past out-of-sample residual distribution, fixed-model split conformal and conformalized quantile regression. No finite-sample time-series coverage claim.",
+  "risk_scenarios": {
+    "cold_weights": [
+      1,
+      3,
+      5
+    ],
+    "shortage_surplus_ratios": [
+      1,
+      3,
+      9,
+      19
+    ],
+    "units": "Weighted MW loss proxies, not euros"
+  },
+  "bootstrap_block_days": [
+    7,
+    14,
+    28
+  ],
+  "bootstrap_repetitions": 500,
+  "seed": 42,
+  "test_previously_explored": true,
+  "production_scope": false,
+  "limitations": [
+    "No guaranteed improvement over RTE",
+    "No archived forecast weather; only past observed weather and learned cold probabilities",
+    "National consumption is a portfolio proxy",
+    "Original compact neural budgets and anchor limitations persist in reused base forecasts",
+    "This expanded evaluation starts in Q2 because Q1 is required for causal hybrid burn-in",
+    "Cold labels used for retrospective segment scoring are distinct from pre-cutoff cold probabilities"
+  ],
+  "development_period": "Q2-Q4 2024 plus Jan2-March31 2025. Jan1 excluded at base-archive boundary. These blocks include 102 cold-evening hours/41 days before selection.",
+  "calibration_season_limit": "April2-June29 2025 has zero realized cold-evening observations; held-out calibration cannot establish winter-conditional coverage."
+}

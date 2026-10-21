@@ -1,0 +1,11 @@
+model,day,hours,absolute_daily_energy_error_MWh,absolute_daily_peak_error_MW,ramp_MAE_MW,shortage_proxy_MWh,surplus_proxy_MWh,cause
+lightgbm_quantile__regional__rte_residual,2026-01-08,24,53676.340553737944,2535.2199539416615,390.3743791187438,0.0,53676.340553737944,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-11-29,24,48648.96250418809,2209.845063531713,315.6223673326964,0.0,48648.96250418809,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-12-21,24,47959.00981627956,2427.969296634219,271.754196134233,0.0,47959.00981627956,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-12-01,24,47601.08890826398,2904.726264091136,401.6799808027417,47601.08890826398,0.0,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2026-01-05,24,47163.79595906033,3354.8125278659863,650.413692698962,48593.514921043316,1429.7189619829878,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-11-10,24,47049.909959835735,2089.7843940996827,367.4259236595624,0.0,47049.909959835735,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2026-01-24,24,44585.8077444488,2562.4762950043078,353.5395795925771,44585.8077444488,0.0,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-10-27,24,44544.24258448456,2026.1406551502005,508.88482462681776,44544.24258448456,0.0,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2026-02-14,24,43496.71509617976,3045.298514836155,359.3466097183197,43542.41792858232,45.70283240255958,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"
+lightgbm_quantile__regional__rte_residual,2025-11-01,24,42458.46031919378,2970.7371070770096,388.1907061730118,42458.46031919378,0.0,"Unexplained; recorded weather/calendar are diagnostic, not verified causes"

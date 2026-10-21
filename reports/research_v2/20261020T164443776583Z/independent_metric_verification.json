@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "method": "Independent stdlib CSV/gzip arithmetic; no forecasting/scoring modules imported",
+  "matched_observations": 8759,
+  "MAE_MW": {
+    "rte_proxy": 1438.982075579404,
+    "rte_bias_proxy": 1111.048320132847,
+    "gam__national": 1865.6516328733187
+  },
+  "RTE_bias_relative_improvement_percent": 22.789287025310223,
+  "cold_evening": {
+    "intervals": 66,
+    "days": 24,
+    "represented_DJF_winters": 1,
+    "covered_intervals": 46,
+    "upper_misses": 18,
+    "coverage": 0.696969696969697,
+    "upper_miss_rate": 0.2727272727272727,
+    "conditional_upper_miss_severity_MW": 1350.0526751181214
+  },
+  "RTE_raw_missing_rows": [
+    {
+      "delivery_time": "2025-10-26T00:00:00+00:00",
+      "actual_target_available": false
+    }
+  ]
+}

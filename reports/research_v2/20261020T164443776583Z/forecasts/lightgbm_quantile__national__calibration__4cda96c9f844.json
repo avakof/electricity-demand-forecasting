@@ -1,0 +1,16 @@
+{
+  "sha256": "491669bdef19f12c6c0f10dbfb23ba9cd622ccbc3a64a804e80e04de8d159781",
+  "rows": 4295,
+  "ledger_sha256": "deb5f612420f6e61ae0ff2483d7e04b5ca2c0c03d18b7e82ad7ced8994487657",
+  "predictions_archived_before_scoring": true,
+  "signature": "4cda96c9f844",
+  "family": "lightgbm_quantile",
+  "params": {
+    "n_estimators": 150,
+    "num_leaves": 31,
+    "min_child_samples": 96,
+    "reg_lambda": 5.0
+  },
+  "arm": "national",
+  "phase": "calibration"
+}

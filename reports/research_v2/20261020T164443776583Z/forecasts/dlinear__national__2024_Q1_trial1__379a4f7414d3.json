@@ -1,0 +1,17 @@
+{
+  "sha256": "d882ae6e211b0228ab642f1fc0cfde8b31262895ac493dc8c50da373e927a1ab",
+  "rows": 2183,
+  "ledger_sha256": "d83e2f5e32d4085d6a305f57e8559f0a203a635434816eb5c75ad7b1ab2dafae",
+  "predictions_archived_before_scoring": true,
+  "signature": "379a4f7414d3",
+  "family": "dlinear",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "2024_Q1_trial1"
+}

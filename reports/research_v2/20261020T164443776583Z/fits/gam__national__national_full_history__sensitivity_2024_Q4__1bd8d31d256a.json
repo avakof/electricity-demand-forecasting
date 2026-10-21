@@ -1,0 +1,126 @@
+[
+  {
+    "model":"gam__national__national_full_history",
+    "phase":"sensitivity_2024_Q4",
+    "origin":"2024-09-30T09:00:00.000Z",
+    "params":{
+      "n_knots":4,
+      "degree":3,
+      "alpha":20.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"gam",
+      "training_rows":49514,
+      "feature_count":24,
+      "fit_seconds":0.492541145,
+      "warnings":[
+
+      ],
+      "quantile":null,
+      "seed":42,
+      "implementation":"sklearn independent B-splines + Ridge; not pyGAM",
+      "objective":"penalized squared error; conditional mean"
+    },
+    "training_rows":49514,
+    "latest_label_available_at":"2024-09-30T08:00:00.000Z",
+    "train_MAE_MW":1810.5947994143,
+    "elapsed_seconds":0.879899814
+  },
+  {
+    "model":"gam__national__national_full_history",
+    "phase":"sensitivity_2024_Q4",
+    "origin":"2024-10-01T09:00:00.000Z",
+    "params":{
+      "n_knots":4,
+      "degree":3,
+      "alpha":20.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"gam",
+      "training_rows":49538,
+      "feature_count":24,
+      "fit_seconds":0.484419058,
+      "warnings":[
+
+      ],
+      "quantile":null,
+      "seed":42,
+      "implementation":"sklearn independent B-splines + Ridge; not pyGAM",
+      "objective":"penalized squared error; conditional mean"
+    },
+    "training_rows":49538,
+    "latest_label_available_at":"2024-10-01T08:00:00.000Z",
+    "train_MAE_MW":1809.9939999113,
+    "elapsed_seconds":0.868474165
+  },
+  {
+    "model":"gam__national__national_full_history",
+    "phase":"sensitivity_2024_Q4",
+    "origin":"2024-11-01T10:00:00.000Z",
+    "params":{
+      "n_knots":4,
+      "degree":3,
+      "alpha":20.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"gam",
+      "training_rows":50282,
+      "feature_count":24,
+      "fit_seconds":0.523844359,
+      "warnings":[
+
+      ],
+      "quantile":null,
+      "seed":42,
+      "implementation":"sklearn independent B-splines + Ridge; not pyGAM",
+      "objective":"penalized squared error; conditional mean"
+    },
+    "training_rows":50282,
+    "latest_label_available_at":"2024-11-01T09:00:00.000Z",
+    "train_MAE_MW":1798.3134548689,
+    "elapsed_seconds":0.919329368
+  },
+  {
+    "model":"gam__national__national_full_history",
+    "phase":"sensitivity_2024_Q4",
+    "origin":"2024-12-01T10:00:00.000Z",
+    "params":{
+      "n_knots":4,
+      "degree":3,
+      "alpha":20.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"gam",
+      "training_rows":51002,
+      "feature_count":24,
+      "fit_seconds":0.577639184,
+      "warnings":[
+
+      ],
+      "quantile":null,
+      "seed":42,
+      "implementation":"sklearn independent B-splines + Ridge; not pyGAM",
+      "objective":"penalized squared error; conditional mean"
+    },
+    "training_rows":51002,
+    "latest_label_available_at":"2024-12-01T09:00:00.000Z",
+    "train_MAE_MW":1810.9883059591,
+    "elapsed_seconds":1.021839395
+  }
+]

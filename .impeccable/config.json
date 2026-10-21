@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "graphify-out/overview_template.html"
+        ],
+        "createdAt": "2026-10-20T07:37:21.308Z",
+        "reason": "Agent review: the flagged 40-character text is the short Architecture map / local source snapshot heading. Uppercase styling is confined to headings, badges and compact node labels; descriptive body paragraphs remain sentence case."
+      }
+    ]
+  }
+}

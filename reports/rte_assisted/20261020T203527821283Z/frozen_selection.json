@@ -1,0 +1,579 @@
+{
+  "frozen_utc": "2026-10-20T20:51:03.465345+00:00",
+  "selection_period": "2024 only",
+  "test_previously_explored": true,
+  "selection_rule": "Select each variant's configuration using pooled 2024 MAE with raw forecast availability >= 0.99; freeze best assisted variant and best complete policy across the 16 assisted and 27 original policies before new calibration/test replay",
+  "selections": {
+    "hist_gradient_boosting__national__rte_direct": {
+      "family": "hist_gradient_boosting",
+      "arm": "national",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "max_iter": 120,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 72,
+        "l2_regularization": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 909.8063025018212,
+      "RMSE_MW": 1311.9114528762573,
+      "bias_actual_minus_forecast_MW": -36.26244419942218,
+      "WAPE_percent": 1.8159354215785664,
+      "raw_availability": 0.9998861566484517
+    },
+    "hist_gradient_boosting__national__rte_residual": {
+      "family": "hist_gradient_boosting",
+      "arm": "national",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "max_iter": 80,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 48,
+        "l2_regularization": 2.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 860.3841510958205,
+      "RMSE_MW": 1134.9462867837199,
+      "bias_actual_minus_forecast_MW": -171.1160432237852,
+      "WAPE_percent": 1.717290869323889,
+      "raw_availability": 0.9998861566484517
+    },
+    "hist_gradient_boosting__regional__rte_direct": {
+      "family": "hist_gradient_boosting",
+      "arm": "regional",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "max_iter": 120,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 72,
+        "l2_regularization": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 880.5515523019192,
+      "RMSE_MW": 1273.053428585456,
+      "bias_actual_minus_forecast_MW": -14.237130835392186,
+      "WAPE_percent": 1.7575441607229862,
+      "raw_availability": 0.9998861566484517
+    },
+    "hist_gradient_boosting__regional__rte_residual": {
+      "family": "hist_gradient_boosting",
+      "arm": "regional",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "max_iter": 120,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 72,
+        "l2_regularization": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 828.6416821703785,
+      "RMSE_MW": 1097.632421131143,
+      "bias_actual_minus_forecast_MW": -175.47310168264838,
+      "WAPE_percent": 1.6539342256827536,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm__national__rte_direct": {
+      "family": "lightgbm",
+      "arm": "national",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "min_child_samples": 48,
+        "reg_lambda": 2.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 898.5587399580844,
+      "RMSE_MW": 1289.855589515108,
+      "bias_actual_minus_forecast_MW": 5.897306740231554,
+      "WAPE_percent": 1.793485756003128,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm__national__rte_residual": {
+      "family": "lightgbm",
+      "arm": "national",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "min_child_samples": 48,
+        "reg_lambda": 2.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 854.4567577502941,
+      "RMSE_MW": 1126.1922692603741,
+      "bias_actual_minus_forecast_MW": -180.89721355691512,
+      "WAPE_percent": 1.70546003950421,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm__regional__rte_direct": {
+      "family": "lightgbm",
+      "arm": "regional",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_estimators": 150,
+        "num_leaves": 31,
+        "min_child_samples": 72,
+        "reg_lambda": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 872.6467614068225,
+      "RMSE_MW": 1256.279573826586,
+      "bias_actual_minus_forecast_MW": -59.995130928283,
+      "WAPE_percent": 1.741766527893773,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm__regional__rte_residual": {
+      "family": "lightgbm",
+      "arm": "regional",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_estimators": 150,
+        "num_leaves": 31,
+        "min_child_samples": 72,
+        "reg_lambda": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 827.5384933735728,
+      "RMSE_MW": 1100.1510765960481,
+      "bias_actual_minus_forecast_MW": -171.35362386437825,
+      "WAPE_percent": 1.651732306870695,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm_quantile__national__rte_direct": {
+      "family": "lightgbm_quantile",
+      "arm": "national",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "min_child_samples": 72,
+        "reg_lambda": 2.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 909.2854327186592,
+      "RMSE_MW": 1312.911925466534,
+      "bias_actual_minus_forecast_MW": -3.7317232510154525,
+      "WAPE_percent": 1.8148957872226898,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm_quantile__national__rte_residual": {
+      "family": "lightgbm_quantile",
+      "arm": "national",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "min_child_samples": 72,
+        "reg_lambda": 2.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 862.1815115333064,
+      "RMSE_MW": 1138.9615151484695,
+      "bias_actual_minus_forecast_MW": -174.93282390565807,
+      "WAPE_percent": 1.7208783257690683,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm_quantile__regional__rte_direct": {
+      "family": "lightgbm_quantile",
+      "arm": "regional",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_estimators": 150,
+        "num_leaves": 31,
+        "min_child_samples": 96,
+        "reg_lambda": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 883.9646753747363,
+      "RMSE_MW": 1275.8235363129295,
+      "bias_actual_minus_forecast_MW": -50.23013550106463,
+      "WAPE_percent": 1.7643566119767224,
+      "raw_availability": 0.9998861566484517
+    },
+    "lightgbm_quantile__regional__rte_residual": {
+      "family": "lightgbm_quantile",
+      "arm": "regional",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_estimators": 150,
+        "num_leaves": 31,
+        "min_child_samples": 96,
+        "reg_lambda": 5.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 822.1262145253914,
+      "RMSE_MW": 1093.1736597051352,
+      "bias_actual_minus_forecast_MW": -172.99435842629748,
+      "WAPE_percent": 1.6409296240965192,
+      "raw_availability": 0.9998861566484517
+    },
+    "gam__national__rte_direct": {
+      "family": "gam",
+      "arm": "national",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_knots": 4,
+        "degree": 3,
+        "alpha": 20.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 1042.3235887591213,
+      "RMSE_MW": 1489.9377790454866,
+      "bias_actual_minus_forecast_MW": -137.5607555675671,
+      "WAPE_percent": 2.080434396167299,
+      "raw_availability": 0.9998861566484517
+    },
+    "gam__national__rte_residual": {
+      "family": "gam",
+      "arm": "national",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 0,
+      "params": {
+        "n_knots": 4,
+        "degree": 3,
+        "alpha": 20.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 997.1180657639101,
+      "RMSE_MW": 1336.1286011996274,
+      "bias_actual_minus_forecast_MW": -188.94111099570208,
+      "WAPE_percent": 1.9902060582977397,
+      "raw_availability": 0.9998861566484517
+    },
+    "gam__regional__rte_direct": {
+      "family": "gam",
+      "arm": "regional",
+      "mode": "direct",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_knots": 6,
+        "degree": 3,
+        "alpha": 100.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 1073.5946482206803,
+      "RMSE_MW": 1458.9822705902125,
+      "bias_actual_minus_forecast_MW": -118.74674312157413,
+      "WAPE_percent": 2.142850126186295,
+      "raw_availability": 0.9998861566484517
+    },
+    "gam__regional__rte_residual": {
+      "family": "gam",
+      "arm": "regional",
+      "mode": "residual",
+      "status": "selected",
+      "trial": 1,
+      "params": {
+        "n_knots": 6,
+        "degree": 3,
+        "alpha": 100.0
+      },
+      "eligible_targets": 8783,
+      "scored": 8783,
+      "missing_targets": 1,
+      "availability": 1.0,
+      "MAE_MW": 1019.3513424046599,
+      "RMSE_MW": 1346.2696013341324,
+      "bias_actual_minus_forecast_MW": -137.65821221232545,
+      "WAPE_percent": 2.0345827508735885,
+      "raw_availability": 0.9998861566484517
+    }
+  },
+  "selected_assisted_model": "lightgbm_quantile__regional__rte_residual",
+  "selected_complete_policy": "lightgbm_quantile__regional__rte_residual",
+  "alternatives": [
+    {
+      "model": "rte_bias_proxy",
+      "MAE_MW": 1029.6767265353294,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "rte_proxy",
+      "MAE_MW": 1428.1070249345325,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "gam__national",
+      "MAE_MW": 2065.910369782848,
+      "kind": "independent_model"
+    },
+    {
+      "model": "hist_gradient_boosting__regional",
+      "MAE_MW": 2075.7840543262323,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm_quantile__regional",
+      "MAE_MW": 2077.6593712280014,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm__regional",
+      "MAE_MW": 2084.35565729989,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm_quantile__national",
+      "MAE_MW": 2146.7524617168337,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm__national",
+      "MAE_MW": 2172.633459158005,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gam__regional",
+      "MAE_MW": 2191.2127636044834,
+      "kind": "independent_model"
+    },
+    {
+      "model": "hist_gradient_boosting__national",
+      "MAE_MW": 2192.268801800232,
+      "kind": "independent_model"
+    },
+    {
+      "model": "sarimax__national",
+      "MAE_MW": 3180.947270027331,
+      "kind": "independent_model"
+    },
+    {
+      "model": "seasonal_naive",
+      "MAE_MW": 3229.486697787392,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "sarima__national",
+      "MAE_MW": 3512.540457900933,
+      "kind": "independent_model"
+    },
+    {
+      "model": "comparable_days",
+      "MAE_MW": 3707.0465862082056,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "dlinear__regional",
+      "MAE_MW": 4029.465785733092,
+      "kind": "independent_model"
+    },
+    {
+      "model": "dlinear__national",
+      "MAE_MW": 4389.937682570378,
+      "kind": "independent_model"
+    },
+    {
+      "model": "patchtst__regional",
+      "MAE_MW": 4650.324664168351,
+      "kind": "independent_model"
+    },
+    {
+      "model": "tft__regional",
+      "MAE_MW": 4950.12029453205,
+      "kind": "independent_model"
+    },
+    {
+      "model": "tft__national",
+      "MAE_MW": 4970.070983184845,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gru__regional",
+      "MAE_MW": 5345.4960852997265,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gru__national",
+      "MAE_MW": 5347.148367229307,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nhits__regional",
+      "MAE_MW": 5580.786777590587,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nhits__national",
+      "MAE_MW": 5586.086010661576,
+      "kind": "independent_model"
+    },
+    {
+      "model": "arima__national",
+      "MAE_MW": 5664.058857590521,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nbeats__regional",
+      "MAE_MW": 5669.094070220881,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nbeats__national",
+      "MAE_MW": 5706.5222811468175,
+      "kind": "independent_model"
+    },
+    {
+      "model": "patchtst__national",
+      "MAE_MW": 5803.461473202849,
+      "kind": "independent_model"
+    },
+    {
+      "model": "hist_gradient_boosting__national__rte_direct",
+      "MAE_MW": 909.8063025018212,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "hist_gradient_boosting__national__rte_residual",
+      "MAE_MW": 860.3841510958205,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "hist_gradient_boosting__regional__rte_direct",
+      "MAE_MW": 880.5515523019192,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "hist_gradient_boosting__regional__rte_residual",
+      "MAE_MW": 828.6416821703785,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm__national__rte_direct",
+      "MAE_MW": 898.5587399580844,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm__national__rte_residual",
+      "MAE_MW": 854.4567577502941,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm__regional__rte_direct",
+      "MAE_MW": 872.6467614068225,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm__regional__rte_residual",
+      "MAE_MW": 827.5384933735728,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm_quantile__national__rte_direct",
+      "MAE_MW": 909.2854327186592,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm_quantile__national__rte_residual",
+      "MAE_MW": 862.1815115333064,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm_quantile__regional__rte_direct",
+      "MAE_MW": 883.9646753747363,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "lightgbm_quantile__regional__rte_residual",
+      "MAE_MW": 822.1262145253914,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "gam__national__rte_direct",
+      "MAE_MW": 1042.3235887591213,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "gam__national__rte_residual",
+      "MAE_MW": 997.1180657639101,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "gam__regional__rte_direct",
+      "MAE_MW": 1073.5946482206803,
+      "kind": "rte_assisted_model"
+    },
+    {
+      "model": "gam__regional__rte_residual",
+      "MAE_MW": 1019.3513424046599,
+      "kind": "rte_assisted_model"
+    }
+  ],
+  "selection_inputs_sha256": {
+    "selected_parameters.json": "b5266160532207b25422ab025565cab00822ccfc0205e9b950e907e90040c324",
+    "tables/tuning_trials.csv": "166c5bd86f30123a088cf508644a4a306a00d3e9036f87c8c242adbf184b95e9"
+  }
+}

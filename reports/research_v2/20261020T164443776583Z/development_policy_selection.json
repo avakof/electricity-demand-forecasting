@@ -1,0 +1,151 @@
+{
+  "selection_period": "2024 delivery intervals only",
+  "criterion": "pooled national MAE_MW; include all four predeclared baselines",
+  "selected_policy": "rte_bias_proxy",
+  "selected_independent_model": "gam__national",
+  "frozen_utc": "2026-10-20T19:10:58.022056+00:00",
+  "test_previously_explored": true,
+  "selection_inputs_sha256": {
+    "selected_parameters.json": "811420db6a3e07af406d85493600929fa83377035d15ee4df79a2598b20ee599",
+    "tables/development_baselines.csv": "801c61a1cc3c176e863fe34b95f55944ab30d1682c59f02322fda20a8fa5008e"
+  },
+  "freeze_script_sha256": "8b9f082fa0fd6803c5904aff172b532974d70e7069115265ebaeedf99f5fc6d9",
+  "entries": [
+    {
+      "model": "rte_bias_proxy",
+      "MAE_MW": 1029.6767265353294,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "rte_proxy",
+      "MAE_MW": 1428.1070249345325,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "gam__national",
+      "MAE_MW": 2065.910369782848,
+      "kind": "independent_model"
+    },
+    {
+      "model": "hist_gradient_boosting__regional",
+      "MAE_MW": 2075.7840543262323,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm_quantile__regional",
+      "MAE_MW": 2077.6593712280014,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm__regional",
+      "MAE_MW": 2084.35565729989,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm_quantile__national",
+      "MAE_MW": 2146.7524617168337,
+      "kind": "independent_model"
+    },
+    {
+      "model": "lightgbm__national",
+      "MAE_MW": 2172.633459158005,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gam__regional",
+      "MAE_MW": 2191.2127636044834,
+      "kind": "independent_model"
+    },
+    {
+      "model": "hist_gradient_boosting__national",
+      "MAE_MW": 2192.268801800232,
+      "kind": "independent_model"
+    },
+    {
+      "model": "sarimax__national",
+      "MAE_MW": 3180.947270027331,
+      "kind": "independent_model"
+    },
+    {
+      "model": "seasonal_naive",
+      "MAE_MW": 3229.486697787392,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "sarima__national",
+      "MAE_MW": 3512.540457900933,
+      "kind": "independent_model"
+    },
+    {
+      "model": "comparable_days",
+      "MAE_MW": 3707.0465862082056,
+      "kind": "predeclared_baseline"
+    },
+    {
+      "model": "dlinear__regional",
+      "MAE_MW": 4029.465785733092,
+      "kind": "independent_model"
+    },
+    {
+      "model": "dlinear__national",
+      "MAE_MW": 4389.937682570378,
+      "kind": "independent_model"
+    },
+    {
+      "model": "patchtst__regional",
+      "MAE_MW": 4650.324664168351,
+      "kind": "independent_model"
+    },
+    {
+      "model": "tft__regional",
+      "MAE_MW": 4950.12029453205,
+      "kind": "independent_model"
+    },
+    {
+      "model": "tft__national",
+      "MAE_MW": 4970.070983184845,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gru__regional",
+      "MAE_MW": 5345.4960852997265,
+      "kind": "independent_model"
+    },
+    {
+      "model": "gru__national",
+      "MAE_MW": 5347.148367229307,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nhits__regional",
+      "MAE_MW": 5580.786777590587,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nhits__national",
+      "MAE_MW": 5586.086010661576,
+      "kind": "independent_model"
+    },
+    {
+      "model": "arima__national",
+      "MAE_MW": 5664.058857590521,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nbeats__regional",
+      "MAE_MW": 5669.094070220881,
+      "kind": "independent_model"
+    },
+    {
+      "model": "nbeats__national",
+      "MAE_MW": 5706.5222811468175,
+      "kind": "independent_model"
+    },
+    {
+      "model": "patchtst__national",
+      "MAE_MW": 5803.461473202849,
+      "kind": "independent_model"
+    }
+  ],
+  "scope": "additional development-only policy choice; no model/core-selection changes"
+}

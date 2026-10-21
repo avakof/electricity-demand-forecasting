@@ -1,0 +1,6 @@
+{
+  "input_relationship_observations": 1330,
+  "simple_graph_edges": 877,
+  "grouped_observations": 453,
+  "policy": "All directed source/target observations and evidence retained in relationship_observations; default Graphify visualization is undirected."
+}

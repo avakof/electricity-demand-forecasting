@@ -1,0 +1,47 @@
+{
+  "primary": "gam__national",
+  "records": [
+    {
+      "candidate": "pooled",
+      "critical_ndays": 11,
+      "critical_nobs": 33,
+      "critical_upper_exceedance_rate": 0.0,
+      "model": "gam__national",
+      "selected": true,
+      "selection_reason": "pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied",
+      "weighted_WIS": 1026.5443863359026
+    },
+    {
+      "candidate": "conditional",
+      "critical_ndays": 11,
+      "critical_nobs": 33,
+      "critical_upper_exceedance_rate": 0.0,
+      "model": "gam__national",
+      "selected": false,
+      "selection_reason": "pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied",
+      "weighted_WIS": 1028.6825646544467
+    },
+    {
+      "candidate": "pooled",
+      "critical_ndays": 11,
+      "critical_nobs": 33,
+      "critical_upper_exceedance_rate": 0.15151515151515152,
+      "model": "rte_proxy",
+      "selected": true,
+      "selection_reason": "pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied",
+      "weighted_WIS": 535.5624869849769
+    },
+    {
+      "candidate": "conditional",
+      "critical_ndays": 11,
+      "critical_nobs": 33,
+      "critical_upper_exceedance_rate": 0.09090909090909091,
+      "model": "rte_proxy",
+      "selected": false,
+      "selection_reason": "pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied",
+      "weighted_WIS": 534.7203093856909
+    }
+  ],
+  "selected_utc": "2026-10-20T19:16:18.331200+00:00",
+  "spec_source_sha256": "a975b051603988ec75cedcd4c844561c9071d8195758b7a6ca0da4e261c5b953"
+}

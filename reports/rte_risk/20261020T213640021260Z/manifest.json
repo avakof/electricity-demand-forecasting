@@ -1,0 +1,148 @@
+{
+  "created_utc": "2026-10-20T21:36:40.039134+00:00",
+  "source_sha256": {
+    "config/research_experiment.json": "d935d151a101addeece8d7b1dfdd68991758ae52c2227221646ee374d9a10c2a",
+    "src/research_data.py": "7e5f293f08a95661a6502d355b5e7cb7909dfa8cca9b9d02547ab583748a50e2",
+    "src/research_experiment.py": "24047b055e03d86ea01ba7e794b03f017eefbbbfb4aba07fa2d5ca3e3bb0471f",
+    "src/research_extensions.py": "7181f5de2dc972d450fcf7ca1d90fcace7c3c31d82a8bc681322ce6772c520ba",
+    "src/research_models.py": "f2f7be27d843e280f74f0c5e4ac4294eb1f8a8e60982c2959d9beac12878d343",
+    "src/research_neural.py": "164398c5747af355e960fcb185a74ef0668ff6d2e1533e36feef7558c721a482",
+    "src/research_risks.py": "df421d27f36096a5a80e32533ce05da1e4b152fade1613df425e5ed49d5b16c1",
+    "src/research_scores.py": "12b2d8774afcb70ae8ba0f2ae26af6cbc239b3b019c39c8305e28b55ff111e2a",
+    "src/features.py": "31042712ff9622d7e1b32a57bb84581eec55eba48bad476d1706788bc97d9338",
+    "src/common.py": "389c209e4787bfa5bbacb4b479dca618705687a20c38d36e3de48ad85f6555b9",
+    "src/data.py": "a813d95730c74b597d3a4a8781a4e8f8d88f02dde47ae0648ffaa1f4b54d1adc",
+    "src/metrics.py": "971532e336365cc2d7090fefdeb08297f206e05909ebf43e4a1af84323404bf7",
+    "src/uncertainty.py": "a8aa49e1421f975dd33a53bd2cc401c513885ceb943af25b9344e26bc3f34273",
+    "requirements-research-neural.txt": "a97cb3f1cd638c499dc065b6bb1f96bc1e51700449dada34912a943777b7df6f",
+    "config/rte_risk_experiment.json": "b0f3a050a259705ab1bdd82d90b2b91c840c728f983c31c8d1a265da99f584c5",
+    "src/rte_risk_lab.py": "413d4b1ada35b2531aa3a74c57f10cbeef0f0508aa4ec695795edb4360480ab0",
+    "src/rte_risk_uncertainty.py": "58958e6f455201ae76e258fbc884d27db66c33ba81ef864f8b5ec5df6bc12f33",
+    "src/rte_feature_lab.py": "0048f6cf3bc93518a83c9ca504c4ec55cc2c23725539cac6d465c2816ce42aef",
+    "src/rte_learned_features.py": "65ebf5b25fe708783bd0bd3915a56420d7477dc1dbf5a83234b56d08cacbef81",
+    "src/rte_base_replay.py": "c9bffa001cd9d980c69655bcffeb8eef40a01e1cfa0da7253b73cb7e99bfa8c0"
+  },
+  "raw_sha256": {
+    "france_electricity_hourly.csv": "700cf5546f04ac1e677c0e161b2da7a0da65494d2cc350ec5a11309b68594123",
+    "france_regional_electricity_hourly.csv": "8b08abae3b0e3d92099e7411cd58a9e6d556292d43bd43e8290ead22a40bc461"
+  },
+  "spec": {
+    "version": "rte-risk-feature-lab-v1",
+    "reference_run": "reports/research_v2/20261020T164443776583Z",
+    "rte_reference_run": "reports/rte_assisted/20261020T203527821283Z",
+    "forecast_origin": "11:00 Europe/Paris on D; forecast every actual hourly interval of D+1, including DST",
+    "rte_policy": "Use supplied rte_forecast_d1_mw as assumed available at the origin. No D2 product or 05:00 rule. Historical issue vintages remain unverified.",
+    "arms": [
+      "national",
+      "regional_only",
+      "combined"
+    ],
+    "arm_meaning": "All targets are national consumption. Regional-only means regional historical predictors plus national RTE and known calendar; it does not mean a sum of regional targets or regional RTE.",
+    "validation_folds": [
+      {
+        "name": "2024_Q2",
+        "start": "2024-04-01",
+        "end": "2024-07-01"
+      },
+      {
+        "name": "2024_Q3",
+        "start": "2024-07-01",
+        "end": "2024-10-01"
+      },
+      {
+        "name": "2024_Q4",
+        "start": "2024-10-01",
+        "end": "2025-01-01"
+      },
+      {
+        "name": "2025_Q1",
+        "start": "2025-01-02",
+        "end": "2025-04-01"
+      }
+    ],
+    "base_forecast_burnin": "2024 Q1; historical base configurations selected only from released earlier-quarter outcomes. Final base parameters selected over 2024, as in the original study.",
+    "calibration": {
+      "start": "2025-04-02",
+      "end": "2025-06-30"
+    },
+    "test": {
+      "start": "2025-07-01",
+      "end": "2026-07-01"
+    },
+    "cold_evening": {
+      "hours_local": [
+        18,
+        19,
+        20
+      ],
+      "temperature_below_c": 5
+    },
+    "training_weight": "1 + (weight-1) * out-of-sample predicted probability of cold * known evening indicator. This is a function of available predictors; future realized cold labels are not prediction inputs.",
+    "cold_weight": 5,
+    "primary_metric": "Normalized weighted MAE: sum((1+4*realized_cold_evening)*abs(error))/sum(1+4*realized_cold_evening)",
+    "selection_guardrails": {
+      "raw_availability_min": 0.99,
+      "overall_mae_ratio_to_bias_max": 1.02,
+      "cold_mae_ratio_to_bias_max": 1.0,
+      "development_cold_hours_min": 60,
+      "development_cold_days_min": 20
+    },
+    "selection": "Freeze minimum development weighted-MAE eligible candidate passing both MAE guardrails; if none passes, report no qualified winner. Also retain all candidate scores and the best unqualified diagnostic candidate.",
+    "fit_policy": "First origin of each delivery quarter; earlier outcomes may enter scheduled later fits once released. Same schedule for all new candidates. Original references retain their declared monthly policies.",
+    "search": "Two deterministic regularization/complexity configurations per variant. This is a bounded comparison, not exhaustive hyperparameter optimization.",
+    "tabular_families": [
+      "hist_gradient_boosting",
+      "lightgbm",
+      "lightgbm_quantile",
+      "gam"
+    ],
+    "feature_ablation": "LightGBM residual: basic, engineered, engineered plus causal learned features, crossed with training weight1/5 and all three arms. Extra direct-demand LightGBM arm for each dataset view.",
+    "hybrid_scope": "All23 original model variants (13 families) receive an individually trained LightGBM RTE-residual meta-model using their causal out-of-sample base forecast and engineered/learned predictors. These are explicitly hybrids, not native exogenous neural/statistical architectures. National base variants use national predictors; prior regional variants use combined predictors. No false regional-only base architecture claim.",
+    "quantiles": [
+      0.05,
+      0.075,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.95,
+      0.975
+    ],
+    "probability_selection": "For the three standalone quantile-LightGBM residual arms, use the point-selected parameters, evaluate the quantile grid on development, and select lowest WIS across central50/90 intervals before calibration/test.",
+    "uncertainty": "Native quantile grid, central90 and asymmetric90 [q.075,q.975], past out-of-sample residual distribution, fixed-model split conformal and conformalized quantile regression. No finite-sample time-series coverage claim.",
+    "risk_scenarios": {
+      "cold_weights": [
+        1,
+        3,
+        5
+      ],
+      "shortage_surplus_ratios": [
+        1,
+        3,
+        9,
+        19
+      ],
+      "units": "Weighted MW loss proxies, not euros"
+    },
+    "bootstrap_block_days": [
+      7,
+      14,
+      28
+    ],
+    "bootstrap_repetitions": 500,
+    "seed": 42,
+    "test_previously_explored": true,
+    "production_scope": false,
+    "limitations": [
+      "No guaranteed improvement over RTE",
+      "No archived forecast weather; only past observed weather and learned cold probabilities",
+      "National consumption is a portfolio proxy",
+      "Original compact neural budgets and anchor limitations persist in reused base forecasts",
+      "This expanded evaluation starts in Q2 because Q1 is required for causal hybrid burn-in",
+      "Cold labels used for retrospective segment scoring are distinct from pre-cutoff cold probabilities"
+    ],
+    "development_period": "Q2-Q4 2024 plus Jan2-March31 2025. Jan1 excluded at base-archive boundary. These blocks include 102 cold-evening hours/41 days before selection.",
+    "calibration_season_limit": "April2-June29 2025 has zero realized cold-evening observations; held-out calibration cannot establish winter-conditional coverage."
+  },
+  "original_manifest_sha256": "e0504b019ba85447a41da23950210e4c9fc7a7aeaf28cf1d97f1af07bf5c40e7"
+}

@@ -1,0 +1,15 @@
+{
+  "sha256": "836a677007a59b62da8c1186e7da0ff2bedc5301b8d5fa19ccd78cdc30e60afe",
+  "rows": 2208,
+  "ledger_sha256": "6c366d300a6f32d941425cca2161421d10ea6c67c7d06463fe21582765cc2d50",
+  "predictions_archived_before_scoring": true,
+  "signature": "736e3614d21a",
+  "family": "gam",
+  "params": {
+    "n_knots": 4,
+    "degree": 3,
+    "alpha": 20.0
+  },
+  "arm": "national",
+  "phase": "sensitivity_2024_Q3"
+}

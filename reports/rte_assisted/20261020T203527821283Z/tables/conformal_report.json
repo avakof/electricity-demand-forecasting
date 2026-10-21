@@ -1,0 +1,9 @@
+{
+  "model": "lightgbm_quantile__regional__rte_residual",
+  "single_fit_origin": "2025-01-01 10:00:00+00:00",
+  "calibration_rows": 4295,
+  "radius_MW": 1996.636553054268,
+  "latest_calibration_available_at": "2025-06-30 00:00:00+00:00",
+  "test_origin": "2025-06-30 09:00:00+00:00",
+  "interpretation": "Separate fixed-predictor comparator, not intervals around the monthly-refitted point policy; no exchangeability/conditional guarantees"
+}

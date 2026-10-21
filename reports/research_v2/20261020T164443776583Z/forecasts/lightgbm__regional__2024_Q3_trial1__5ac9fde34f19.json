@@ -1,0 +1,16 @@
+{
+  "sha256": "7413161eec46ceade53ce0b79f4d89b292cbedfcfa2ae1a28f10ca31cdb952f5",
+  "rows": 2208,
+  "ledger_sha256": "250549cfed087d74b9e07c240f653205a9055ff314e742f8bf42e759c73673b4",
+  "predictions_archived_before_scoring": true,
+  "signature": "5ac9fde34f19",
+  "family": "lightgbm",
+  "params": {
+    "n_estimators": 150,
+    "num_leaves": 31,
+    "min_child_samples": 72,
+    "reg_lambda": 5.0
+  },
+  "arm": "regional",
+  "phase": "2024_Q3_trial1"
+}

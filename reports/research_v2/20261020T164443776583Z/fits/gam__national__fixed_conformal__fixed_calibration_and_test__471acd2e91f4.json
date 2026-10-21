@@ -1,0 +1,33 @@
+[
+  {
+    "model":"gam__national__fixed_conformal",
+    "phase":"fixed_calibration_and_test",
+    "origin":"2025-01-01T10:00:00.000Z",
+    "params":{
+      "n_knots":4,
+      "degree":3,
+      "alpha":20.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":true,
+    "status":"fit",
+    "metadata":{
+      "family":"gam",
+      "training_rows":16686,
+      "feature_count":24,
+      "fit_seconds":0.175868839,
+      "warnings":[
+
+      ],
+      "quantile":null,
+      "seed":42,
+      "implementation":"sklearn independent B-splines + Ridge; not pyGAM",
+      "objective":"penalized squared error; conditional mean"
+    },
+    "training_rows":16686,
+    "latest_label_available_at":"2025-01-01T09:00:00.000Z",
+    "train_MAE_MW":1670.5900348392,
+    "elapsed_seconds":0.331668683
+  }
+]

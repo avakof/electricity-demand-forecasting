@@ -1,0 +1,17 @@
+{
+  "sha256": "17de6e9c20574cfbe31a6944a41ff16ac8c8b69a57fe9e377b82f595ec487a4b",
+  "rows": 8760,
+  "ledger_sha256": "bfffe66de7bd6ad13aab0201d4ddefb3c70c74618d928ccc2708784798068833",
+  "predictions_archived_before_scoring": true,
+  "signature": "1083d2c9b935",
+  "family": "patchtst",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "test"
+}

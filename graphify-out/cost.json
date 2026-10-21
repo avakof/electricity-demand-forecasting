@@ -1,0 +1,32 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-20T07:35:24.530832+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 58,
+      "usage_status": "unreported by host; zeros are placeholders"
+    },
+    {
+      "date": "2026-10-21T04:23:42.934082+00:00",
+      "files": 168,
+      "semantic_files": 32,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "usage_status": "unreported by host; zeros are unmeasured placeholders"
+    },
+    {
+      "date": "2026-10-21T04:28:31.459349+00:00",
+      "files": 168,
+      "semantic_files": 32,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "usage_status": "unreported by host; zeros are unmeasured placeholders"
+    }
+  ],
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "usage_status": "unknown; host-agent extraction usage is not exposed",
+  "semantic_money_cost": null,
+  "ast_extraction": "deterministic; no external LLM calls"
+}

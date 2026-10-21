@@ -1,0 +1,17 @@
+{
+  "sha256": "6d9fec5d281a13c492b07c8d36dbfab3e1e9d76ef5494a63da364d45c3358fed",
+  "rows": 8760,
+  "ledger_sha256": "e802255cb20e82b01294db19727c7826493f56510c975f4fbb475d1c0e043d10",
+  "predictions_archived_before_scoring": true,
+  "signature": "b2163e0a358b",
+  "family": "dlinear",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "test"
+}

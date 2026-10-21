@@ -1,0 +1,17 @@
+{
+  "sha256": "206e1c56a9047a5a6e7f8ac1e8e62e5544ab688b2406b5ba1214d0332f62ca6d",
+  "rows": 2208,
+  "ledger_sha256": "9dbbe9a7248cdd7bfaa4079b8921e1e84079135a3511eca1a68b820ac36fc9d0",
+  "predictions_archived_before_scoring": true,
+  "signature": "49808085b2ce",
+  "family": "tft",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "2024_Q3_trial0"
+}

@@ -1,0 +1,16 @@
+{
+  "sha256": "ac09181104530d320b9ab7a9b862ddd5959abcdfe2fa2ba18cc25955447ef4bb",
+  "rows": 8760,
+  "ledger_sha256": "bd021d34b6b30b3f7055d7c066ce4acfee1fffbbfcae7975a14f347c3275921d",
+  "predictions_archived_before_scoring": true,
+  "signature": "041f6be3650b",
+  "family": "hist_gradient_boosting",
+  "params": {
+    "max_iter": 120,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 72,
+    "l2_regularization": 5.0
+  },
+  "arm": "regional",
+  "phase": "test"
+}

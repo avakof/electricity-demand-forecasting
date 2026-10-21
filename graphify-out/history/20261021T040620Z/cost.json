@@ -1,0 +1,16 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-20T07:35:24.530832+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 58,
+      "usage_status": "unreported by host; zeros are placeholders"
+    }
+  ],
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "usage_status": "unknown; counters do not measure host-agent extraction usage",
+  "semantic_money_cost": null,
+  "ast_extraction": "deterministic; no external LLM calls"
+}

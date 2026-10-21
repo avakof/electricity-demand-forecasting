@@ -1,0 +1,77 @@
+{
+  "verified_at_utc": "2026-10-21T04:29:56.363364+00:00",
+  "preview_urls": [
+    "http://127.0.0.1:8769/graphify-out/architecture.html",
+    "http://127.0.0.1:8769/graphify-out/graph.html"
+  ],
+  "overview_desktop": {
+    "rendered": true,
+    "layers": true,
+    "node_details_and_exact_source_evidence": true,
+    "file_search": true,
+    "focus_and_fit": true,
+    "javascript_errors": 0
+  },
+  "overview_mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "document_width": 390,
+    "document_scroll_width": 390,
+    "panel_selector_width": 358,
+    "overflow_fixed": true,
+    "viewport_override_reset": true
+  },
+  "full_graph": {
+    "rendered": true,
+    "nodes": 1696,
+    "edges": 4702,
+    "communities": 83,
+    "search_and_node_details": true,
+    "javascript_errors": 0,
+    "runtime_asset": "vendor/vis-network.min.js",
+    "sha384_integrity_verified": true
+  },
+  "tabs_kept_open": true,
+  "proof": [
+    "architecture_preview.png",
+    "graph_preview.png"
+  ],
+  "design_hook_followup": {
+    "verified_at_utc": "2026-10-21T04:33:50.360234+00:00",
+    "target": "graphify-out/overview_template.html",
+    "findings": [
+      {
+        "rule": "extreme-negative-tracking",
+        "outcome": "fixed",
+        "change": "h1 tracking changed from -1px to -.02em. Measured -0.72px at 36px desktop and -0.48px at 24px mobile."
+      },
+      {
+        "rule": "skipped-heading",
+        "outcome": "fixed",
+        "change": "Independent inventory search section promoted from h3 to h2, preserving its 14px appearance and 1.5 line height."
+      }
+    ],
+    "rendered_heading_levels": {
+      "default": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "selected": [
+        1,
+        2,
+        3,
+        3,
+        2
+      ]
+    },
+    "mechanical_detector_findings": [],
+    "mobile_document_width": 390,
+    "mobile_document_scroll_width": 390,
+    "graph_data_hashes_unchanged": true,
+    "ignores_applied": []
+  }
+}

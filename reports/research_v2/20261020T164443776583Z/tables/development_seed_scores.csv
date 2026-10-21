@@ -1,0 +1,4 @@
+model,sensitivity,seed,eligible_targets,scored,missing_targets,availability,MAE_MW,RMSE_MW,bias_actual_minus_forecast_MW,WAPE_percent
+dlinear__regional,neural_seed,42,,,,,4029.465785733092,,,
+dlinear__regional,neural_seed,123,8783.0,8783.0,1.0,1.0,4097.637813060386,5235.009741260821,481.4442635542383,8.178714116482166
+dlinear__regional,neural_seed,2026,8783.0,8783.0,1.0,1.0,4273.958369951184,5280.355435189958,373.3072737283673,8.530642591730134

@@ -1,0 +1,19 @@
+{
+  "arima__national": {
+    "family": "arima",
+    "arm": "national",
+    "status": "selected",
+    "trial": 0,
+    "params": {
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "maxiter": 40,
+      "window_days": 56
+    },
+    "MAE_MW": 5664.058857590521,
+    "raw_availability": 1.0
+  }
+}

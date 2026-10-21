@@ -7,5 +7,6 @@
   "coverage_90": 0.8105948167599041,
   "operationally_validated": false,
   "financial_savings_estimable": false,
-  "test_previously_explored": true
+  "test_previously_explored": true,
+  "scope": "retrospective research; no production implementation"
 }

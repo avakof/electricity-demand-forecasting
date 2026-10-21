@@ -1,0 +1,16 @@
+{
+  "sha256": "3fd0364909c8ed1ce38243b7963ba520ff7c89ec779b2fbe2c3a6413ce071053",
+  "rows": 8760,
+  "ledger_sha256": "e9c0efcd3b534254876f5dd01cb62a7477625eb83d8fdb72ba8582d7a771aaf7",
+  "predictions_archived_before_scoring": true,
+  "signature": "4a4ecc9601b3",
+  "family": "hist_gradient_boosting",
+  "params": {
+    "max_iter": 120,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 72,
+    "l2_regularization": 5.0
+  },
+  "arm": "national",
+  "phase": "test"
+}

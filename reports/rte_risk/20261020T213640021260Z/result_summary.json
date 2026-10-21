@@ -1,0 +1,32 @@
+{
+  "selected_point": "lab__lightgbm__combined__stacked__w1__residual",
+  "reported_candidate": "lab__lightgbm__combined__stacked__w1__residual",
+  "qualified_in_development": true,
+  "selected_quantile": "lab__lightgbm_quantile__combined__stacked__w5__residual",
+  "policies": 98,
+  "matched_scored_hours": 8759,
+  "candidate_MAE_MW": 719.6314040624263,
+  "RTE_MAE_MW": 1438.982075579404,
+  "bias_correction_MAE_MW": 1111.0483201328468,
+  "candidate_weighted_MAE_MW": 744.7465516008979,
+  "RTE_weighted_MAE_MW": 1467.912667627175,
+  "candidate_cold_MAE_MW": 1578.0176776973867,
+  "cold_hours": 66,
+  "cold_days": 24,
+  "cold_DJF_winters": 1,
+  "previous_development_selected_policy": "lightgbm_quantile__regional__rte_residual",
+  "previous_selected_MAE_MW": 806.760881869323,
+  "previous_selected_weighted_MAE_MW": 830.3190504810875,
+  "previous_selected_cold_MAE_MW": 1611.9326825661058,
+  "loss_improvement_vs_previous_selected_MW": {
+    "MAE_MW": 87.12947780689672,
+    "weighted_MAE_MW": 85.57249888018964,
+    "cold_MAE_MW": 33.91500486871905
+  },
+  "weighted_improvement_vs_previous_14day_CI_MW": [
+    62.42831791964153,
+    111.41739200312564
+  ],
+  "test_previously_explored": true,
+  "operational_vintages_verified": false
+}

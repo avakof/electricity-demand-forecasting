@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-10-21T02:46:26.782422+00:00",
+  "source_sha256": {
+    "reports/rte_risk/20261020T213640021260Z/frozen_selection.json": "a88f5040c36c8ae6fe9c627634ab51090144b01dd416530900399a2fb71a1151",
+    "reports/rte_risk/20261020T213640021260Z/result_summary.json": "026869162e045b87c1658094e9baa8bc1fbead0ca4b6a4e0f40056cc01fa90cf",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/all_test.csv.gz": "67a93ce36b5099da6068b5ad099057ab8771b39212992a0c73fbeff984f7ffde",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/selected_empirical_intervals.csv.gz": "a8d889406684c84393ca7e78ccc2ae597606f9f01969bf1c2b2f4a6d6bffd337",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/probabilistic_test.csv.gz": "bc819080ffaf15575655d2bae4e95c02606ccd483a4721a3d58cc14fe028bee9",
+    "data/france_electricity_hourly.csv": "700cf5546f04ac1e677c0e161b2da7a0da65494d2cc350ec5a11309b68594123",
+    "config/rte_risk_experiment.json": "b0f3a050a259705ab1bdd82d90b2b91c840c728f983c31c8d1a265da99f584c5",
+    "src/common.py": "389c209e4787bfa5bbacb4b479dca618705687a20c38d36e3de48ad85f6555b9"
+  },
+  "output_sha256": {
+    "matched_hourly.csv": "902523ae0e9a9e0ea11921c93632e05824a4796c075f235042282303082eb2d9",
+    "excluded_hours.csv": "52e45375013610d901f18560e769f3809b5f689747bbee4b927a196996ed8822",
+    "local_hour_mae.csv": "41f892a1fa897787a59abe6d3d3997bc152cf6afac6b917469580f8609fc873a",
+    "cold_day_errors.csv": "b4e0e20d706974dfcbb3d9fc077ea51a973f6cf9820e710fdcfe35fbf608dee7",
+    "findings.json": "3f3eb14cfeb35dee4f4925223f9c16c1142edd6127a959dc153d32b91135ae6f",
+    "daily_errors.csv": "5fa6a15d6f8ebb02923d18b30ad68b33d3dcd75724c75647c62448febcd0374c",
+    "worst_five_days_hourly.csv": "bcdb2cc5c369f004f9f0785094a884874de9071038444a620cbd61a696e22787",
+    "findings.md": "72f31eef0bc22a4e6f311cdeb062b925359af09acb73d13ac6a175f42a028982",
+    "build_diagnostics.py": "32cb1c752d6f8c360ce2d6aa5992324ba3a5b2d351ff46bcd993512d11e9b456",
+    "monthly_mae.csv": "3d92b9c5b83b5e05c93feaf6f7356514a237b64ecd0c2216ef2bc93469ff3ffd",
+    "worst_five_days.csv": "fe431be3a42f93ce6d791131f3446482724a11ac722fc38fcb825f53eb9fbf19",
+    "worst_cold_day_hourly.csv": "3bbc7ea4194320a4cd90604d21d06f92cae2d853c6441456ccab60715b3cf860"
+  },
+  "no_source_edits": true,
+  "no_training": true,
+  "matched_hours": 8759,
+  "cold_hours": 66
+}

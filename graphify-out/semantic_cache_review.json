@@ -1,0 +1,9 @@
+{
+  "initial_cached_documents": 4,
+  "initial_cached_cross_references_to_replaced_concepts": 10,
+  "resolution": "All four cached documents were re-extracted; no stale endpoint was invented or retained.",
+  "semantic_documents": 32,
+  "nodes": 89,
+  "edges": 84,
+  "token_usage": "unreported"
+}

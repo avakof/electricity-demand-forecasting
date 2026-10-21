@@ -432,21 +432,16 @@ md('''## Takeaways
 Point metrics, interval calibration, daily trajectory risks and paired improvement uncertainty answer different questions. Cold-evening segments use recorded weather only for retrospective diagnosis; operational cold alerts cannot be evaluated without accessible forecast weather. Neither a shaded interval nor the word conformal establishes conditional or simultaneous coverage. Worst-day classes above describe evidence, not verified root causes.''')])
 
 save("06_business_and_deployment.ipynb",[
-md('''# 06 · Manager scorecard, business interpretation and deployment
+md('''# 06 · Manager scorecard, business interpretation and research limitations
 ## Summary
-Organize the decision around three questions: improvement over RTE; uncertainty and failures; deployment and risks. Forecast skill is measured on matched observations under explicit retrospective assumptions. Procurement savings cannot be estimated from demand, temperatures and RTE alone.
+Organize the research assessment around three questions: improvement over RTE; uncertainty and failures; recommendation and evidence limitations. Forecast skill is measured on matched observations under explicit retrospective assumptions. Procurement savings cannot be estimated from demand, temperatures and RTE alone.
 ## Context and methods
 Use the frozen candidate and saved test forecasts. No model or feature is changed here. National consumption is a utility-demand proxy. The holdout was previously explored, weather/RTE vintages are unverified and the hourly conversion is undocumented: these constrain the recommendation even if retrospective loss improves.'''),code(SETUP),
 code('''
-from src.storage import read_predictions,read_labels
-from src.data import read_audited,availability_gate
-from src.pipeline import readiness,monitoring_specification,risk_register
-from src.metrics import point_metrics
+from src.research_risks import risk_register
 frozen=json.loads((ROOT/"config/frozen_candidate.json").read_text()); name=frozen["experiment"]["name"]
 scores=pd.read_csv(ROOT/"reports/scorecards/test_common.csv")
 ci=pd.read_csv(ROOT/"reports/scorecards/paired_block_bootstrap.csv")
-predictions=read_predictions(ROOT/"reports/forecasts/all_test.csv.gz")
-labels=read_labels(ROOT/"data/processed/evaluation_labels.csv.gz")
 '''),
 md("### 1. Does it improve on the provided RTE benchmark?"),
 code('''
@@ -469,20 +464,14 @@ display(pd.read_csv(ROOT/"reports/failure_catalogue.csv").head(5))
 daily=pd.read_csv(ROOT/"reports/scorecards/test_daily.csv")
 display(daily.groupby("model")[["absolute_daily_energy_error_MWh","absolute_daily_peak_error_MW","shortage_proxy_MWh","surplus_proxy_MWh"]].mean())
 '''),
-md('''### 3. Can it be deployed, and what are the business limits?
+md('''### 3. What can the research establish, and what are its limits?
 Demand forecasting and procurement decisions are separate. Euro savings require actual prices, settlement rules for the evaluation dates, market instruments, and an explicit shortage/surplus procurement policy applied identically to RTE and the candidate. Realized future prices may evaluate that policy retrospectively but cannot be auction-time input features.
 
-EU day-ahead markets introduced **15-minute market time units for delivery from 1 October 2025**. The assignment retains hourly targets; quarter-hour forecasting and settlement alignment remain additional production work. [European Commission](https://energy.ec.europa.eu/news/eu-electricity-trading-day-ahead-markets-becomes-more-dynamic-2025-10-01_en)'''),
+EU day-ahead markets introduced **15-minute market time units for delivery from 1 October 2025**. The assignment retains hourly targets; its scores do not establish performance at quarter-hour settlement resolution. [European Commission](https://energy.ec.europa.eu/news/eu-electricity-trading-day-ahead-markets-becomes-more-dynamic-2025-10-01_en)'''),
 code('''
-data=read_audited(ROOT)
-# Client date is explicit; never assume that a June data extract is fresh in October.
-assessment_origin=pd.Timestamp("2026-10-20 11:00",tz=contract["timezone"]).tz_convert("UTC")
-readiness_report=readiness(ROOT,data,assessment_origin,contract)
-display(pd.Series(readiness_report).to_frame("deployment_readiness"))
-monitoring=monitoring_specification(); risks=risk_register()
-monitoring.to_csv(ROOT/"reports/monitoring_specification.csv",index=False)
+risks=risk_register()
 risks.to_csv(ROOT/"reports/risk_register.csv",index=False)
-display(monitoring); display(risks)
+display(risks)
 '''),
 md("### 4. Save the manager-facing recommendation"),
 code('''
@@ -499,14 +488,14 @@ Read reports/scorecards/paired_block_bootstrap.csv for paired 7/14/28-day block 
 Nominal 90% quantile interval coverage: {overall.coverage_90:.3f}; mean width: {overall.width_MW:,.1f} MW. The fixed rolling past-error baseline has coverage {empirical_overall.coverage_90:.3f}. Quantile coverage below 90% indicates undercoverage, not successful calibration; further method development must use validation or a new prospective period, not discretionary tuning on this test. Coverage, tail exceedances and pinball losses by hour, season, cold evenings and lead time are in reports/uncertainty/. Complete residual-day scenarios evaluate daily energy and peaks separately. Unsupported DST sample sizes remain explicit.
 Worst-day evidence is in reports/failure_catalogue.csv. Weather misses cannot be verified without archived forecast weather. Do not infer causes from coincidence.
 
-## 3. Deployment and risks
-Recommendation: retrospective research and prospective shadow validation only; no procurement deployment claim. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.
-The October readiness check also finds that the supplied extract ends in June: a live system must reject stale inputs. National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common procurement policy are required for financial claims; quarter-hour production alignment is additional work.
+## 3. Research recommendation and evidence limits
+Recommendation: retain this as a retrospective research result and confirm it on fresh later data before drawing stronger conclusions. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.
+National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common decision policy are required for financial claims. Hourly demand scores do not establish quarter-hour settlement performance.
 
-Pipeline: ingest -> validate freshness -> cutoff snapshot -> point/uncertainty forecast -> declared fallback -> archive/publish on time -> monitor. Begin with shadow operation and monitor the complete policy, including fallback days. See monitoring_specification.csv and risk_register.csv.
+The research deliverables are saved predictions, matched scorecards, uncertainty calibration, a failure catalogue and reports/risk_register.csv. Serving, scheduling, live monitoring and procurement integration are outside this project.
 """
 (ROOT/"reports/final_recommendation.md").write_text(recommendation)
-write_json(ROOT/"reports/run_summary.json",{"candidate":name,"test_MAE_MW":candidate_score.MAE_MW,"rte_test_MAE_MW":reference.MAE_MW,"relative_improvement_percent":relative,"absolute_improvement_MW":absolute,"coverage_90":overall.coverage_90,"operationally_validated":False,"financial_savings_estimable":False,"test_previously_explored":True})
+write_json(ROOT/"reports/run_summary.json",{"candidate":name,"test_MAE_MW":candidate_score.MAE_MW,"rte_test_MAE_MW":reference.MAE_MW,"relative_improvement_percent":relative,"absolute_improvement_MW":absolute,"coverage_90":overall.coverage_90,"operationally_validated":False,"financial_savings_estimable":False,"test_previously_explored":True,"scope":"retrospective research; no production implementation"})
 display(Markdown(recommendation))
 ''')])
 

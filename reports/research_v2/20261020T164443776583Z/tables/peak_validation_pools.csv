@@ -1,0 +1,13 @@
+requested_evening,requested_cold_proxy,interval_policy,pool,pool_nobs,pool_ndays,fallback_reason,model,phase
+False,False,pooled,overall,4351,182,requested_pool_supported,gam__national,2024_H1_to_H2_selection
+True,False,pooled,overall,4351,182,requested_pool_supported,gam__national,2024_H1_to_H2_selection
+True,True,pooled,overall,4351,182,requested_pool_supported,gam__national,2024_H1_to_H2_selection
+False,False,conditional,overall,4351,182,requested_pool_supported,gam__national,2024_H1_to_H2_selection
+True,False,conditional,evening,543,181,requested_pool_supported,gam__national,2024_H1_to_H2_selection
+True,True,conditional,evening,543,181,coldrisk_evening: 45 observations/15 days below 60/20,gam__national,2024_H1_to_H2_selection
+False,False,pooled,overall,4351,182,requested_pool_supported,rte_proxy,2024_H1_to_H2_selection
+True,False,pooled,overall,4351,182,requested_pool_supported,rte_proxy,2024_H1_to_H2_selection
+True,True,pooled,overall,4351,182,requested_pool_supported,rte_proxy,2024_H1_to_H2_selection
+False,False,conditional,overall,4351,182,requested_pool_supported,rte_proxy,2024_H1_to_H2_selection
+True,False,conditional,evening,543,181,requested_pool_supported,rte_proxy,2024_H1_to_H2_selection
+True,True,conditional,evening,543,181,coldrisk_evening: 45 observations/15 days below 60/20,rte_proxy,2024_H1_to_H2_selection

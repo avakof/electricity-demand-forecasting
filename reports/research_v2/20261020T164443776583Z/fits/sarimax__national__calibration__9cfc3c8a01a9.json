@@ -1,0 +1,392 @@
+[
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-01-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2024-11-06 06:00:00+00:00",
+      "training_end":"2025-01-01 06:00:00+00:00",
+      "fit_seconds":7.528958834,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":38,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.0008186764,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-01-31 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-01-01T09:00:00.000Z",
+    "elapsed_seconds":7.58266363
+  },
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-02-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2024-12-07 06:00:00+00:00",
+      "training_end":"2025-02-01 06:00:00+00:00",
+      "fit_seconds":6.529172136,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":39,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.0003997476,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":27,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-02-28 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-02-01T09:00:00.000Z",
+    "elapsed_seconds":6.581506659
+  },
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-03-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-01-04 06:00:00+00:00",
+      "training_end":"2025-03-01 06:00:00+00:00",
+      "fit_seconds":6.893090927,
+      "warnings":[
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ],
+      "converged":false,
+      "optimizer_iterations":40,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.0034690028,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-03-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-03-01T09:00:00.000Z",
+    "elapsed_seconds":6.943881041
+  },
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-04-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-02-04 05:00:00+00:00",
+      "training_end":"2025-04-01 05:00:00+00:00",
+      "fit_seconds":9.627013822,
+      "warnings":[
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ],
+      "converged":false,
+      "optimizer_iterations":40,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.0411640384,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":29,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-04-30 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-04-01T08:00:00.000Z",
+    "elapsed_seconds":9.678925296
+  },
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-05-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-03-06 05:00:00+00:00",
+      "training_end":"2025-05-01 05:00:00+00:00",
+      "fit_seconds":6.910676941,
+      "warnings":[
+        "Maximum Likelihood optimization failed to converge. Check mle_retvals"
+      ],
+      "converged":false,
+      "optimizer_iterations":40,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.002100866,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-05-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-05-01T08:00:00.000Z",
+    "elapsed_seconds":6.966991653
+  },
+  {
+    "model":"sarimax__national",
+    "phase":"calibration",
+    "origin":"2025-06-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "maxiter":40,
+      "pgtol":0.001,
+      "factr":100000000.0
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"sarimax",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-04-06 05:00:00+00:00",
+      "training_end":"2025-06-01 05:00:00+00:00",
+      "fit_seconds":4.288054438,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":28,
+      "optimizer_options":{
+        "maxiter":40,
+        "pgtol":0.001,
+        "factr":100000000.0
+      },
+      "optimizer_gradient_max_abs":0.0006615167,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":27,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        1,
+        0,
+        0
+      ],
+      "seasonal_order":[
+        1,
+        0,
+        0,
+        24
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-06-28 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-06-01T08:00:00.000Z",
+    "elapsed_seconds":4.338128171
+  }
+]

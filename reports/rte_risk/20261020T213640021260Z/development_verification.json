@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-20T22:43:52.319447+00:00",
+  "scope": "Frozen provenance and development selection; full forecast/report audit still pending",
+  "original_base_variants": 23,
+  "learned_fit_events": 369,
+  "reference_artifact_hashes_checked": 938,
+  "new_variants": 55,
+  "development_configuration_folds": 440,
+  "development_cold_hours": 102,
+  "development_cold_days": 41
+}

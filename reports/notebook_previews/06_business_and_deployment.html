@@ -7802,7 +7802,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="06-%C2%B7-Manager-scorecard,-business-interpretation-and-deployment">06 · Manager scorecard, business interpretation and deployment<a class="anchor-link" href="#06-%C2%B7-Manager-scorecard,-business-interpretation-and-deployment">¶</a></h1><h2 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h2><p>Organize the decision around three questions: improvement over RTE; uncertainty and failures; deployment and risks. Forecast skill is measured on matched observations under explicit retrospective assumptions. Procurement savings cannot be estimated from demand, temperatures and RTE alone.</p>
+<h1 id="06-%C2%B7-Manager-scorecard,-business-interpretation-and-research-limitations">06 · Manager scorecard, business interpretation and research limitations<a class="anchor-link" href="#06-%C2%B7-Manager-scorecard,-business-interpretation-and-research-limitations">¶</a></h1><h2 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h2><p>Organize the research assessment around three questions: improvement over RTE; uncertainty and failures; recommendation and evidence limitations. Forecast skill is measured on matched observations under explicit retrospective assumptions. Procurement savings cannot be estimated from demand, temperatures and RTE alone.</p>
 <h2 id="Context-and-methods">Context and methods<a class="anchor-link" href="#Context-and-methods">¶</a></h2><p>Use the frozen candidate and saved test forecasts. No model or feature is changed here. National consumption is a utility-demand proxy. The holdout was previously explored, weather/RTE vintages are unverified and the hourly conversion is undocumented: these constrain the recommendation even if retrospective loss improves.</p>
 </div>
 </div>
@@ -7844,15 +7844,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.storage</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_predictions</span><span class="p">,</span><span class="n">read_labels</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">src.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_audited</span><span class="p">,</span><span class="n">availability_gate</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">src.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">readiness</span><span class="p">,</span><span class="n">monitoring_specification</span><span class="p">,</span><span class="n">risk_register</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">src.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">point_metrics</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.research_risks</span><span class="w"> </span><span class="kn">import</span> <span class="n">risk_register</span>
 <span class="n">frozen</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">((</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"config/frozen_candidate.json"</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">());</span> <span class="n">name</span><span class="o">=</span><span class="n">frozen</span><span class="p">[</span><span class="s2">"experiment"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">]</span>
 <span class="n">scores</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/scorecards/test_common.csv"</span><span class="p">)</span>
 <span class="n">ci</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/scorecards/paired_block_bootstrap.csv"</span><span class="p">)</span>
-<span class="n">predictions</span><span class="o">=</span><span class="n">read_predictions</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/forecasts/all_test.csv.gz"</span><span class="p">)</span>
-<span class="n">labels</span><span class="o">=</span><span class="n">read_labels</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"data/processed/evaluation_labels.csv.gz"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8391,8 +8386,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Can-it-be-deployed,-and-what-are-the-business-limits?">3. Can it be deployed, and what are the business limits?<a class="anchor-link" href="#3.-Can-it-be-deployed,-and-what-are-the-business-limits?">¶</a></h3><p>Demand forecasting and procurement decisions are separate. Euro savings require actual prices, settlement rules for the evaluation dates, market instruments, and an explicit shortage/surplus procurement policy applied identically to RTE and the candidate. Realized future prices may evaluate that policy retrospectively but cannot be auction-time input features.</p>
-<p>EU day-ahead markets introduced <strong>15-minute market time units for delivery from 1 October 2025</strong>. The assignment retains hourly targets; quarter-hour forecasting and settlement alignment remain additional production work. <a href="https://energy.ec.europa.eu/news/eu-electricity-trading-day-ahead-markets-becomes-more-dynamic-2025-10-01_en">European Commission</a></p>
+<h3 id="3.-What-can-the-research-establish,-and-what-are-its-limits?">3. What can the research establish, and what are its limits?<a class="anchor-link" href="#3.-What-can-the-research-establish,-and-what-are-its-limits?">¶</a></h3><p>Demand forecasting and procurement decisions are separate. Euro savings require actual prices, settlement rules for the evaluation dates, market instruments, and an explicit shortage/surplus procurement policy applied identically to RTE and the candidate. Realized future prices may evaluate that policy retrospectively but cannot be auction-time input features.</p>
+<p>EU day-ahead markets introduced <strong>15-minute market time units for delivery from 1 October 2025</strong>. The assignment retains hourly targets; its scores do not establish performance at quarter-hour settlement resolution. <a href="https://energy.ec.europa.eu/news/eu-electricity-trading-day-ahead-markets-becomes-more-dynamic-2025-10-01_en">European Commission</a></p>
 </div>
 </div>
 </div>
@@ -8404,15 +8399,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">read_audited</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)</span>
-<span class="c1"># Client date is explicit; never assume that a June data extract is fresh in October.</span>
-<span class="n">assessment_origin</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2026-10-20 11:00"</span><span class="p">,</span><span class="n">tz</span><span class="o">=</span><span class="n">contract</span><span class="p">[</span><span class="s2">"timezone"</span><span class="p">])</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s2">"UTC"</span><span class="p">)</span>
-<span class="n">readiness_report</span><span class="o">=</span><span class="n">readiness</span><span class="p">(</span><span class="n">ROOT</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">assessment_origin</span><span class="p">,</span><span class="n">contract</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">readiness_report</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">"deployment_readiness"</span><span class="p">))</span>
-<span class="n">monitoring</span><span class="o">=</span><span class="n">monitoring_specification</span><span class="p">();</span> <span class="n">risks</span><span class="o">=</span><span class="n">risk_register</span><span class="p">()</span>
-<span class="n">monitoring</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/monitoring_specification.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">risks</span><span class="o">=</span><span class="n">risk_register</span><span class="p">()</span>
 <span class="n">risks</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/risk_register.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">monitoring</span><span class="p">);</span> <span class="n">display</span><span class="p">(</span><span class="n">risks</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">risks</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8422,140 +8411,6 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>deployment_readiness</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>origin</th>
-<td>2026-10-20 09:00:00+00:00</td>
-</tr>
-<tr>
-<th>latest_known_demand_age_hours</th>
-<td>2,676.000</td>
-</tr>
-<tr>
-<th>demand_fresh_under_assumed_delay</th>
-<td>False</td>
-</tr>
-<tr>
-<th>verified_operational_gate_passed</th>
-<td>False</td>
-</tr>
-<tr>
-<th>publish_procurement_decision</th>
-<td>False</td>
-</tr>
-<tr>
-<th>recommendation</th>
-<td>retrospective research / shadow design only un...</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>stage</th>
-<th>check</th>
-<th>response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>ingestion</td>
-<td>file schema, checksums, duplicates, missing in...</td>
-<td>fail run on ambiguous keys; retain last archiv...</td>
-</tr>
-<tr>
-<th>1</th>
-<td>freshness</td>
-<td>weather issue/availability, RTE publication, d...</td>
-<td>reject stale runs; declared fallback or explic...</td>
-</tr>
-<tr>
-<th>2</th>
-<td>snapshot</td>
-<td>origin/delivery keys; maximum input availability</td>
-<td>reject any input after cutoff</td>
-</tr>
-<tr>
-<th>3</th>
-<td>forecast</td>
-<td>finite positive predictions; complete delivery...</td>
-<td>RTE if verified/available for assisted model; ...</td>
-</tr>
-<tr>
-<th>4</th>
-<td>uncertainty</td>
-<td>coverage, width, upper/lower exceedances, samp...</td>
-<td>flag uncalibrated interval; do not fabricate a...</td>
-</tr>
-<tr>
-<th>5</th>
-<td>delivery</td>
-<td>runtime and completion before agreed deadline</td>
-<td>publish fallback before deadline or mark misse...</td>
-</tr>
-<tr>
-<th>6</th>
-<td>archive</td>
-<td>predictions, issue versions, model/config/sour...</td>
-<td>write immutable run identifier before accessin...</td>
-</tr>
-<tr>
-<th>7</th>
-<td>monitor</td>
-<td>MAE, cold-evening MAE, fallback frequency and ...</td>
-<td>shadow review; refit only under frozen online ...</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
@@ -8587,49 +8442,49 @@ a.anchor-link {
 <th>0</th>
 <td>unknown vintages</td>
 <td>revised data can leak into historical inputs</td>
-<td>obtain original publication/issue archives; ke...</td>
+<td>obtain original publication and issue archives...</td>
 </tr>
 <tr>
 <th>1</th>
 <td>unknown hourly aggregation</td>
 <td>target and benchmark may represent different i...</td>
-<td>verify extraction recipe and interval labels b...</td>
+<td>verify extraction recipe, aggregation and inte...</td>
 </tr>
 <tr>
 <th>2</th>
 <td>previously explored holdout</td>
 <td>selection may be influenced by full-history EDA</td>
-<td>fresh prospective shadow period</td>
+<td>freeze this retrospective comparison; confirm ...</td>
 </tr>
 <tr>
 <th>3</th>
 <td>national proxy</td>
 <td>utility customer mix may behave differently</td>
-<td>portfolio-specific retraining and validation</td>
+<td>limit conclusions to national demand; validate...</td>
 </tr>
 <tr>
 <th>4</th>
 <td>weather miss</td>
-<td>forecast weather differs from delivery conditions</td>
-<td>authentic weather archive; stale/missing-input...</td>
+<td>realized temperature cannot establish forecast...</td>
+<td>obtain authentic weather forecast archives; ke...</td>
 </tr>
 <tr>
 <th>5</th>
 <td>rare extremes</td>
 <td>few cold or hot observations</td>
-<td>segment counts and trajectory-aware stress eva...</td>
+<td>report segment counts and trajectory-aware str...</td>
 </tr>
 <tr>
 <th>6</th>
 <td>settlement alignment</td>
-<td>hourly target differs from 15-minute market units</td>
-<td>quarter-hour forecasting and settlement integr...</td>
+<td>hourly research targets do not represent quart...</td>
+<td>state the hourly scope; do not infer settlemen...</td>
 </tr>
 <tr>
 <th>7</th>
 <td>financial inference</td>
 <td>lower forecast loss need not mean lower costs</td>
-<td>prices, period-specific rules, instruments and...</td>
+<td>report skill and risk proxies; financial evalu...</td>
 </tr>
 </tbody>
 </table>
@@ -8670,14 +8525,14 @@ a.anchor-link {
 <span class="s2">Nominal 90% quantile interval coverage: </span><span class="si">{</span><span class="n">overall</span><span class="o">.</span><span class="n">coverage_90</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">; mean width: </span><span class="si">{</span><span class="n">overall</span><span class="o">.</span><span class="n">width_MW</span><span class="si">:</span><span class="s2">,.1f</span><span class="si">}</span><span class="s2"> MW. The fixed rolling past-error baseline has coverage </span><span class="si">{</span><span class="n">empirical_overall</span><span class="o">.</span><span class="n">coverage_90</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Quantile coverage below 90% indicates undercoverage, not successful calibration; further method development must use validation or a new prospective period, not discretionary tuning on this test. Coverage, tail exceedances and pinball losses by hour, season, cold evenings and lead time are in reports/uncertainty/. Complete residual-day scenarios evaluate daily energy and peaks separately. Unsupported DST sample sizes remain explicit.</span>
 <span class="s2">Worst-day evidence is in reports/failure_catalogue.csv. Weather misses cannot be verified without archived forecast weather. Do not infer causes from coincidence.</span>
 
-<span class="s2">## 3. Deployment and risks</span>
-<span class="s2">Recommendation: retrospective research and prospective shadow validation only; no procurement deployment claim. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.</span>
-<span class="s2">The October readiness check also finds that the supplied extract ends in June: a live system must reject stale inputs. National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common procurement policy are required for financial claims; quarter-hour production alignment is additional work.</span>
+<span class="s2">## 3. Research recommendation and evidence limits</span>
+<span class="s2">Recommendation: retain this as a retrospective research result and confirm it on fresh later data before drawing stronger conclusions. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.</span>
+<span class="s2">National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common decision policy are required for financial claims. Hourly demand scores do not establish quarter-hour settlement performance.</span>
 
-<span class="s2">Pipeline: ingest -&gt; validate freshness -&gt; cutoff snapshot -&gt; point/uncertainty forecast -&gt; declared fallback -&gt; archive/publish on time -&gt; monitor. Begin with shadow operation and monitor the complete policy, including fallback days. See monitoring_specification.csv and risk_register.csv.</span>
+<span class="s2">The research deliverables are saved predictions, matched scorecards, uncertainty calibration, a failure catalogue and reports/risk_register.csv. Serving, scheduling, live monitoring and procurement integration are outside this project.</span>
 <span class="s2">"""</span>
 <span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/final_recommendation.md"</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
-<span class="n">write_json</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/run_summary.json"</span><span class="p">,{</span><span class="s2">"candidate"</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">"test_MAE_MW"</span><span class="p">:</span><span class="n">candidate_score</span><span class="o">.</span><span class="n">MAE_MW</span><span class="p">,</span><span class="s2">"rte_test_MAE_MW"</span><span class="p">:</span><span class="n">reference</span><span class="o">.</span><span class="n">MAE_MW</span><span class="p">,</span><span class="s2">"relative_improvement_percent"</span><span class="p">:</span><span class="n">relative</span><span class="p">,</span><span class="s2">"absolute_improvement_MW"</span><span class="p">:</span><span class="n">absolute</span><span class="p">,</span><span class="s2">"coverage_90"</span><span class="p">:</span><span class="n">overall</span><span class="o">.</span><span class="n">coverage_90</span><span class="p">,</span><span class="s2">"operationally_validated"</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s2">"financial_savings_estimable"</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s2">"test_previously_explored"</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
+<span class="n">write_json</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="s2">"reports/run_summary.json"</span><span class="p">,{</span><span class="s2">"candidate"</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">"test_MAE_MW"</span><span class="p">:</span><span class="n">candidate_score</span><span class="o">.</span><span class="n">MAE_MW</span><span class="p">,</span><span class="s2">"rte_test_MAE_MW"</span><span class="p">:</span><span class="n">reference</span><span class="o">.</span><span class="n">MAE_MW</span><span class="p">,</span><span class="s2">"relative_improvement_percent"</span><span class="p">:</span><span class="n">relative</span><span class="p">,</span><span class="s2">"absolute_improvement_MW"</span><span class="p">:</span><span class="n">absolute</span><span class="p">,</span><span class="s2">"coverage_90"</span><span class="p">:</span><span class="n">overall</span><span class="o">.</span><span class="n">coverage_90</span><span class="p">,</span><span class="s2">"operationally_validated"</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s2">"financial_savings_estimable"</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s2">"test_previously_explored"</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span><span class="s2">"scope"</span><span class="p">:</span><span class="s2">"retrospective research; no production implementation"</span><span class="p">})</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">recommendation</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -8695,9 +8550,9 @@ a.anchor-link {
 Read reports/scorecards/paired_block_bootstrap.csv for paired 7/14/28-day block sensitivity and confidence intervals. These retain exactly the same eligible paired hours as headline MAE, including partial days with their actual counts. Calendar-day blocks preserve dependence; hourly errors are not resampled independently.</p>
 <h2 id="2.-Uncertainty-and-failures">2. Uncertainty and failures<a class="anchor-link" href="#2.-Uncertainty-and-failures">¶</a></h2><p>Nominal 90% quantile interval coverage: 0.811; mean width: 2,811.5 MW. The fixed rolling past-error baseline has coverage 0.890. Quantile coverage below 90% indicates undercoverage, not successful calibration; further method development must use validation or a new prospective period, not discretionary tuning on this test. Coverage, tail exceedances and pinball losses by hour, season, cold evenings and lead time are in reports/uncertainty/. Complete residual-day scenarios evaluate daily energy and peaks separately. Unsupported DST sample sizes remain explicit.
 Worst-day evidence is in reports/failure_catalogue.csv. Weather misses cannot be verified without archived forecast weather. Do not infer causes from coincidence.</p>
-<h2 id="3.-Deployment-and-risks">3. Deployment and risks<a class="anchor-link" href="#3.-Deployment-and-risks">¶</a></h2><p>Recommendation: retrospective research and prospective shadow validation only; no procurement deployment claim. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.
-The October readiness check also finds that the supplied extract ends in June: a live system must reject stale inputs. National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common procurement policy are required for financial claims; quarter-hour production alignment is additional work.</p>
-<p>Pipeline: ingest -&gt; validate freshness -&gt; cutoff snapshot -&gt; point/uncertainty forecast -&gt; declared fallback -&gt; archive/publish on time -&gt; monitor. Begin with shadow operation and monitor the complete policy, including fallback days. See monitoring_specification.csv and risk_register.csv.</p>
+<h2 id="3.-Research-recommendation-and-evidence-limits">3. Research recommendation and evidence limits<a class="anchor-link" href="#3.-Research-recommendation-and-evidence-limits">¶</a></h2><p>Recommendation: retain this as a retrospective research result and confirm it on fresh later data before drawing stronger conclusions. Forecast vintages, source-to-hourly conversion and original observation publication times are unverified. The chronological test was previously explored in EDA. Demand history uses a disclosed publication-delay/revision approximation.
+National consumption is not a validated customer portfolio model. Energy shortage/surplus proxies are not euro savings. Prices, applicable settlement rules and a common decision policy are required for financial claims. Hourly demand scores do not establish quarter-hour settlement performance.</p>
+<p>The research deliverables are saved predictions, matched scorecards, uncertainty calibration, a failure catalogue and reports/risk_register.csv. Serving, scheduling, live monitoring and procurement integration are outside this project.</p>
 </div>
 </div>
 </div>

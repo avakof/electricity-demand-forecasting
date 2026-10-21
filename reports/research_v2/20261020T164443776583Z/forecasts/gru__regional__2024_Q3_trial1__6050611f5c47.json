@@ -1,0 +1,17 @@
+{
+  "sha256": "aace5375028eb1d7435c8fedda5cc41ea283891c2fc3f6cca99428a436f6ca09",
+  "rows": 2208,
+  "ledger_sha256": "30691e1c4736cbf45af48999007359b069009e914ecfdc1ca7cabd32448d2066",
+  "predictions_archived_before_scoring": true,
+  "signature": "6050611f5c47",
+  "family": "gru",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "2024_Q3_trial1"
+}

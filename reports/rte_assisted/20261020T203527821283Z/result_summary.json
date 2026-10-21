@@ -1,0 +1,17 @@
+{
+  "selected_assisted_model": "lightgbm_quantile__regional__rte_residual",
+  "selected_complete_policy": "lightgbm_quantile__regional__rte_residual",
+  "matched_test_hours": 8759,
+  "selected_MAE_MW": 806.760881869323,
+  "RTE_MAE_MW": 1438.982075579404,
+  "bias_correction_MAE_MW": 1111.0483201328468,
+  "improvement_vs_RTE_percent": 43.935307078478935,
+  "improvement_vs_bias_correction_percent": 27.387417158161085,
+  "cold_coverage": 0.5151515151515151,
+  "cold_upper_exceedance": 0.45454545454545453,
+  "cold_hours": 66,
+  "cold_days": 24,
+  "failed_fit_events": 0,
+  "fit_events": 817,
+  "retrospective": true
+}

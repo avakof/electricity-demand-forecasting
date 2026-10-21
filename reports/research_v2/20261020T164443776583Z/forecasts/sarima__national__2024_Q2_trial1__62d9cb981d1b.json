@@ -1,0 +1,25 @@
+{
+  "sha256": "830fe4119177dae4343996415ad5ccc56accb23f2dc8c888b47f9882df5fe44c",
+  "rows": 2184,
+  "ledger_sha256": "321b5c6f08acb9cb1800d9dd38fec0b830a8abbb64e2a9bb00d88812dbbcec7c",
+  "predictions_archived_before_scoring": true,
+  "signature": "62d9cb981d1b",
+  "family": "sarima",
+  "params": {
+    "order": [
+      2,
+      0,
+      0
+    ],
+    "seasonal_order": [
+      0,
+      0,
+      1,
+      24
+    ],
+    "maxiter": 60,
+    "window_days": 84
+  },
+  "arm": "national",
+  "phase": "2024_Q2_trial1"
+}

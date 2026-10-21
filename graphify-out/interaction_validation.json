@@ -1,0 +1,13 @@
+{
+  "method": "JSDOM simulation; no browser or network",
+  "rendered_components": 32,
+  "all_links": 72,
+  "mode_switches": true,
+  "node_selection": true,
+  "keyboard_selection": true,
+  "reset": true,
+  "file_search": true,
+  "zoom_and_fit": true,
+  "panel_focus": true,
+  "javascript_errors": []
+}

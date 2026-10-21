@@ -1,0 +1,2 @@
+model,eligible_targets,scored,missing_targets,availability,MAE_MW,RMSE_MW,bias_actual_minus_forecast_MW,WAPE_percent
+gam__national__fixed_conformal,8759.0,8759.0,1.0,1.0,1940.969484137459,2575.999078896424,137.46720102128563,3.830719264629239

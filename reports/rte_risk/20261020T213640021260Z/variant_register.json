@@ -1,0 +1,552 @@
+{
+  "lab__hist_gradient_boosting__national__stacked__w5__residual": {
+    "model": "lab__hist_gradient_boosting__national__stacked__w5__residual",
+    "family": "hist_gradient_boosting",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__stacked__w5__residual": {
+    "model": "lab__lightgbm__national__stacked__w5__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm_quantile__national__stacked__w5__residual": {
+    "model": "lab__lightgbm_quantile__national__stacked__w5__residual",
+    "family": "lightgbm_quantile",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__gam__national__stacked__w5__residual": {
+    "model": "lab__gam__national__stacked__w5__residual",
+    "family": "gam",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__basic__w1__residual": {
+    "model": "lab__lightgbm__national__basic__w1__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "basic",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__basic__w5__residual": {
+    "model": "lab__lightgbm__national__basic__w5__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "basic",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__engineered__w1__residual": {
+    "model": "lab__lightgbm__national__engineered__w1__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "engineered",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__engineered__w5__residual": {
+    "model": "lab__lightgbm__national__engineered__w5__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "engineered",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__stacked__w1__residual": {
+    "model": "lab__lightgbm__national__stacked__w1__residual",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__national__stacked__w5__direct": {
+    "model": "lab__lightgbm__national__stacked__w5__direct",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "direct",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__hist_gradient_boosting__regional_only__stacked__w5__residual": {
+    "model": "lab__hist_gradient_boosting__regional_only__stacked__w5__residual",
+    "family": "hist_gradient_boosting",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__stacked__w5__residual": {
+    "model": "lab__lightgbm__regional_only__stacked__w5__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm_quantile__regional_only__stacked__w5__residual": {
+    "model": "lab__lightgbm_quantile__regional_only__stacked__w5__residual",
+    "family": "lightgbm_quantile",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__gam__regional_only__stacked__w5__residual": {
+    "model": "lab__gam__regional_only__stacked__w5__residual",
+    "family": "gam",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__basic__w1__residual": {
+    "model": "lab__lightgbm__regional_only__basic__w1__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "basic",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__basic__w5__residual": {
+    "model": "lab__lightgbm__regional_only__basic__w5__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "basic",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__engineered__w1__residual": {
+    "model": "lab__lightgbm__regional_only__engineered__w1__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "engineered",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__engineered__w5__residual": {
+    "model": "lab__lightgbm__regional_only__engineered__w5__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "engineered",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__stacked__w1__residual": {
+    "model": "lab__lightgbm__regional_only__stacked__w1__residual",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__regional_only__stacked__w5__direct": {
+    "model": "lab__lightgbm__regional_only__stacked__w5__direct",
+    "family": "lightgbm",
+    "arm": "regional_only",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "direct",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__hist_gradient_boosting__combined__stacked__w5__residual": {
+    "model": "lab__hist_gradient_boosting__combined__stacked__w5__residual",
+    "family": "hist_gradient_boosting",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__stacked__w5__residual": {
+    "model": "lab__lightgbm__combined__stacked__w5__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm_quantile__combined__stacked__w5__residual": {
+    "model": "lab__lightgbm_quantile__combined__stacked__w5__residual",
+    "family": "lightgbm_quantile",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__gam__combined__stacked__w5__residual": {
+    "model": "lab__gam__combined__stacked__w5__residual",
+    "family": "gam",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__basic__w1__residual": {
+    "model": "lab__lightgbm__combined__basic__w1__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "basic",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__basic__w5__residual": {
+    "model": "lab__lightgbm__combined__basic__w5__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "basic",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__engineered__w1__residual": {
+    "model": "lab__lightgbm__combined__engineered__w1__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "engineered",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__engineered__w5__residual": {
+    "model": "lab__lightgbm__combined__engineered__w5__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "engineered",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__stacked__w1__residual": {
+    "model": "lab__lightgbm__combined__stacked__w1__residual",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 1,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__lightgbm__combined__stacked__w5__direct": {
+    "model": "lab__lightgbm__combined__stacked__w5__direct",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "direct",
+    "base": null,
+    "restrict_to_base_burnin": false
+  },
+  "lab__hybrid__arima__national": {
+    "model": "lab__hybrid__arima__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "arima__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__dlinear__national": {
+    "model": "lab__hybrid__dlinear__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "dlinear__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__dlinear__regional": {
+    "model": "lab__hybrid__dlinear__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "dlinear__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__gam__national": {
+    "model": "lab__hybrid__gam__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "gam__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__gam__regional": {
+    "model": "lab__hybrid__gam__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "gam__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__gru__national": {
+    "model": "lab__hybrid__gru__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "gru__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__gru__regional": {
+    "model": "lab__hybrid__gru__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "gru__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__hist_gradient_boosting__national": {
+    "model": "lab__hybrid__hist_gradient_boosting__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "hist_gradient_boosting__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__hist_gradient_boosting__regional": {
+    "model": "lab__hybrid__hist_gradient_boosting__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "hist_gradient_boosting__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__lightgbm__national": {
+    "model": "lab__hybrid__lightgbm__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "lightgbm__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__lightgbm__regional": {
+    "model": "lab__hybrid__lightgbm__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "lightgbm__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__lightgbm_quantile__national": {
+    "model": "lab__hybrid__lightgbm_quantile__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "lightgbm_quantile__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__lightgbm_quantile__regional": {
+    "model": "lab__hybrid__lightgbm_quantile__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "lightgbm_quantile__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__nbeats__national": {
+    "model": "lab__hybrid__nbeats__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "nbeats__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__nbeats__regional": {
+    "model": "lab__hybrid__nbeats__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "nbeats__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__nhits__national": {
+    "model": "lab__hybrid__nhits__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "nhits__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__nhits__regional": {
+    "model": "lab__hybrid__nhits__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "nhits__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__patchtst__national": {
+    "model": "lab__hybrid__patchtst__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "patchtst__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__patchtst__regional": {
+    "model": "lab__hybrid__patchtst__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "patchtst__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__sarima__national": {
+    "model": "lab__hybrid__sarima__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "sarima__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__sarimax__national": {
+    "model": "lab__hybrid__sarimax__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "sarimax__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__tft__national": {
+    "model": "lab__hybrid__tft__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "tft__national",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid__tft__regional": {
+    "model": "lab__hybrid__tft__regional",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": "tft__regional",
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid_control__national": {
+    "model": "lab__hybrid_control__national",
+    "family": "lightgbm",
+    "arm": "national",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": true
+  },
+  "lab__hybrid_control__combined": {
+    "model": "lab__hybrid_control__combined",
+    "family": "lightgbm",
+    "arm": "combined",
+    "tier": "stacked",
+    "cold_weight": 5,
+    "mode": "residual",
+    "base": null,
+    "restrict_to_base_burnin": true
+  }
+}

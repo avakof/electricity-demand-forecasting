@@ -23,4 +23,5 @@ __pycache__/
 
 # Project-local execution kernel state (not the notebooks or research reports)
 .runtime/
+.research-deps/
 

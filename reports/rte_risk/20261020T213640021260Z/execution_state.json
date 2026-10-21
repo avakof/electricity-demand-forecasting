@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "stage": "training, tuning, evaluation, reporting, notebooks and verification complete",
+  "run_dir": "/Users/alivakof/Desktop/Time Series/Project/reports/rte_risk/20261020T213640021260Z",
+  "updated_utc": "2026-10-20T23:44:26.861294+00:00",
+  "no_production": true,
+  "test_previously_explored": true,
+  "active_owned_processes": [],
+  "artifact_verification": "passed",
+  "visual_review": "passed",
+  "independent_review": "passed",
+  "tests": {
+    "passed": 123,
+    "optional_skipped": 1
+  },
+  "notebooks_executed": [
+    "07_statistical_and_boosting_models.ipynb",
+    "08_deep_learning_and_uncertainty.ipynb"
+  ],
+  "remaining_work_this_run": [],
+  "scope_limitations": [
+    "RTE availability is assumed; original issuance vintages unavailable",
+    "Previously inspected retrospective test",
+    "All original families represented by causal hybrids, not all natively retrained with RTE",
+    "Cold-evening uncertainty coverage inadequate"
+  ]
+}

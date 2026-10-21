@@ -1,0 +1,852 @@
+[
+  {
+    "id": "src_pipeline_monitoring_specification",
+    "source_file": "src/pipeline.py",
+    "reason": "source deleted or no longer available"
+  },
+  {
+    "id": "src_pipeline_readiness",
+    "source_file": "src/pipeline.py",
+    "reason": "source deleted or no longer available"
+  },
+  {
+    "id": "src_pipeline_risk_register",
+    "source_file": "src/pipeline.py",
+    "reason": "source deleted or no longer available"
+  },
+  {
+    "id": "runtime_kernels",
+    "source_file": ".runtime/kernels",
+    "reason": "excluded local tooling"
+  },
+  {
+    "id": "reports_forecasts_immutable",
+    "source_file": "reports/forecasts/immutable",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events",
+    "source_file": "reports/forecasts/origin_events",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_all_test_csv",
+    "source_file": "reports/forecasts/all_test.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd_csv_manifest",
+    "source_file": "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3_csv_manifest",
+    "source_file": "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889_csv_manifest",
+    "source_file": "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a_csv_manifest",
+    "source_file": "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a_csv_manifest",
+    "source_file": "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e_csv_manifest",
+    "source_file": "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0_csv_manifest",
+    "source_file": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0_csv_manifest",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18_csv_manifest",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd_csv",
+    "source_file": "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_all_test_previous_0aa301a52639e25a_csv",
+    "source_file": "reports/forecasts/immutable/all_test_previous_0aa301a52639e25a.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3_csv",
+    "source_file": "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_test_previous_074c930b888918aa_csv",
+    "source_file": "reports/forecasts/immutable/baselines_test_previous_074c930b888918aa.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889_csv",
+    "source_file": "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_baselines_validation_previous_2341f5a59fe466fd_csv",
+    "source_file": "reports/forecasts/immutable/baselines_validation_previous_2341f5a59fe466fd.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a_csv",
+    "source_file": "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_calendar_validation_previous_426407a34dd5e383_csv",
+    "source_file": "reports/forecasts/immutable/calendar_validation_previous_426407a34dd5e383.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a_csv",
+    "source_file": "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_previous_2d9a271e06f7ec27_csv",
+    "source_file": "reports/forecasts/immutable/candidate_empirical_intervals_test_previous_2d9a271e06f7ec27.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b_csv",
+    "source_file": "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_365_validation_previous_d92f5444fdd6dede_csv",
+    "source_file": "reports/forecasts/immutable/history_365_validation_previous_d92f5444fdd6dede.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7_csv",
+    "source_file": "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_730_validation_previous_fe692030261a0563_csv",
+    "source_file": "reports/forecasts/immutable/history_730_validation_previous_fe692030261a0563.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5_csv",
+    "source_file": "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_expanding_validation_previous_2983282db856664e_csv",
+    "source_file": "reports/forecasts/immutable/history_expanding_validation_previous_2983282db856664e.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389_csv",
+    "source_file": "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_more_leaves_validation_previous_48454dfd5ff56fff_csv",
+    "source_file": "reports/forecasts/immutable/history_more_leaves_validation_previous_48454dfd5ff56fff.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b_csv",
+    "source_file": "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_past_weather_validation_previous_6eedd56567aacc62_csv",
+    "source_file": "reports/forecasts/immutable/history_past_weather_validation_previous_6eedd56567aacc62.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e_csv",
+    "source_file": "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_history_weekly_fit_validation_previous_d42028942defd67f_csv",
+    "source_file": "reports/forecasts/immutable/history_weekly_fit_validation_previous_d42028942defd67f.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0_csv",
+    "source_file": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_previous_87d7be1b93c88176_csv",
+    "source_file": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_previous_87d7be1b93c88176.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0_csv",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_test_previous_398a22c261c65c81_csv",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_test_previous_398a22c261c65c81.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18_csv",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_immutable_rte_correction_proxy_validation_previous_19c37bc6ebf6bc14_csv",
+    "source_file": "reports/forecasts/immutable/rte_correction_proxy_validation_previous_19c37bc6ebf6bc14.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_all_test_csv_manifest",
+    "source_file": "reports/forecasts/all_test.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_baselines_test_csv_manifest",
+    "source_file": "reports/forecasts/baselines_test.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_baselines_validation_csv_manifest",
+    "source_file": "reports/forecasts/baselines_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_calendar_validation_csv_manifest",
+    "source_file": "reports/forecasts/calendar_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_candidate_empirical_intervals_test_csv_manifest",
+    "source_file": "reports/forecasts/candidate_empirical_intervals_test.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_365_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_365_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_730_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_730_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_expanding_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_expanding_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_more_leaves_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_more_leaves_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_past_weather_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_past_weather_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_weekly_fit_validation_csv_manifest",
+    "source_file": "reports/forecasts/history_weekly_fit_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_oracle_weather_sensitivity_oracle_validation_csv_manifest",
+    "source_file": "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_rte_correction_proxy_test_csv_manifest",
+    "source_file": "reports/forecasts/rte_correction_proxy_test.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_rte_correction_proxy_validation_csv_manifest",
+    "source_file": "reports/forecasts/rte_correction_proxy_validation.csv.manifest.json",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_all_validation_csv",
+    "source_file": "reports/forecasts/all_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_baselines_test_csv",
+    "source_file": "reports/forecasts/baselines_test.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_baselines_validation_csv",
+    "source_file": "reports/forecasts/baselines_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_calendar_validation_csv",
+    "source_file": "reports/forecasts/calendar_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_candidate_empirical_intervals_test_csv",
+    "source_file": "reports/forecasts/candidate_empirical_intervals_test.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_365_validation_csv",
+    "source_file": "reports/forecasts/history_365_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_730_validation_csv",
+    "source_file": "reports/forecasts/history_730_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_expanding_validation_csv",
+    "source_file": "reports/forecasts/history_expanding_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_more_leaves_validation_csv",
+    "source_file": "reports/forecasts/history_more_leaves_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_past_weather_validation_csv",
+    "source_file": "reports/forecasts/history_past_weather_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_history_weekly_fit_validation_csv",
+    "source_file": "reports/forecasts/history_weekly_fit_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_oracle_weather_sensitivity_oracle_validation_csv",
+    "source_file": "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_calendar_validation_08ade1f865d14c3f91d17fd1db6f698e_jsonl",
+    "source_file": "reports/forecasts/origin_events/calendar_validation_08ade1f865d14c3f91d17fd1db6f698e.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_365_validation_025f3ec5425a4f8291a8d828c51f9d8c_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_365_validation_025f3ec5425a4f8291a8d828c51f9d8c.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_730_validation_5a5cb5d3806b400f8df8f1f3cbf4e38f_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_730_validation_5a5cb5d3806b400f8df8f1f3cbf4e38f.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_expanding_validation_9484be46354341b58c12a9e47804a203_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_expanding_validation_9484be46354341b58c12a9e47804a203.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_more_leaves_validation_539edce8713c4079b1a56cb6b0f12ae3_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_more_leaves_validation_539edce8713c4079b1a56cb6b0f12ae3.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_history_weekly_fit_validation_233048c33d4a4af5b3931e08e50a4a26_jsonl",
+    "source_file": "reports/forecasts/origin_events/history_weekly_fit_validation_233048c33d4a4af5b3931e08e50a4a26.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9_jsonl",
+    "source_file": "reports/forecasts/origin_events/oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_rte_correction_proxy_test_f8fe0c5614a34564af1aa50dc4748e94_jsonl",
+    "source_file": "reports/forecasts/origin_events/rte_correction_proxy_test_f8fe0c5614a34564af1aa50dc4748e94.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_origin_events_rte_correction_proxy_validation_9580a0bdd9424127a341eaedb7228e8e_jsonl",
+    "source_file": "reports/forecasts/origin_events/rte_correction_proxy_validation_9580a0bdd9424127a341eaedb7228e8e.jsonl.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_rte_correction_proxy_test_csv",
+    "source_file": "reports/forecasts/rte_correction_proxy_test.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_forecasts_rte_correction_proxy_validation_csv",
+    "source_file": "reports/forecasts/rte_correction_proxy_validation.csv.gz",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_01_data_audit_cell_7",
+    "source_file": "reports/figures/01_data_audit_cell_7.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_01_data_audit_cell_9",
+    "source_file": "reports/figures/01_data_audit_cell_9.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_02_development_eda_cell_10",
+    "source_file": "reports/figures/02_development_eda_cell_10.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_02_development_eda_cell_4",
+    "source_file": "reports/figures/02_development_eda_cell_4.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_02_development_eda_cell_6",
+    "source_file": "reports/figures/02_development_eda_cell_6.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_02_development_eda_cell_8",
+    "source_file": "reports/figures/02_development_eda_cell_8.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_03_backtest_and_baselines_cell_9",
+    "source_file": "reports/figures/03_backtest_and_baselines_cell_9.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_04_model_comparison_cell_6",
+    "source_file": "reports/figures/04_model_comparison_cell_6.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_05_uncertainty_and_failures_cell_12",
+    "source_file": "reports/figures/05_uncertainty_and_failures_cell_12.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_05_uncertainty_and_failures_cell_8",
+    "source_file": "reports/figures/05_uncertainty_and_failures_cell_8.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_figures_06_business_and_deployment_cell_4",
+    "source_file": "reports/figures/06_business_and_deployment_cell_4.png",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_monitoring_specification",
+    "source_file": "reports/monitoring_specification.csv",
+    "reason": "source deleted or no longer available"
+  },
+  {
+    "id": "reports_notebook_previews_01_data_audit",
+    "source_file": "reports/notebook_previews/01_data_audit.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_notebook_previews_02_development_eda",
+    "source_file": "reports/notebook_previews/02_development_eda.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_notebook_previews_03_backtest_and_baselines",
+    "source_file": "reports/notebook_previews/03_backtest_and_baselines.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_notebook_previews_04_model_comparison",
+    "source_file": "reports/notebook_previews/04_model_comparison.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_notebook_previews_05_uncertainty_and_failures",
+    "source_file": "reports/notebook_previews/05_uncertainty_and_failures.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_notebook_previews_06_business_and_deployment",
+    "source_file": "reports/notebook_previews/06_business_and_deployment.html",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_calendar_validation_fits",
+    "source_file": "reports/models/calendar_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_calendar_validation_pipelines",
+    "source_file": "reports/models/calendar_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_365_validation_fits",
+    "source_file": "reports/models/history_365_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_365_validation_pipelines",
+    "source_file": "reports/models/history_365_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_730_validation_fits",
+    "source_file": "reports/models/history_730_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_730_validation_pipelines",
+    "source_file": "reports/models/history_730_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_expanding_validation_fits",
+    "source_file": "reports/models/history_expanding_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_expanding_validation_pipelines",
+    "source_file": "reports/models/history_expanding_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_more_leaves_validation_fits",
+    "source_file": "reports/models/history_more_leaves_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_more_leaves_validation_pipelines",
+    "source_file": "reports/models/history_more_leaves_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_past_weather_validation_fits",
+    "source_file": "reports/models/history_past_weather_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_past_weather_validation_pipelines",
+    "source_file": "reports/models/history_past_weather_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_weekly_fit_validation_fits",
+    "source_file": "reports/models/history_weekly_fit_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_history_weekly_fit_validation_pipelines",
+    "source_file": "reports/models/history_weekly_fit_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_oracle_weather_sensitivity_oracle_validation_fits",
+    "source_file": "reports/models/oracle_weather_sensitivity_oracle_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_oracle_weather_sensitivity_oracle_validation_pipelines",
+    "source_file": "reports/models/oracle_weather_sensitivity_oracle_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_rte_correction_proxy_test_fits",
+    "source_file": "reports/models/rte_correction_proxy_test_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_rte_correction_proxy_test_pipelines",
+    "source_file": "reports/models/rte_correction_proxy_test_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_rte_correction_proxy_validation_fits",
+    "source_file": "reports/models/rte_correction_proxy_validation_fits.csv",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "reports_models_rte_correction_proxy_validation_pipelines",
+    "source_file": "reports/models/rte_correction_proxy_validation_pipelines.joblib",
+    "reason": "individual generated artifact represented by group"
+  },
+  {
+    "id": "src_pipeline",
+    "source_file": "src/pipeline.py",
+    "reason": "source deleted or no longer available"
+  },
+  {
+    "id": "readme_authentic_archives",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_available_information_replay",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_conditional_median",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_config",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_daily_trajectory_uncertainty",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_daylight_saving_grid",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_evaluation_lock",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_forecast_archiving",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_forecast_contract",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_four_baseline_policies",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_frozen_candidate",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_hypothesis_register",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_integrity_tests",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_01",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_02",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_03",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_04",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_05",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_notebook_06",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_operational_gate",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_oracle_sensitivity",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_origin_snapshots",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_processed_data",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_project",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_raw_data",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_reports",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_shared_logic",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_validation_selection",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_final_recommendation_coverage_monitoring",
+    "source_file": "reports/final_recommendation.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_final_recommendation_live_pipeline",
+    "source_file": "reports/final_recommendation.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_final_recommendation_rte_additive_correction",
+    "source_file": "reports/final_recommendation.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_final_recommendation_shadow_operation",
+    "source_file": "reports/final_recommendation.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_implementation_review_append_only_origin_ledger",
+    "source_file": "reports/implementation_review.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_implementation_review_content_addressed_forecasts",
+    "source_file": "reports/implementation_review.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_implementation_review_falsification_tests",
+    "source_file": "reports/implementation_review.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "requirements_notebook_stack",
+    "source_file": "requirements.txt",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "requirements_scientific_stack",
+    "source_file": "requirements.txt",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "requirements_validated_execution_environment",
+    "source_file": "requirements-validated.txt",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_assumed_observation_availability",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "readme_missing_target_policy",
+    "source_file": "readme.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_audit_limitations_hourly_conversion_unknown",
+    "source_file": "reports/audit/limitations.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_audit_limitations_previously_explored_test",
+    "source_file": "reports/audit/limitations.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_audit_limitations_retrospective_evidence",
+    "source_file": "reports/audit/limitations.md",
+    "reason": "changed/re-extracted document concept replaced"
+  },
+  {
+    "id": "reports_final_recommendation_procurement_requirements",
+    "source_file": "reports/final_recommendation.md",
+    "reason": "changed/re-extracted document concept replaced"
+  }
+]
