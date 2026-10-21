@@ -1,0 +1,17 @@
+{
+  "sha256": "d71669a564d232346152b95069345bc11bfd66d0bab61ca47824a0b1f4b95c46",
+  "rows": 8760,
+  "ledger_sha256": "e4046ee3b640be7ae6c539a249c9b657eded320bb540d45358a83f84efbaf8c2",
+  "predictions_archived_before_scoring": true,
+  "signature": "c9fb05d222fc",
+  "family": "nbeats",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "test"
+}

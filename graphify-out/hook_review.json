@@ -1,0 +1,48 @@
+{
+  "verified_at_utc": "2026-10-21T04:33:50.360234+00:00",
+  "target": "graphify-out/overview_template.html",
+  "findings": [
+    {
+      "rule": "extreme-negative-tracking",
+      "outcome": "fixed",
+      "change": "h1 tracking changed from -1px to -.02em. Measured -0.72px at 36px desktop and -0.48px at 24px mobile."
+    },
+    {
+      "rule": "skipped-heading",
+      "outcome": "fixed",
+      "change": "Independent inventory search section promoted from h3 to h2, preserving its 14px appearance and 1.5 line height."
+    }
+  ],
+  "rendered_heading_levels": {
+    "default": [
+      1,
+      2,
+      3,
+      2
+    ],
+    "selected": [
+      1,
+      2,
+      3,
+      3,
+      2
+    ]
+  },
+  "mechanical_detector_findings": [],
+  "mobile_document_width": 390,
+  "mobile_document_scroll_width": 390,
+  "graph_data_hashes_unchanged": true,
+  "ignores_applied": [],
+  "previous_review": {
+    "rule": "all-caps-body",
+    "outcome": "false positive",
+    "evidence": "Flagged short heading and other compact labels; no uppercase paragraphs",
+    "uppercase_css_selectors": [
+      ".eyebrow",
+      "aside h3",
+      ".badge"
+    ],
+    "suppression_scope": "graphify-out/overview_template.html only",
+    "ui_code_changed": false
+  }
+}

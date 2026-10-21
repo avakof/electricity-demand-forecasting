@@ -1,0 +1,33 @@
+{
+  "corpus_tokens": 113066,
+  "corpus_words": 84800,
+  "nodes": 1696,
+  "edges": 4702,
+  "avg_query_tokens": 1625,
+  "reduction_ratio": 69.6,
+  "per_question": [
+    {
+      "question": "what is the main entry point",
+      "query_tokens": 1595,
+      "reduction": 70.9
+    },
+    {
+      "question": "how are errors handled",
+      "query_tokens": 1659,
+      "reduction": 68.2
+    },
+    {
+      "question": "what connects the data layer to the api",
+      "query_tokens": 1610,
+      "reduction": 70.2
+    },
+    {
+      "question": "what are the core abstractions",
+      "query_tokens": 1636,
+      "reduction": 69.1
+    }
+  ],
+  "interpretation": "Heuristic serialized-query retrieval size; not measured usage, financial cost, latency or answer quality.",
+  "corpus_basis": "Default graph-size estimate: node count multiplied by 50 words.",
+  "detected_scope_words": 357190
+}

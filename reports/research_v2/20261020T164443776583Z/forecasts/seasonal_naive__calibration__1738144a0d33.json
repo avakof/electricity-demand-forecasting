@@ -1,0 +1,11 @@
+{
+  "sha256": "f7d7e77da79d04cbeb9e67130126a69d2cf2262aa9413980ec18a35e665681f6",
+  "rows": 4295,
+  "ledger_sha256": "68e62ecd36c49ecdbc9780a14fa0e509632d6c90d54699bf517a99c12ae13d46",
+  "predictions_archived_before_scoring": true,
+  "signature": "1738144a0d33",
+  "family": "seasonal_naive",
+  "params": {},
+  "arm": "national",
+  "phase": "calibration"
+}

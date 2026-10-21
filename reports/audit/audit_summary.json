@@ -1,0 +1,17 @@
+{
+  "country_rows": 65710,
+  "regional_rows": 367752,
+  "regions": 12,
+  "country_duplicate_keys": 0,
+  "regional_duplicate_keys": 0,
+  "hourly_grid_missing_rows": 0,
+  "country_target_missing": 7,
+  "rte_missing": 7,
+  "weather_missing": 0,
+  "complete_regional_overlap_hours": 30643,
+  "country_regional_comparable_hours": 30643,
+  "max_country_regional_difference_mw": 1620.0,
+  "reconciliation_flags": 1,
+  "no_targets_interpolated": true,
+  "peaks_deleted": 0
+}

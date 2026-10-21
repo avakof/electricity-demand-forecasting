@@ -1,0 +1,5 @@
+model,candidate,selected,weighted_WIS,critical_nobs,critical_ndays,critical_upper_exceedance_rate,selection_reason
+gam__national,pooled,True,1026.5443863359026,33,11,0.0,"pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied"
+gam__national,conditional,False,1028.6825646544467,33,11,0.0,"pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied"
+rte_proxy,pooled,True,535.5624869849769,33,11,0.15151515151515152,"pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied"
+rte_proxy,conditional,False,534.7203093856909,33,11,0.09090909090909091,"pooled retained: conditional evidence, support, WIS or upper-tail rule not satisfied"

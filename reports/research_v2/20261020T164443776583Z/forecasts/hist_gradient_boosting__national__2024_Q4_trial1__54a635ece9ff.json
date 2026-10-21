@@ -1,0 +1,16 @@
+{
+  "sha256": "1893b8f96818707512fe3e9fe3271f5f39b96c2c27daad2d0505acfa92de872e",
+  "rows": 2209,
+  "ledger_sha256": "5576f484a3a8d236cab97995c9b3f35e759668b7a720d33ccbe0813291704fff",
+  "predictions_archived_before_scoring": true,
+  "signature": "54a635ece9ff",
+  "family": "hist_gradient_boosting",
+  "params": {
+    "max_iter": 120,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 72,
+    "l2_regularization": 5.0
+  },
+  "arm": "national",
+  "phase": "2024_Q4_trial1"
+}

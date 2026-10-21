@@ -1,0 +1,17 @@
+{
+  "sha256": "5360d92441d29816dd9151e5f5fd2af8bf064498169e8e884e78cb45be9f28f8",
+  "rows": 4295,
+  "ledger_sha256": "c12f15fde609cc167118c9f98dca7150c53861af9562d81a9eb69811104d4498",
+  "predictions_archived_before_scoring": true,
+  "signature": "ed4cab1918c2",
+  "family": "patchtst",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "calibration"
+}

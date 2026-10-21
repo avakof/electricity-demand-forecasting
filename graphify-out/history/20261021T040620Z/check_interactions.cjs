@@ -1,0 +1,27 @@
+// DOM simulation only: no browser, network requests or project code execution.
+const fs=require('fs'),assert=require('node:assert/strict');
+const {JSDOM,VirtualConsole}=require('../.runtime/graph-ui-check/node_modules/jsdom');
+const errors=[];const vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
+const dom=new JSDOM(fs.readFileSync(__dirname+'/architecture.html','utf8'),{runScripts:'dangerously',virtualConsole:vc});
+const doc=dom.window.document;
+assert.equal(doc.querySelectorAll('g.node').length,29);
+assert.equal(doc.querySelectorAll('.edge').length,17);
+doc.querySelector('[data-mode="code"]').click();
+assert.ok(doc.querySelectorAll('.edge').length>25);
+doc.querySelector('g[aria-label="features.py"]').dispatchEvent(new dom.window.MouseEvent('click',{bubbles:true}));
+assert.equal(doc.querySelector('aside h2').textContent,'features.py');
+assert.ok(doc.querySelector('aside').textContent.includes('src/features.py'));
+assert.ok(doc.querySelectorAll('.edge.focus').length>0);
+doc.querySelector('#reset').click();
+const input=doc.querySelector('#search');input.value='bootstrap';input.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
+assert.ok(doc.querySelector('#fileResults').textContent.includes('paired_block_bootstrap.csv'));
+doc.querySelector('[data-mode="data"]').click();assert.ok(doc.querySelectorAll('.edge').length>0);
+doc.querySelector('[data-mode="all"]').click();assert.equal(doc.querySelectorAll('.edge').length,76);
+doc.querySelector('g[aria-label="Forecast contract"]').dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+assert.equal(doc.querySelector('aside h2').textContent,'Forecast contract');
+doc.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+assert.equal(doc.querySelector('aside h2').textContent,'Navigate the project');
+assert.deepEqual(errors,[]);
+fs.writeFileSync(__dirname+'/interaction_validation.json',JSON.stringify({method:'JSDOM simulation; no browser or network',rendered_components:29,all_links:76,mode_switches:true,node_selection:true,keyboard_selection:true,reset:true,file_search:true,javascript_errors:errors,browser_preview:'Blocked by browser URL policy for local file protocol; no workaround attempted.'},null,2));
+console.log('DOM interactions passed: modes, component selection, sourced detail, keyboard, reset, file search; no script errors.');
+dom.window.close();

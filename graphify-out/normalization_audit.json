@@ -1,0 +1,30 @@
+{
+  "input_relationship_observations": 6605,
+  "simple_graph_edges": 4702,
+  "distinct_observations_retained": 6594,
+  "self_reference_observations": [
+    {
+      "source": "reports_manager_report_20261021_app_src_content_shared_sortabledashboardlayout_sortabledashboardlayout_visit",
+      "target": "reports_manager_report_20261021_app_src_content_shared_sortabledashboardlayout_sortabledashboardlayout_visit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/manager_report_20261021/app/src/content/shared/SortableDashboardLayout.jsx",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "reports_manager_report_20261021_diagnostics_build_diagnostics_clean",
+      "target": "reports_manager_report_20261021_diagnostics_build_diagnostics_clean",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/manager_report_20261021/diagnostics/build_diagnostics.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "policy": "Simple undirected visualization; every distinct directed observation, confidence, type and source location is retained in relationship_observations. Syntactic self-reference observations are retained separately here."
+}

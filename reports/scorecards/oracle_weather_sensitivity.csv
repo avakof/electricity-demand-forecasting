@@ -1,0 +1,2 @@
+model,eligible_targets,scored,missing_targets,availability,MAE_MW,RMSE_MW,bias_actual_minus_forecast_MW,WAPE_percent,interpretation
+oracle_weather_sensitivity,17542.0,17542.0,2.0,1.0,1808.4485519176155,2517.781275059877,273.07496695976397,3.6113240292109254,recorded future weather; not deployable evidence

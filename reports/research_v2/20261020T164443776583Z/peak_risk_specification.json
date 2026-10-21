@@ -1,0 +1,69 @@
+{
+  "bootstrap_block_days": [
+    7,
+    14
+  ],
+  "bootstrap_repetitions": 500,
+  "cold_threshold_c": 5.0,
+  "cold_weight_scenarios": [
+    1,
+    3,
+    5
+  ],
+  "conformal_interpretation": "Symmetric conformal bounds do not establish equal-tail 5% probabilities; their center need not be a median",
+  "cost_interpretation": "Dimensionless shortage/surplus ratios times MW error: risk proxies, not euros, prices, procurement savings, or optimal bids",
+  "decision_policies": [
+    "median_every_interval",
+    "q95_on_origin_proxy_evening_else_median"
+  ],
+  "endpoint_convention": "Delivery-date ends exclusive; calibration outcomes also strictly released before first scoring origin",
+  "evening_hours_local": [
+    18,
+    19,
+    20
+  ],
+  "final_calibration_dates": [
+    "2025-01-02",
+    "2025-06-30"
+  ],
+  "frozen_utc": "2026-10-20T17:12:20.462086+00:00",
+  "guardrail_min_days": 20,
+  "guardrail_min_observations": 60,
+  "nominal_coverage": 0.9,
+  "nominal_upper_exceedance": 0.05,
+  "origin_proxy": "past_temperature_mean_24h < 5 C AND delivery local hour in [18,19,20]; past proxy, not forecast weather",
+  "pool_minimums": {
+    "coldrisk_evening": [
+      60,
+      20
+    ],
+    "evening": [
+      120,
+      40
+    ],
+    "overall": [
+      200,
+      1
+    ]
+  },
+  "random_seed": 42,
+  "realized_cold_role": "retrospective diagnosis and loss weighting only; never a decision trigger",
+  "selection_fit_dates": [
+    "2024-01-01",
+    "2024-07-01"
+  ],
+  "selection_rule": "Conditional only if H2 origin-proxy cold evening has >=60 observations/20 days, every conditional calibration tier is supported, proxy-cold-weighted WIS(weight3) decreases, and observed upper-tail exceedance <=5%; otherwise pooled. No realized-cold selection.",
+  "selection_score_dates": [
+    "2024-07-01",
+    "2025-01-01"
+  ],
+  "shortage_surplus_ratios": [
+    1,
+    3,
+    9,
+    19
+  ],
+  "source_sha256": "a975b051603988ec75cedcd4c844561c9071d8195758b7a6ca0da4e261c5b953",
+  "version": "peak-risk-v1",
+  "winter_count_definition": "Represented meteorological DJF winter-years; December belongs to next January/February year; not complete seasonal cycles"
+}

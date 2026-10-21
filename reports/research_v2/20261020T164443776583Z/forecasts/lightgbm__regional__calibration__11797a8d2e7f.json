@@ -1,0 +1,16 @@
+{
+  "sha256": "60db088c8d7a5fb0cd499af7ad530c7582d4db193dfdae863e78309a7eef9311",
+  "rows": 4295,
+  "ledger_sha256": "5ef4cedfc43fe0b766a765e1aeb7ca8748f95c9aee2cebbfff1e6105b1e2e8bd",
+  "predictions_archived_before_scoring": true,
+  "signature": "11797a8d2e7f",
+  "family": "lightgbm",
+  "params": {
+    "n_estimators": 150,
+    "num_leaves": 31,
+    "min_child_samples": 72,
+    "reg_lambda": 5.0
+  },
+  "arm": "regional",
+  "phase": "calibration"
+}

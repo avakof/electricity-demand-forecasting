@@ -1,0 +1,51 @@
+{
+  "verified_at_utc": "2026-10-21T04:28:31.237296+00:00",
+  "verification_questions": [
+    {
+      "question": "Does the graph cover current source, all nine notebooks, and grouped artifacts while removing deleted production components?",
+      "confirmed": true,
+      "inventory_files": 5414,
+      "notebooks": 9,
+      "parsed_code_cells": 74,
+      "removed_paths": [
+        "src/pipeline.py",
+        "reports/monitoring_specification.csv"
+      ]
+    },
+    {
+      "question": "Are every endpoint and overview evidence reference valid, with inspected inputs unchanged?",
+      "confirmed": true,
+      "nodes": 1696,
+      "edges": 4702,
+      "source_hashes_checked": 177,
+      "changed_inputs": [],
+      "overview_components": 32,
+      "overview_relationships": 72,
+      "overview_source_references_checked": 127,
+      "documentation_links_checked": 659
+    },
+    {
+      "question": "Do availability and model distinctions match source evidence?",
+      "confirmed": true,
+      "archive_rows": {
+        "weather_forecast_archive.csv": 0,
+        "demand_observation_archive.csv": 0,
+        "rte_forecast_archive.csv": 0
+      },
+      "note": "Three versioned later protocols, separate point/quantile/calibration methods, no verified operating deployment."
+    }
+  ],
+  "graph_health": {
+    "dangling_endpoint_edges": 0,
+    "missing_endpoint_edges": 0,
+    "self_loop_edges": 0,
+    "undirected_same_endpoint_collapsed_edges": 0
+  },
+  "unresolved_ast_references": 67,
+  "unlocated_type_or_import_references": 21,
+  "python_import_cycles": [],
+  "test_definitions_inspected": 124,
+  "not_executed": "No predictive models, project notebooks, or forecasting test suite were run by the graph refresh.",
+  "token_usage": "Unreported by host; counters of zero are placeholders.",
+  "browser_preview": "See interaction_validation.json and browser_validation.json for the separate UI checks."
+}

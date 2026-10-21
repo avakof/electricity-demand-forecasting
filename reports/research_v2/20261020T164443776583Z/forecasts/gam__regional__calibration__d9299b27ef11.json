@@ -1,0 +1,15 @@
+{
+  "sha256": "ef59207a54cbd2406b2b49ddafb1fe987d3412de9d6d4fd570e8063d845aa23f",
+  "rows": 4295,
+  "ledger_sha256": "f3ca83205abe2192f0117dab89bb6a5023d6b49cfce374e6e821440c03d0e2e0",
+  "predictions_archived_before_scoring": true,
+  "signature": "d9299b27ef11",
+  "family": "gam",
+  "params": {
+    "n_knots": 6,
+    "degree": 3,
+    "alpha": 100.0
+  },
+  "arm": "regional",
+  "phase": "calibration"
+}

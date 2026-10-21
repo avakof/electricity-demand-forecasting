@@ -1,0 +1,13 @@
+feature_prefix,source_region,mapping
+region_00,Auvergne-Rhône-Alpes,Actual regional pivot-column order used when constructing features
+region_01,Bourgogne-Franche-Comté,Actual regional pivot-column order used when constructing features
+region_02,Bretagne,Actual regional pivot-column order used when constructing features
+region_03,Centre-Val de Loire,Actual regional pivot-column order used when constructing features
+region_04,Grand Est,Actual regional pivot-column order used when constructing features
+region_05,Hauts-de-France,Actual regional pivot-column order used when constructing features
+region_06,Normandie,Actual regional pivot-column order used when constructing features
+region_07,Nouvelle-Aquitaine,Actual regional pivot-column order used when constructing features
+region_08,Occitanie,Actual regional pivot-column order used when constructing features
+region_09,Pays de la Loire,Actual regional pivot-column order used when constructing features
+region_10,Provence-Alpes-Côte d'Azur,Actual regional pivot-column order used when constructing features
+region_11,Île-de-France,Actual regional pivot-column order used when constructing features

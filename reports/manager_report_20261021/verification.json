@@ -1,0 +1,107 @@
+{
+  "verified_at_utc": "2026-10-21T03:03:54.718368+00:00",
+  "frozen_run": "reports/rte_risk/20261020T213640021260Z",
+  "scope": "Report creation and descriptive diagnostics; no retraining or model selection changes",
+  "computed_checks": {
+    "written_report_local_links": 34,
+    "all_local_links_resolve": true,
+    "source_hashes_match": 17,
+    "png_figures": 8,
+    "svg_figures": 8,
+    "app_build_status": "complete"
+  },
+  "independent_review": {
+    "file": "report_review.md",
+    "numeric_boolean_checks": 6318,
+    "model_scope_rows": 55,
+    "status": "passed"
+  },
+  "manual_browser_review": {
+    "browser": "Chrome",
+    "local_preview": "http://127.0.0.1:8768/",
+    "normal_viewport_checked": true,
+    "narrow_viewport": [
+      390,
+      844
+    ],
+    "narrow_document_width": 390,
+    "narrow_document_scroll_width": 390,
+    "temporary_viewport_reset": true,
+    "console_errors_observed": 0,
+    "controls_checked": [
+      "metric",
+      "interval segment",
+      "interval type",
+      "source inspector",
+      "shortage/surplus ratio"
+    ],
+    "charts_checked": [
+      "point comparison",
+      "feature ablation",
+      "monthly errors",
+      "coverage",
+      "upper misses",
+      "local-hour errors",
+      "cold-day trajectory",
+      "asymmetric loss"
+    ],
+    "corrections_verified": [
+      "local hour axis",
+      "actual-demand contrast",
+      "responsive chart-control rows",
+      "risk text formatting",
+      "missing-target disclosure"
+    ],
+    "tab_left_open": true
+  },
+  "source_sha256": {
+    "reports/manager_report_20261021/diagnostics/monthly_mae.csv": "3d92b9c5b83b5e05c93feaf6f7356514a237b64ecd0c2216ef2bc93469ff3ffd",
+    "reports/manager_report_20261021/diagnostics/worst_cold_day_hourly.csv": "3bbc7ea4194320a4cd90604d21d06f92cae2d853c6441456ccab60715b3cf860",
+    "reports/rte_risk/20261020T213640021260Z/tables/bootstrap.csv": "bc0e248251c0d526c96595b6985983c90aef8615d9eadebe64dd06b6d4c3943e",
+    "reports/rte_risk/20261020T213640021260Z/tables/cold_interval_scorecard.csv": "eaa18f5238f4ce031b37430a3232745ec2408b0a10965afaaec037638be49811",
+    "reports/rte_risk/20261020T213640021260Z/tables/feature_ablation.csv": "98dc2dd34391ad9c76d1e3f7d8d40cd836de6954bce166737d02762f2e692ea8",
+    "reports/rte_risk/20261020T213640021260Z/tables/quantile_decision_risk_scenarios.csv": "b84211ce53454683bc1dc5e4d712d870bbcd0f1ad242012b4db9aef14d323c5a",
+    "reports/rte_risk/20261020T213640021260Z/tables/test_scorecard.csv": "88c6142ba363d1e9644ca522993e2931484d78f1fd7eedff58e55ae4f2ed2216",
+    "reports/rte_risk/20261020T213640021260Z/tables/test_segments.csv": "784a0c23f5acbb53e24c0abd190cecaa08081462a2ec2aff0740657476b0b7a7",
+    "reports/rte_risk/20261020T213640021260Z/tables/uncertainty_scorecard.csv": "3893d78e867d5ccd02b0757fdfedddc9924981f8fe76e66f223779edf68f98f6",
+    "reports/rte_risk/20261020T213640021260Z/frozen_selection.json": "a88f5040c36c8ae6fe9c627634ab51090144b01dd416530900399a2fb71a1151",
+    "reports/rte_risk/20261020T213640021260Z/result_summary.json": "026869162e045b87c1658094e9baa8bc1fbead0ca4b6a4e0f40056cc01fa90cf",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/all_test.csv.gz": "67a93ce36b5099da6068b5ad099057ab8771b39212992a0c73fbeff984f7ffde",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/selected_empirical_intervals.csv.gz": "a8d889406684c84393ca7e78ccc2ae597606f9f01969bf1c2b2f4a6d6bffd337",
+    "reports/rte_risk/20261020T213640021260Z/forecasts/probabilistic_test.csv.gz": "bc819080ffaf15575655d2bae4e95c02606ccd483a4721a3d58cc14fe028bee9",
+    "data/france_electricity_hourly.csv": "700cf5546f04ac1e677c0e161b2da7a0da65494d2cc350ec5a11309b68594123",
+    "config/rte_risk_experiment.json": "b0f3a050a259705ab1bdd82d90b2b91c840c728f983c31c8d1a265da99f584c5",
+    "src/common.py": "389c209e4787bfa5bbacb4b479dca618705687a20c38d36e3de48ad85f6555b9"
+  },
+  "output_sha256": {
+    "complete_report.md": "2a2c482292a005192a5e029a429441787a3ba71216b54ac56821680c6e28012b",
+    "README.md": "c98671649c94884ba0311ddddde19d120313e662fb5356bc5b5974438add41aa",
+    "report_review.md": "5e5f75acd7b2e5f6617459576c45e4801cee772c48827c397e194ad372c6e25d",
+    "claim_audit.md": "26647f9da4561dfa0419bb19e266fca92fb9c0e9756e5037a6447639ddeb076e",
+    "reviewed_snapshot.json": "0cec5cb146dfb5a685f33ff6913f7bd81ee41bd09a0d99224b9b63df1d3e2494",
+    "app/src/data.json": "a84a3306eca9e36806027196a9f59ac982f53f92573c0c6116b300d109732e73",
+    "app/dist/index.html": "b3f6a5a9c6e3cf684d9d29120433c3a95be982c28746753b574933937ceafac4",
+    "report_preview.png": "38bfe2fac32d09b8f79f36ea0f23e44c21d621442b8e398c70fcb66bdcc89785",
+    "figures/01_accuracy.png": "e789d0bd9c11b9b9d7a6b1cb5bc3b3c02530dd9c8c94eee899837688fc9844a2",
+    "figures/01_accuracy.svg": "5ba907c08d3d863c6fbbf7abca49c9f352988d60242fa25a3fe666714e421db6",
+    "figures/02_improvement_uncertainty.png": "b9a3c63c351a5879f30d2ee4d881933562771ff05a8669102281537d32bf706e",
+    "figures/02_improvement_uncertainty.svg": "42419ab30e0653ee4ae987001bccb0414c102a4d4137ebc50f748a22ec3b4ed2",
+    "figures/03_feature_ablation.png": "870ba5806dda73fa10a9dbbf5320d938ffed714d9b8aad739c309ebcf5b06b63",
+    "figures/03_feature_ablation.svg": "1c7a29f6a97bc29b3b72436b487716ce92204349e6789ddb35f1dd4b010ef569",
+    "figures/04_interval_failure.png": "28ce7339dc28745829bd335c943d516879512a31f0d879d965e9b4a92658004d",
+    "figures/04_interval_failure.svg": "12589488d110bfad9c9fd4490bb17b54a652fa692439cb4610d5698a7252020e",
+    "figures/05_hour_season.png": "fed5d627c1f510fd093d8bf19117bbe9f1246c876f559bd20cb3a9848a5e2ba4",
+    "figures/05_hour_season.svg": "1492f8c35c0d03f067db876c42d8a8ef3b125fa481699f701c9c231af980e234",
+    "figures/06_risk_scenarios.png": "f9ef22270418b54ddd8010af65ef9deba49c4158b24cfd75c85219313c774f0d",
+    "figures/06_risk_scenarios.svg": "f5ff732345bf82875ac3e18a013e9c2b08f1dd37fec9ff35d56f42617dbc3f7a",
+    "figures/07_worst_cold_day.png": "214e10bd37878019ee5b25328cc0cb7783382c204ff40a864f1fd9fb963ca7a8",
+    "figures/07_worst_cold_day.svg": "939000f278fcd3395621a502bff505cae9d89a4c9f3a12304148505848d72c30",
+    "figures/08_monthly_errors.png": "a9704e2d304810ec2293be4f2a51232d09b992a5daaf0d118302b09c3b776a42",
+    "figures/08_monthly_errors.svg": "eadf0c3b4091c90400a50a7b297f62c3e836e28ec1bad082ac7c81974a914bd5"
+  },
+  "limits": [
+    "Checks establish internal consistency, not authentic historical issue vintages.",
+    "Previously inspected retrospective test is not an untouched prospective evaluation.",
+    "Interactive point-loss scenarios and written quantile-decision scenarios represent distinct experiments."
+  ]
+}

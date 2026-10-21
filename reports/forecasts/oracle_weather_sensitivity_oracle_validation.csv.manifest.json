@@ -1,0 +1,13 @@
+{
+  "forecast_sha256": "2ceb67fdeda24c631bd8ea4884702cfb44b923e310d6a80ae825d126f91e66b1",
+  "csv_payload_sha256": "09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0",
+  "immutable_archive": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.gz",
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad",
+  "rows": 17544,
+  "predictions_archived_before_scoring": true,
+  "regime": "retrospective_assumed_availability",
+  "test_previously_explored": true,
+  "origin_ledger": "reports/forecasts/origin_events/oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9.jsonl.gz",
+  "origin_ledger_sha256": "be1195ba7c02d6f2b04e873bf11ef7c7a87243912e290b2ded34ebb6c5c84fb2",
+  "each_origin_saved_before_next_origin_fit": true
+}

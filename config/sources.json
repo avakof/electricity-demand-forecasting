@@ -1,0 +1,17 @@
+{
+  "country": {"path": "data/france_electricity_hourly.csv", "source_url": "https://odre.opendatasoft.com/explore/dataset/eco2mix-national-tr/", "provenance": "candidate source documentation; exact CSV extraction and aggregation lineage not supplied", "hourly_conversion": "unknown", "vintage": "unknown"},
+  "regional": {"path": "data/france_regional_electricity_hourly.csv", "provenance": "provided CSV; extraction lineage not supplied", "hourly_conversion": "unknown", "vintage": "unknown"},
+  "rte_archive": {"path": "data/raw/rte_forecast_archive.csv", "required_columns": ["valid_time", "issued_at", "available_at", "run_id", "value"], "units": "MW", "status": "not supplied; empty schema only"},
+  "weather_archive": {"path": "data/raw/weather_forecast_archive.csv", "required_columns": ["valid_time", "issued_at", "available_at", "run_id", "value"], "units": "degree C", "status": "not supplied; empty schema only"},
+  "demand_archive": {"path": "data/raw/demand_observation_archive.csv", "required_columns": ["valid_time", "available_at", "value", "revision_status"], "status": "not supplied; empty schema only"},
+  "references": [
+    "https://odre.opendatasoft.com/explore/dataset/eco2mix-national-tr/",
+    "https://www.rte-france.com/donnees-publications/eco2mix-donnees-temps-reel/consommation-france",
+    "https://otexts.com/fpp3/tscv.html",
+    "https://otexts.com/fpp3/bootstrap.html",
+    "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_quantile.html",
+    "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "https://arxiv.org/abs/2106.00170",
+    "https://energy.ec.europa.eu/news/eu-electricity-trading-day-ahead-markets-becomes-more-dynamic-2025-10-01_en"
+  ]
+}

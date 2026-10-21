@@ -1,0 +1,5 @@
+scenario,delivered_intervals,fallback_intervals,minimum_MW,maximum_MW
+missing_demand_lags,24,24,31150.0,43262.0
+missing_rte,24,24,31670.0,43227.0
+stale_weather,24,0,32149.445035438337,44837.69395503414
+rapid_demand_change,24,0,32341.24310749282,44727.53421939969

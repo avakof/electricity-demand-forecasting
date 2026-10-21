@@ -1,0 +1,49 @@
+{
+  "notebooks": [
+    {
+      "notebook": "01_data_audit.ipynb",
+      "code_cells": 6,
+      "figures": 2,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "02_development_eda.ipynb",
+      "code_cells": 7,
+      "figures": 4,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "03_backtest_and_baselines.ipynb",
+      "code_cells": 5,
+      "figures": 1,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "04_model_comparison.ipynb",
+      "code_cells": 6,
+      "figures": 1,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "05_uncertainty_and_failures.ipynb",
+      "code_cells": 7,
+      "figures": 2,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "06_business_and_deployment.ipynb",
+      "code_cells": 6,
+      "figures": 1,
+      "executed_without_errors": true
+    }
+  ],
+  "raw_sources_unchanged": true,
+  "audited_values_preserved": true,
+  "forecast_archives_have_no_outcomes": true,
+  "verified_per_origin_ledgers": 10,
+  "training_labels_before_fit": true,
+  "test_delivery_grids_complete": true,
+  "visual_inspection": "All 11 native PNG figures inspected; rendered EDA HTML typography checked in Chrome; final uncertainty and test scorecard figures rechecked after replay.",
+  "integrity_tests_passed": 18,
+  "legacy_notebook_preserved": true
+}

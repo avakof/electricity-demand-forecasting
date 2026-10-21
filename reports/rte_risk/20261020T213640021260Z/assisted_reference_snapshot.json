@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-10-20T22:58:19.942820+00:00",
+  "scope": "Previously completed and audited RTE-assisted reference study; manifest verified before snapshot",
+  "source_sha256": {
+    "reports/rte_assisted/20261020T203527821283Z/manifest.json": "1880cc7c6467b6d761de6f02f29d3d895fe2c0fd35f6e82a65f231d2c9889a83",
+    "reports/rte_assisted/20261020T203527821283Z/frozen_selection.json": "c5672a07262cb4d3c2e5dcc83232012ba86fb7cdd675aeca8531600115d86a05",
+    "reports/rte_assisted/20261020T203527821283Z/artifact_verification.json": "21be639bc95fcc7ca366c1afeb6ff873594c675014220b2e3d8db98935ca16a6",
+    "reports/rte_assisted/20261020T203527821283Z/forecasts/assisted_calibration.csv.gz": "e4670b3a3fb58126f35ff0c68c4abf12982343ee82693a7c462fb764d70e5046",
+    "reports/rte_assisted/20261020T203527821283Z/forecasts/assisted_test.csv.gz": "2c5812a5ec9e4c28eb7afd1bd7f410f09807880ddcd6d51ca29137fa3baa9f0d"
+  }
+}

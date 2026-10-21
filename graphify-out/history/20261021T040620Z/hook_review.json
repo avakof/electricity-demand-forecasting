@@ -1,0 +1,12 @@
+{
+  "rule": "all-caps-body",
+  "outcome": "false positive",
+  "evidence": "Flagged short heading and other compact labels; no uppercase paragraphs",
+  "uppercase_css_selectors": [
+    ".eyebrow",
+    "aside h3",
+    ".badge"
+  ],
+  "suppression_scope": "graphify-out/overview_template.html only",
+  "ui_code_changed": false
+}

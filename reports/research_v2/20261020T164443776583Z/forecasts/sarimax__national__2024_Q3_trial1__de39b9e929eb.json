@@ -1,0 +1,27 @@
+{
+  "sha256": "f6182455c11b092c67dac37d60249a3b321292ae7b715ef4060dce3d5685fac4",
+  "rows": 2208,
+  "ledger_sha256": "ec231de8f2024e5d11c9a430d9886ecb0e30f61ab7f63cf7b59cb66abe055d3e",
+  "predictions_archived_before_scoring": true,
+  "signature": "de39b9e929eb",
+  "family": "sarimax",
+  "params": {
+    "order": [
+      2,
+      0,
+      0
+    ],
+    "seasonal_order": [
+      0,
+      0,
+      1,
+      24
+    ],
+    "maxiter": 60,
+    "window_days": 84,
+    "pgtol": 0.001,
+    "factr": 100000000.0
+  },
+  "arm": "national",
+  "phase": "2024_Q3_trial1"
+}

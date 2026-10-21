@@ -1,0 +1,19 @@
+{
+  "sha256": "1e9e2200c1c74c43a37df4aadc50372894797b9bd2529a2fbcd39b26111a96e8",
+  "rows": 2208,
+  "ledger_sha256": "81da3282e186b28ab2bc5d471dbfcd8dcc297957099cb7d71ae082aff2651f27",
+  "predictions_archived_before_scoring": true,
+  "signature": "5af4710159eb",
+  "family": "arima",
+  "params": {
+    "order": [
+      2,
+      1,
+      0
+    ],
+    "maxiter": 40,
+    "window_days": 56
+  },
+  "arm": "national",
+  "phase": "2024_Q3_trial0"
+}

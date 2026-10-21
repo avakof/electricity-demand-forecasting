@@ -1,0 +1,3578 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "title": "01  Audit & contract",
+      "subtitle": "Provenance, coverage, reconciliation",
+      "kind": "notebook",
+      "x": 44,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/01_data_audit.ipynb"
+      ],
+      "description": "Freeze the forecast contract and source hashes. Audit missingness, timestamps, country/regional reconciliation and the operational availability gate.",
+      "files": [
+        "notebooks/01_data_audit.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "n2",
+      "title": "02  Development EDA",
+      "subtitle": "Calendar, temperature, RTE errors",
+      "kind": "notebook",
+      "x": 288,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/02_development_eda.ipynb"
+      ],
+      "description": "Use development data to examine season, weekdays, holidays, temperature bands and delayed effects; record modeling hypotheses.",
+      "files": [
+        "notebooks/02_development_eda.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "n3",
+      "title": "03  Replay & baselines",
+      "subtitle": "Origin \u2192 next-day intervals",
+      "kind": "notebook",
+      "x": 532,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/03_backtest_and_baselines.ipynb"
+      ],
+      "description": "Run integrity tests, reconstruct information available at each origin, save feature/label stores and replay four baseline policies.",
+      "files": [
+        "notebooks/03_backtest_and_baselines.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "n4",
+      "title": "04  Model comparison",
+      "subtitle": "Validate \u2192 select \u2192 freeze",
+      "kind": "notebook",
+      "x": 776,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/04_model_comparison.ipynb"
+      ],
+      "description": "Compare bounded feature/model ablations on chronological validation. Check guardrails and fallback stress tests. Freeze selection before test replay; keep oracle weather separate.",
+      "files": [
+        "notebooks/04_model_comparison.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "n5",
+      "title": "05  Uncertainty & failures",
+      "subtitle": "Frozen test, intervals, bootstrap",
+      "kind": "notebook",
+      "x": 1020,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/05_uncertainty_and_failures.ipynb"
+      ],
+      "description": "Replay the frozen candidate on the previously explored test. Score matched hours, calculate paired block uncertainty, evaluate intervals and inspect failures.",
+      "files": [
+        "notebooks/05_uncertainty_and_failures.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "n6",
+      "title": "06  Business & deployment",
+      "subtitle": "Evidence, monitoring, risks",
+      "kind": "notebook",
+      "x": 1264,
+      "y": 216,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "notebooks/06_business_and_deployment.ipynb"
+      ],
+      "description": "Answer the manager's three questions: improvement over RTE, uncertainty/failures, deployment/risks. Recommend prospective shadow evidence; do not equate forecast skill with euro savings.",
+      "files": [
+        "notebooks/06_business_and_deployment.ipynb"
+      ],
+      "count": 1
+    },
+    {
+      "id": "contract",
+      "title": "Forecast contract",
+      "subtitle": "11:00 Paris \u00b7 D\u22121 \u2192 next day",
+      "kind": "config",
+      "x": 44,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "config/forecast_contract.json",
+        "config/sources.json"
+      ],
+      "description": "Defines cutoff, 23/24/25-hour delivery days, chronological splits, MAE objective, availability assumptions, guardrails and fallbacks. Sources.json records provided source identities.",
+      "files": [
+        "config/forecast_contract.json",
+        "config/sources.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "raw",
+      "title": "Provided source data",
+      "subtitle": "National + 12 regional CSVs",
+      "kind": "data",
+      "x": 288,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "data/france_electricity_hourly.csv",
+        "data/france_regional_electricity_hourly.csv",
+        "data/france_regional_electricity_hourly.csv.gz"
+      ],
+      "description": "Original national demand/RTE/temperature and regional demand/temperature. Source-to-hourly conversion and original vintages are unverified. Values are preserved by the audit.",
+      "files": [
+        "data/france_electricity_hourly.csv",
+        "data/france_regional_electricity_hourly.csv",
+        "data/france_regional_electricity_hourly.csv.gz"
+      ],
+      "count": 3
+    },
+    {
+      "id": "lock",
+      "title": "Evaluation lock",
+      "subtitle": "Contract + source fingerprints",
+      "kind": "config",
+      "x": 532,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "config/evaluation_lock.json",
+        "data/raw/source_manifest.json"
+      ],
+      "description": "Notebook 01 records fingerprints. A changed contract or source identity requires an explicitly versioned new research run.",
+      "files": [
+        "config/evaluation_lock.json",
+        "data/raw/source_manifest.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "freeze",
+      "title": "Frozen candidate",
+      "subtitle": "Validation-selected RTE correction",
+      "kind": "config",
+      "x": 776,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "config/frozen_candidate.json",
+        "reports/experiment_register.csv"
+      ],
+      "description": "Notebook 04 freezes the validation-selected experiment and contract identity; notebook 05 and 06 read it. The current selected model is RTE-assisted and retrospective.",
+      "files": [
+        "config/frozen_candidate.json",
+        "reports/experiment_register.csv"
+      ],
+      "count": 2
+    },
+    {
+      "id": "archives",
+      "title": "Authentic vintage schemas",
+      "subtitle": "Demand \u00b7 RTE runs \u00b7 weather runs",
+      "kind": "data",
+      "x": 1020,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "data/raw/demand_observation_archive.csv",
+        "data/raw/rte_forecast_archive.csv",
+        "data/raw/weather_forecast_archive.csv"
+      ],
+      "description": "All three current CSVs contain headers only. Integration expects valid_time, available_at, forecast issued_at/run_id, numeric value and demand revision status. These are interfaces, not authentic historical runs.",
+      "files": [
+        "data/raw/demand_observation_archive.csv",
+        "data/raw/rte_forecast_archive.csv",
+        "data/raw/weather_forecast_archive.csv"
+      ],
+      "count": 3
+    },
+    {
+      "id": "gate",
+      "title": "Operational gate CLOSED",
+      "subtitle": "Missing archives + unverified lineage",
+      "kind": "gate",
+      "x": 1264,
+      "y": 58,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/audit/operational_gate.csv",
+        "reports/audit/limitations.md"
+      ],
+      "description": "No authentic operational experiment is enabled. Availability gate requires nonempty valid archives, verified vintage provenance and verified interval aggregation. Current results support retrospective research and shadow design only.",
+      "files": [
+        "reports/audit/limitations.md",
+        "reports/audit/operational_gate.csv"
+      ],
+      "count": 2
+    },
+    {
+      "id": "data",
+      "title": "data.py",
+      "subtitle": "Audit + archive selection",
+      "kind": "module",
+      "x": 44,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/data.py"
+      ],
+      "description": "Read inputs, preserve missing targets, reconcile complete regional populations, write audit artifacts, validate archive schemas and select an available forecast run.",
+      "files": [
+        "src/data.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "eda",
+      "title": "eda.py",
+      "subtitle": "Development frame + hypotheses",
+      "kind": "module",
+      "x": 288,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/eda.py"
+      ],
+      "description": "Restrict exploration to development periods; summarize temperature bands and generate a short hypothesis register. Future realized weather remains diagnostic.",
+      "files": [
+        "src/eda.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "features",
+      "title": "features.py",
+      "subtitle": "Cutoff features + fallback",
+      "kind": "module",
+      "x": 532,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/features.py"
+      ],
+      "description": "Construct per-origin/per-delivery features using only cutoff-eligible history. Keep labels separate, support authentic archive snapshots and apply the declared fallback order.",
+      "files": [
+        "src/features.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "backtest",
+      "title": "backtest.py",
+      "subtitle": "Fit, replay, freeze, archive",
+      "kind": "module",
+      "x": 776,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/backtest.py"
+      ],
+      "description": "One replay engine serves baselines and learned models. Training labels must be available before fitting. Per-origin prediction ledgers close before the next fit; aggregate forecasts have immutable copies.",
+      "files": [
+        "src/backtest.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "uncertainty",
+      "title": "uncertainty.py",
+      "subtitle": "Past-error + quantile evaluation",
+      "kind": "module",
+      "x": 1020,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/uncertainty.py"
+      ],
+      "description": "Rolling intervals from past out-of-sample errors, interval coverage/width/pinball metrics and complete residual-day trajectory scenarios. Calibration uses available outcomes only.",
+      "files": [
+        "src/uncertainty.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "pipeline",
+      "title": "pipeline.py",
+      "subtitle": "Readiness, monitoring, risks",
+      "kind": "module",
+      "x": 1264,
+      "y": 370,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/pipeline.py"
+      ],
+      "description": "Readiness checks and monitoring/risk specifications. It does not implement an external ingestion service, scheduler, publication endpoint or procurement decision.",
+      "files": [
+        "src/pipeline.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "common",
+      "title": "common.py",
+      "subtitle": "Calendar, DST, origins, hashes",
+      "kind": "module",
+      "x": 532,
+      "y": 494,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/common.py"
+      ],
+      "description": "Shared local calendar, French national holidays, UTC delivery grids across daylight saving, forecast origins, fingerprints and contract loading.",
+      "files": [
+        "src/common.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "metrics",
+      "title": "metrics.py",
+      "subtitle": "Matched scores + block bootstrap",
+      "kind": "module",
+      "x": 776,
+      "y": 494,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/metrics.py"
+      ],
+      "description": "MAE/RMSE/bias/WAPE, availability, common eligible hours, segments, complete-day metrics and paired contiguous-day block resampling.",
+      "files": [
+        "src/metrics.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "storage",
+      "title": "storage.py",
+      "subtitle": "Restore typed saved artifacts",
+      "kind": "module",
+      "x": 1020,
+      "y": 494,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "src/storage.py"
+      ],
+      "description": "Read saved feature, evaluation-label and forecast tables with timestamp conversion. Stored targets remain separate from forecast archives.",
+      "files": [
+        "src/storage.py"
+      ],
+      "count": 1
+    },
+    {
+      "id": "tests",
+      "title": "Integrity tests",
+      "subtitle": "18 behavioral checks",
+      "kind": "test",
+      "x": 288,
+      "y": 494,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "tests/"
+      ],
+      "description": "Tests cover unavailable future information, label delays, forecast issuance/publication, DST, missingness, fallback, reproducibility and paired bootstrap eligibility. Test count is from the current test definitions; this graph build does not rerun models.",
+      "files": [
+        "tests/__init__.py",
+        "tests/test_integrity.py"
+      ],
+      "count": 2
+    },
+    {
+      "id": "tools",
+      "title": "Notebook tooling",
+      "subtitle": "Author \u2192 execute \u2192 validate",
+      "kind": "tool",
+      "x": 44,
+      "y": 494,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "scripts/",
+        "requirements.txt",
+        "requirements-validated.txt"
+      ],
+      "description": "build_notebooks.py authors notebook cells; execute_notebooks.py runs them in order with a project-local kernel; validate_artifacts.py checks execution/artifact invariants and exports HTML/PNG previews. The graph build does not execute these scripts.",
+      "files": [
+        "requirements-validated.txt",
+        "requirements.txt",
+        "scripts/build_notebooks.py",
+        "scripts/execute_notebooks.py",
+        "scripts/validate_artifacts.py"
+      ],
+      "count": 5
+    },
+    {
+      "id": "audit",
+      "title": "Audited data & register",
+      "subtitle": "Dictionary, limitations, overlap",
+      "kind": "output",
+      "x": 44,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/audit/",
+        "data/processed/audited_country.csv.gz"
+      ],
+      "description": "Audited hourly national grid includes regional reconciliation and temperature summaries. Audit reports record missingness, frequency, coverage, suspicious retained values and source limitations.",
+      "files": [
+        "data/processed/audited_country.csv.gz",
+        "reports/audit/audit_summary.json",
+        "reports/audit/availability_register.csv",
+        "reports/audit/data_dictionary.csv",
+        "reports/audit/frequency_intervals.csv",
+        "reports/audit/limitations.md",
+        "reports/audit/missing_observations.csv",
+        "reports/audit/missingness.csv",
+        "reports/audit/operational_gate.csv",
+        "reports/audit/overlap.csv",
+        "reports/audit/regional_frequency_and_missingness.csv",
+        "reports/audit/regional_suspicious_retained.csv"
+      ],
+      "count": 12
+    },
+    {
+      "id": "hypotheses",
+      "title": "Hypothesis register",
+      "subtitle": "Temperature bands + EDA evidence",
+      "kind": "output",
+      "x": 288,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/hypothesis_register.csv",
+        "reports/scorecards/development_temperature_bands.csv"
+      ],
+      "description": "Development findings become hypotheses for calendar, demand-history, temperature and RTE correction features. Observation counts remain visible for sparse bands.",
+      "files": [
+        "reports/hypothesis_register.csv",
+        "reports/scorecards/development_temperature_bands.csv"
+      ],
+      "count": 2
+    },
+    {
+      "id": "snapshots",
+      "title": "Origin feature store",
+      "subtitle": "Features and labels stored apart",
+      "kind": "output",
+      "x": 532,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "data/origin_snapshots/",
+        "data/processed/evaluation_labels.csv.gz"
+      ],
+      "description": "Rows represent forecast origin plus delivery interval. Information availability and label availability are explicit; complete origin groups stay together.",
+      "files": [
+        "data/origin_snapshots/history_features.csv.gz",
+        "data/origin_snapshots/manifest.json",
+        "data/processed/evaluation_labels.csv.gz"
+      ],
+      "count": 3
+    },
+    {
+      "id": "forecasts",
+      "title": "Forecasts & fitted models",
+      "subtitle": "Ledgers, immutable copies, fit logs",
+      "kind": "output",
+      "x": 776,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/forecasts/",
+        "reports/models/"
+      ],
+      "description": "Per-origin append-only ledgers, aggregate forecasts and manifests, serialized pipelines and fit-origin logs provide the replay evidence trail. Forecast archives exclude evaluation outcomes.",
+      "files": [
+        "reports/forecasts/all_test.csv.gz",
+        "reports/forecasts/all_test.csv.manifest.json",
+        "reports/forecasts/all_validation.csv.gz",
+        "reports/forecasts/baselines_test.csv.gz",
+        "reports/forecasts/baselines_test.csv.manifest.json",
+        "reports/forecasts/baselines_validation.csv.gz",
+        "reports/forecasts/baselines_validation.csv.manifest.json",
+        "reports/forecasts/calendar_validation.csv.gz",
+        "reports/forecasts/calendar_validation.csv.manifest.json",
+        "reports/forecasts/candidate_empirical_intervals_test.csv.gz",
+        "reports/forecasts/candidate_empirical_intervals_test.csv.manifest.json",
+        "reports/forecasts/history_365_validation.csv.gz",
+        "reports/forecasts/history_365_validation.csv.manifest.json",
+        "reports/forecasts/history_730_validation.csv.gz",
+        "reports/forecasts/history_730_validation.csv.manifest.json",
+        "reports/forecasts/history_expanding_validation.csv.gz",
+        "reports/forecasts/history_expanding_validation.csv.manifest.json",
+        "reports/forecasts/history_more_leaves_validation.csv.gz",
+        "reports/forecasts/history_more_leaves_validation.csv.manifest.json",
+        "reports/forecasts/history_past_weather_validation.csv.gz",
+        "reports/forecasts/history_past_weather_validation.csv.manifest.json",
+        "reports/forecasts/history_weekly_fit_validation.csv.gz",
+        "reports/forecasts/history_weekly_fit_validation.csv.manifest.json",
+        "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.gz",
+        "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.manifest.json",
+        "reports/forecasts/immutable/all_test_previous_0aa301a52639e25a.csv.gz",
+        "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.gz",
+        "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.manifest.json",
+        "reports/forecasts/immutable/baselines_test_previous_074c930b888918aa.csv.gz",
+        "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.gz",
+        "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.manifest.json",
+        "reports/forecasts/immutable/baselines_validation_previous_2341f5a59fe466fd.csv.gz",
+        "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.gz",
+        "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.manifest.json",
+        "reports/forecasts/immutable/calendar_validation_previous_426407a34dd5e383.csv.gz",
+        "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.gz",
+        "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.manifest.json",
+        "reports/forecasts/immutable/candidate_empirical_intervals_test_previous_2d9a271e06f7ec27.csv.gz",
+        "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.gz",
+        "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.manifest.json",
+        "reports/forecasts/immutable/history_365_validation_previous_d92f5444fdd6dede.csv.gz",
+        "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.gz",
+        "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.manifest.json",
+        "reports/forecasts/immutable/history_730_validation_previous_fe692030261a0563.csv.gz",
+        "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.gz",
+        "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.manifest.json",
+        "reports/forecasts/immutable/history_expanding_validation_previous_2983282db856664e.csv.gz",
+        "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.gz",
+        "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.manifest.json",
+        "reports/forecasts/immutable/history_more_leaves_validation_previous_48454dfd5ff56fff.csv.gz",
+        "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.gz",
+        "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.manifest.json",
+        "reports/forecasts/immutable/history_past_weather_validation_previous_6eedd56567aacc62.csv.gz",
+        "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.gz",
+        "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.manifest.json",
+        "reports/forecasts/immutable/history_weekly_fit_validation_previous_d42028942defd67f.csv.gz",
+        "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.gz",
+        "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.manifest.json",
+        "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_previous_87d7be1b93c88176.csv.gz",
+        "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.gz",
+        "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.manifest.json",
+        "reports/forecasts/immutable/rte_correction_proxy_test_previous_398a22c261c65c81.csv.gz",
+        "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.gz",
+        "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.manifest.json",
+        "reports/forecasts/immutable/rte_correction_proxy_validation_previous_19c37bc6ebf6bc14.csv.gz",
+        "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.gz",
+        "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.manifest.json",
+        "reports/forecasts/origin_events/calendar_validation_08ade1f865d14c3f91d17fd1db6f698e.jsonl.gz",
+        "reports/forecasts/origin_events/history_365_validation_025f3ec5425a4f8291a8d828c51f9d8c.jsonl.gz",
+        "reports/forecasts/origin_events/history_730_validation_5a5cb5d3806b400f8df8f1f3cbf4e38f.jsonl.gz",
+        "reports/forecasts/origin_events/history_expanding_validation_9484be46354341b58c12a9e47804a203.jsonl.gz",
+        "reports/forecasts/origin_events/history_more_leaves_validation_539edce8713c4079b1a56cb6b0f12ae3.jsonl.gz",
+        "reports/forecasts/origin_events/history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753.jsonl.gz",
+        "reports/forecasts/origin_events/history_weekly_fit_validation_233048c33d4a4af5b3931e08e50a4a26.jsonl.gz",
+        "reports/forecasts/origin_events/oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9.jsonl.gz",
+        "reports/forecasts/origin_events/rte_correction_proxy_test_f8fe0c5614a34564af1aa50dc4748e94.jsonl.gz",
+        "reports/forecasts/origin_events/rte_correction_proxy_validation_9580a0bdd9424127a341eaedb7228e8e.jsonl.gz",
+        "reports/forecasts/rte_correction_proxy_test.csv.gz",
+        "reports/forecasts/rte_correction_proxy_test.csv.manifest.json",
+        "reports/forecasts/rte_correction_proxy_validation.csv.gz",
+        "reports/forecasts/rte_correction_proxy_validation.csv.manifest.json",
+        "reports/models/calendar_validation_fits.csv",
+        "reports/models/calendar_validation_pipelines.joblib",
+        "reports/models/history_365_validation_fits.csv",
+        "reports/models/history_365_validation_pipelines.joblib",
+        "reports/models/history_730_validation_fits.csv",
+        "reports/models/history_730_validation_pipelines.joblib",
+        "reports/models/history_expanding_validation_fits.csv",
+        "reports/models/history_expanding_validation_pipelines.joblib",
+        "reports/models/history_more_leaves_validation_fits.csv",
+        "reports/models/history_more_leaves_validation_pipelines.joblib",
+        "reports/models/history_past_weather_validation_fits.csv",
+        "reports/models/history_past_weather_validation_pipelines.joblib",
+        "reports/models/history_weekly_fit_validation_fits.csv",
+        "reports/models/history_weekly_fit_validation_pipelines.joblib",
+        "reports/models/oracle_weather_sensitivity_oracle_validation_fits.csv",
+        "reports/models/oracle_weather_sensitivity_oracle_validation_pipelines.joblib",
+        "reports/models/rte_correction_proxy_test_fits.csv",
+        "reports/models/rte_correction_proxy_test_pipelines.joblib",
+        "reports/models/rte_correction_proxy_validation_fits.csv",
+        "reports/models/rte_correction_proxy_validation_pipelines.joblib"
+      ],
+      "count": 101
+    },
+    {
+      "id": "scores",
+      "title": "Scores & uncertainty",
+      "subtitle": "Segments, intervals, failures",
+      "kind": "output",
+      "x": 1020,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/scorecards/",
+        "reports/uncertainty/",
+        "reports/failure_catalogue.csv"
+      ],
+      "description": "Matched model/RTE scores, availability, temporal folds, critical segments, paired block intervals, coverage reports, daily scenarios and failure catalogue.",
+      "files": [
+        "reports/failure_catalogue.csv",
+        "reports/scorecards/baselines_validation_common.csv",
+        "reports/scorecards/baselines_validation_policy.csv",
+        "reports/scorecards/baselines_validation_raw_availability.csv",
+        "reports/scorecards/development_temperature_bands.csv",
+        "reports/scorecards/input_stress_tests.csv",
+        "reports/scorecards/model_validation_common_raw.csv",
+        "reports/scorecards/model_validation_policy.csv",
+        "reports/scorecards/model_validation_segments.csv",
+        "reports/scorecards/oracle_weather_sensitivity.csv",
+        "reports/scorecards/paired_block_bootstrap.csv",
+        "reports/scorecards/selection_guardrails.csv",
+        "reports/scorecards/test_common.csv",
+        "reports/scorecards/test_common_raw.csv",
+        "reports/scorecards/test_daily.csv",
+        "reports/scorecards/test_policy.csv",
+        "reports/scorecards/test_segments.csv",
+        "reports/scorecards/validation_by_fold.csv",
+        "reports/uncertainty/daily_trajectory_evaluation.csv",
+        "reports/uncertainty/daily_trajectory_predictions.csv",
+        "reports/uncertainty/empirical_calibration.csv",
+        "reports/uncertainty/quantile_calibration.csv"
+      ],
+      "count": 22
+    },
+    {
+      "id": "recommendation",
+      "title": "Manager recommendation",
+      "subtitle": "Skill \u00b7 uncertainty \u00b7 deployment",
+      "kind": "output",
+      "x": 1264,
+      "y": 670,
+      "w": 220,
+      "h": 100,
+      "paths": [
+        "reports/final_recommendation.md",
+        "reports/monitoring_specification.csv",
+        "reports/risk_register.csv",
+        "reports/run_summary.json"
+      ],
+      "description": "Final report separates measured forecast losses, uncertainty and failure evidence, business proxies and deployment prerequisites. Current recommendation requires prospective shadow validation.",
+      "files": [
+        "reports/final_recommendation.md",
+        "reports/monitoring_specification.csv",
+        "reports/risk_register.csv",
+        "reports/run_summary.json"
+      ],
+      "count": 4
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n2",
+      "label": "run next",
+      "layer": "workflow",
+      "evidence": "readme.md: run the six notebooks in order"
+    },
+    {
+      "source": "n2",
+      "target": "n3",
+      "label": "run next",
+      "layer": "workflow",
+      "evidence": "readme.md: run the six notebooks in order"
+    },
+    {
+      "source": "n3",
+      "target": "n4",
+      "label": "run next",
+      "layer": "workflow",
+      "evidence": "readme.md: run the six notebooks in order"
+    },
+    {
+      "source": "n4",
+      "target": "n5",
+      "label": "run next",
+      "layer": "workflow",
+      "evidence": "readme.md: run the six notebooks in order"
+    },
+    {
+      "source": "n5",
+      "target": "n6",
+      "label": "run next",
+      "layer": "workflow",
+      "evidence": "readme.md: run the six notebooks in order"
+    },
+    {
+      "source": "n1",
+      "target": "audit",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 01 main outputs"
+    },
+    {
+      "source": "n2",
+      "target": "hypotheses",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 02 main outputs"
+    },
+    {
+      "source": "n3",
+      "target": "snapshots",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 03 main outputs"
+    },
+    {
+      "source": "n4",
+      "target": "forecasts",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 04 main outputs"
+    },
+    {
+      "source": "n5",
+      "target": "scores",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 05 main outputs"
+    },
+    {
+      "source": "n6",
+      "target": "recommendation",
+      "label": "produces / reports",
+      "layer": "workflow",
+      "evidence": "readme.md: notebook 06 main outputs"
+    },
+    {
+      "source": "contract",
+      "target": "n1",
+      "label": "freeze specification",
+      "layer": "workflow",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 4"
+    },
+    {
+      "source": "raw",
+      "target": "n1",
+      "label": "audit original values",
+      "layer": "workflow",
+      "evidence": "src/data.py: load_inputs, run_audit"
+    },
+    {
+      "source": "n1",
+      "target": "lock",
+      "label": "write identity lock",
+      "layer": "data",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 4"
+    },
+    {
+      "source": "n4",
+      "target": "freeze",
+      "label": "freeze selection",
+      "layer": "workflow",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 7"
+    },
+    {
+      "source": "freeze",
+      "target": "n5",
+      "label": "replay frozen candidate",
+      "layer": "workflow",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 3"
+    },
+    {
+      "source": "archives",
+      "target": "gate",
+      "label": "required evidence",
+      "layer": "workflow",
+      "evidence": "src/data.py: availability_gate"
+    },
+    {
+      "source": "gate",
+      "target": "n6",
+      "label": "constrains recommendation",
+      "layer": "workflow",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 9"
+    },
+    {
+      "source": "n3",
+      "target": "tests",
+      "label": "run checks",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: cell 4"
+    },
+    {
+      "source": "n1",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/01_data_audit.ipynb: code-cell import"
+    },
+    {
+      "source": "n1",
+      "target": "data",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/01_data_audit.ipynb: code-cell import"
+    },
+    {
+      "source": "n2",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/02_development_eda.ipynb: code-cell import"
+    },
+    {
+      "source": "n2",
+      "target": "data",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/02_development_eda.ipynb: code-cell import"
+    },
+    {
+      "source": "n2",
+      "target": "eda",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/02_development_eda.ipynb: code-cell import"
+    },
+    {
+      "source": "n3",
+      "target": "backtest",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: code-cell import"
+    },
+    {
+      "source": "n3",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: code-cell import"
+    },
+    {
+      "source": "n3",
+      "target": "data",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: code-cell import"
+    },
+    {
+      "source": "n3",
+      "target": "features",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: code-cell import"
+    },
+    {
+      "source": "n3",
+      "target": "metrics",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "backtest",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "data",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "features",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "metrics",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n4",
+      "target": "storage",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/04_model_comparison.ipynb: code-cell import"
+    },
+    {
+      "source": "n5",
+      "target": "backtest",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: code-cell import"
+    },
+    {
+      "source": "n5",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: code-cell import"
+    },
+    {
+      "source": "n5",
+      "target": "metrics",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: code-cell import"
+    },
+    {
+      "source": "n5",
+      "target": "storage",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: code-cell import"
+    },
+    {
+      "source": "n5",
+      "target": "uncertainty",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: code-cell import"
+    },
+    {
+      "source": "n6",
+      "target": "common",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: code-cell import"
+    },
+    {
+      "source": "n6",
+      "target": "data",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: code-cell import"
+    },
+    {
+      "source": "n6",
+      "target": "metrics",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: code-cell import"
+    },
+    {
+      "source": "n6",
+      "target": "pipeline",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: code-cell import"
+    },
+    {
+      "source": "n6",
+      "target": "storage",
+      "label": "imports",
+      "layer": "code",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: code-cell import"
+    },
+    {
+      "source": "n1",
+      "target": "contract",
+      "label": "checks_hash",
+      "layer": "data",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 4, L3"
+    },
+    {
+      "source": "n1",
+      "target": "raw",
+      "label": "checks_hash",
+      "layer": "data",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 4, L3"
+    },
+    {
+      "source": "audit",
+      "target": "n1",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 6, L4"
+    },
+    {
+      "source": "gate",
+      "target": "n1",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/01_data_audit.ipynb: cell 12, L3"
+    },
+    {
+      "source": "n2",
+      "target": "hypotheses",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/02_development_eda.ipynb: cell 9, L4"
+    },
+    {
+      "source": "n2",
+      "target": "scores",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/02_development_eda.ipynb: cell 9, L4"
+    },
+    {
+      "source": "n3",
+      "target": "snapshots",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: cell 6, L5"
+    },
+    {
+      "source": "n3",
+      "target": "contract",
+      "label": "checks_hash",
+      "layer": "data",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: cell 6, L7"
+    },
+    {
+      "source": "n3",
+      "target": "scores",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/03_backtest_and_baselines.ipynb: cell 8, L9"
+    },
+    {
+      "source": "snapshots",
+      "target": "n4",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 3, L5"
+    },
+    {
+      "source": "n4",
+      "target": "freeze",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 3, L9"
+    },
+    {
+      "source": "n4",
+      "target": "forecasts",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 5, L8"
+    },
+    {
+      "source": "forecasts",
+      "target": "n4",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 5, L2"
+    },
+    {
+      "source": "n4",
+      "target": "scores",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 7, L5"
+    },
+    {
+      "source": "n4",
+      "target": "contract",
+      "label": "checks_hash",
+      "layer": "data",
+      "evidence": "notebooks/04_model_comparison.ipynb: cell 7, L17"
+    },
+    {
+      "source": "snapshots",
+      "target": "n5",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 3, L5"
+    },
+    {
+      "source": "freeze",
+      "target": "n5",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 3, L7"
+    },
+    {
+      "source": "n5",
+      "target": "contract",
+      "label": "checks_hash",
+      "layer": "data",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 3, L8"
+    },
+    {
+      "source": "n5",
+      "target": "scores",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 7, L10"
+    },
+    {
+      "source": "forecasts",
+      "target": "n5",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/05_uncertainty_and_failures.ipynb: cell 9, L1"
+    },
+    {
+      "source": "scores",
+      "target": "n6",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 3, L6"
+    },
+    {
+      "source": "forecasts",
+      "target": "n6",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 3, L8"
+    },
+    {
+      "source": "snapshots",
+      "target": "n6",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 3, L9"
+    },
+    {
+      "source": "freeze",
+      "target": "n6",
+      "label": "reads",
+      "layer": "data",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 3, L5"
+    },
+    {
+      "source": "n6",
+      "target": "recommendation",
+      "label": "writes",
+      "layer": "data",
+      "evidence": "notebooks/06_business_and_deployment.ipynb: cell 9, L7"
+    },
+    {
+      "source": "tools",
+      "target": "n1",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    },
+    {
+      "source": "tools",
+      "target": "n2",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    },
+    {
+      "source": "tools",
+      "target": "n3",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    },
+    {
+      "source": "tools",
+      "target": "n4",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    },
+    {
+      "source": "tools",
+      "target": "n5",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    },
+    {
+      "source": "tools",
+      "target": "n6",
+      "label": "authors / executes / validates",
+      "layer": "code",
+      "evidence": "scripts/build_notebooks.py; scripts/execute_notebooks.py; scripts/validate_artifacts.py"
+    }
+  ],
+  "inventory": {
+    "files": [
+      {
+        "path": ".gitignore",
+        "bytes": 367,
+        "id": "gitignore"
+      },
+      {
+        "path": "config/evaluation_lock.json",
+        "bytes": 269,
+        "id": "config_evaluation_lock"
+      },
+      {
+        "path": "config/forecast_contract.json",
+        "bytes": 2673,
+        "id": "config_forecast_contract"
+      },
+      {
+        "path": "config/frozen_candidate.json",
+        "bytes": 620,
+        "id": "config_frozen_candidate"
+      },
+      {
+        "path": "config/sources.json",
+        "bytes": 1734,
+        "id": "config_sources"
+      },
+      {
+        "path": "data/france_electricity_hourly.csv",
+        "bytes": 3124411,
+        "id": "data_france_electricity_hourly"
+      },
+      {
+        "path": "data/france_regional_electricity_hourly.csv",
+        "bytes": 20020310,
+        "id": "data_france_regional_electricity_hourly"
+      },
+      {
+        "path": "data/france_regional_electricity_hourly.csv.gz",
+        "bytes": 2490030,
+        "id": "data_france_regional_electricity_hourly_csv"
+      },
+      {
+        "path": "data/origin_snapshots/history_features.csv.gz",
+        "bytes": 2420228,
+        "id": "data_origin_snapshots_history_features_csv"
+      },
+      {
+        "path": "data/origin_snapshots/manifest.json",
+        "bytes": 201,
+        "id": "data_origin_snapshots_manifest"
+      },
+      {
+        "path": "data/processed/audited_country.csv.gz",
+        "bytes": 1502549,
+        "id": "data_processed_audited_country_csv"
+      },
+      {
+        "path": "data/processed/evaluation_labels.csv.gz",
+        "bytes": 726851,
+        "id": "data_processed_evaluation_labels_csv"
+      },
+      {
+        "path": "data/raw/demand_observation_archive.csv",
+        "bytes": 46,
+        "id": "data_raw_demand_observation_archive"
+      },
+      {
+        "path": "data/raw/rte_forecast_archive.csv",
+        "bytes": 47,
+        "id": "data_raw_rte_forecast_archive"
+      },
+      {
+        "path": "data/raw/source_manifest.json",
+        "bytes": 446,
+        "id": "data_raw_source_manifest"
+      },
+      {
+        "path": "data/raw/weather_forecast_archive.csv",
+        "bytes": 47,
+        "id": "data_raw_weather_forecast_archive"
+      },
+      {
+        "path": "notebooks/01_data_audit.ipynb",
+        "bytes": 142649,
+        "id": "notebooks_01_data_audit"
+      },
+      {
+        "path": "notebooks/02_development_eda.ipynb",
+        "bytes": 465143,
+        "id": "notebooks_02_development_eda"
+      },
+      {
+        "path": "notebooks/03_backtest_and_baselines.ipynb",
+        "bytes": 57049,
+        "id": "notebooks_03_backtest_and_baselines"
+      },
+      {
+        "path": "notebooks/04_model_comparison.ipynb",
+        "bytes": 88961,
+        "id": "notebooks_04_model_comparison"
+      },
+      {
+        "path": "notebooks/05_uncertainty_and_failures.ipynb",
+        "bytes": 230220,
+        "id": "notebooks_05_uncertainty_and_failures"
+      },
+      {
+        "path": "notebooks/06_business_and_deployment.ipynb",
+        "bytes": 77279,
+        "id": "notebooks_06_business_and_deployment"
+      },
+      {
+        "path": "readme.md",
+        "bytes": 7260,
+        "id": "readme"
+      },
+      {
+        "path": "reports/audit/audit_summary.json",
+        "bytes": 467,
+        "id": "reports_audit_audit_summary"
+      },
+      {
+        "path": "reports/audit/availability_register.csv",
+        "bytes": 1420,
+        "id": "reports_audit_availability_register"
+      },
+      {
+        "path": "reports/audit/data_dictionary.csv",
+        "bytes": 3874,
+        "id": "reports_audit_data_dictionary"
+      },
+      {
+        "path": "reports/audit/frequency_intervals.csv",
+        "bytes": 37,
+        "id": "reports_audit_frequency_intervals"
+      },
+      {
+        "path": "reports/audit/limitations.md",
+        "bytes": 1659,
+        "id": "reports_audit_limitations"
+      },
+      {
+        "path": "reports/audit/missing_observations.csv",
+        "bytes": 1075,
+        "id": "reports_audit_missing_observations"
+      },
+      {
+        "path": "reports/audit/missingness.csv",
+        "bytes": 605,
+        "id": "reports_audit_missingness"
+      },
+      {
+        "path": "reports/audit/operational_gate.csv",
+        "bytes": 258,
+        "id": "reports_audit_operational_gate"
+      },
+      {
+        "path": "reports/audit/overlap.csv",
+        "bytes": 167,
+        "id": "reports_audit_overlap"
+      },
+      {
+        "path": "reports/audit/regional_frequency_and_missingness.csv",
+        "bytes": 1098,
+        "id": "reports_audit_regional_frequency_and_missingness"
+      },
+      {
+        "path": "reports/audit/regional_suspicious_retained.csv",
+        "bytes": 406,
+        "id": "reports_audit_regional_suspicious_retained"
+      },
+      {
+        "path": "reports/execution_validation.json",
+        "bytes": 1363,
+        "id": "reports_execution_validation"
+      },
+      {
+        "path": "reports/experiment_register.csv",
+        "bytes": 1543,
+        "id": "reports_experiment_register"
+      },
+      {
+        "path": "reports/failure_catalogue.csv",
+        "bytes": 933,
+        "id": "reports_failure_catalogue"
+      },
+      {
+        "path": "reports/figures/01_data_audit_cell_7.png",
+        "bytes": 46837,
+        "id": "reports_figures_01_data_audit_cell_7"
+      },
+      {
+        "path": "reports/figures/01_data_audit_cell_9.png",
+        "bytes": 26027,
+        "id": "reports_figures_01_data_audit_cell_9"
+      },
+      {
+        "path": "reports/figures/02_development_eda_cell_10.png",
+        "bytes": 79795,
+        "id": "reports_figures_02_development_eda_cell_10"
+      },
+      {
+        "path": "reports/figures/02_development_eda_cell_4.png",
+        "bytes": 104446,
+        "id": "reports_figures_02_development_eda_cell_4"
+      },
+      {
+        "path": "reports/figures/02_development_eda_cell_6.png",
+        "bytes": 93108,
+        "id": "reports_figures_02_development_eda_cell_6"
+      },
+      {
+        "path": "reports/figures/02_development_eda_cell_8.png",
+        "bytes": 50221,
+        "id": "reports_figures_02_development_eda_cell_8"
+      },
+      {
+        "path": "reports/figures/03_backtest_and_baselines_cell_9.png",
+        "bytes": 18610,
+        "id": "reports_figures_03_backtest_and_baselines_cell_9"
+      },
+      {
+        "path": "reports/figures/04_model_comparison_cell_6.png",
+        "bytes": 36785,
+        "id": "reports_figures_04_model_comparison_cell_6"
+      },
+      {
+        "path": "reports/figures/05_uncertainty_and_failures_cell_12.png",
+        "bytes": 71751,
+        "id": "reports_figures_05_uncertainty_and_failures_cell_12"
+      },
+      {
+        "path": "reports/figures/05_uncertainty_and_failures_cell_8.png",
+        "bytes": 65830,
+        "id": "reports_figures_05_uncertainty_and_failures_cell_8"
+      },
+      {
+        "path": "reports/figures/06_business_and_deployment_cell_4.png",
+        "bytes": 22644,
+        "id": "reports_figures_06_business_and_deployment_cell_4"
+      },
+      {
+        "path": "reports/final_recommendation.md",
+        "bytes": 2469,
+        "id": "reports_final_recommendation"
+      },
+      {
+        "path": "reports/forecasts/all_test.csv.gz",
+        "bytes": 696509,
+        "id": "reports_forecasts_all_test_csv"
+      },
+      {
+        "path": "reports/forecasts/all_test.csv.manifest.json",
+        "bytes": 558,
+        "id": "reports_forecasts_all_test_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/all_validation.csv.gz",
+        "bytes": 2933900,
+        "id": "reports_forecasts_all_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/baselines_test.csv.gz",
+        "bytes": 349210,
+        "id": "reports_forecasts_baselines_test_csv"
+      },
+      {
+        "path": "reports/forecasts/baselines_test.csv.manifest.json",
+        "bytes": 564,
+        "id": "reports_forecasts_baselines_test_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/baselines_validation.csv.gz",
+        "bytes": 697389,
+        "id": "reports_forecasts_baselines_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/baselines_validation.csv.manifest.json",
+        "bytes": 570,
+        "id": "reports_forecasts_baselines_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/calendar_validation.csv.gz",
+        "bytes": 252573,
+        "id": "reports_forecasts_calendar_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/calendar_validation.csv.manifest.json",
+        "bytes": 831,
+        "id": "reports_forecasts_calendar_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/candidate_empirical_intervals_test.csv.gz",
+        "bytes": 423236,
+        "id": "reports_forecasts_candidate_empirical_intervals_test_csv"
+      },
+      {
+        "path": "reports/forecasts/candidate_empirical_intervals_test.csv.manifest.json",
+        "bytes": 583,
+        "id": "reports_forecasts_candidate_empirical_intervals_test_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_365_validation.csv.gz",
+        "bytes": 278305,
+        "id": "reports_forecasts_history_365_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_365_validation.csv.manifest.json",
+        "bytes": 837,
+        "id": "reports_forecasts_history_365_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_730_validation.csv.gz",
+        "bytes": 279009,
+        "id": "reports_forecasts_history_730_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_730_validation.csv.manifest.json",
+        "bytes": 837,
+        "id": "reports_forecasts_history_730_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_expanding_validation.csv.gz",
+        "bytes": 282591,
+        "id": "reports_forecasts_history_expanding_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_expanding_validation.csv.manifest.json",
+        "bytes": 849,
+        "id": "reports_forecasts_history_expanding_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_more_leaves_validation.csv.gz",
+        "bytes": 289822,
+        "id": "reports_forecasts_history_more_leaves_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_more_leaves_validation.csv.manifest.json",
+        "bytes": 853,
+        "id": "reports_forecasts_history_more_leaves_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_past_weather_validation.csv.gz",
+        "bytes": 283694,
+        "id": "reports_forecasts_history_past_weather_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_past_weather_validation.csv.manifest.json",
+        "bytes": 855,
+        "id": "reports_forecasts_history_past_weather_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/history_weekly_fit_validation.csv.gz",
+        "bytes": 284123,
+        "id": "reports_forecasts_history_weekly_fit_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/history_weekly_fit_validation.csv.manifest.json",
+        "bytes": 851,
+        "id": "reports_forecasts_history_weekly_fit_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.gz",
+        "bytes": 696509,
+        "id": "reports_forecasts_immutable_all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd.csv.manifest.json",
+        "bytes": 558,
+        "id": "reports_forecasts_immutable_all_test_7011ae7a127d048c464fa72a6b07fb18a1ca74093da188ef4e1806a6ae10eefd_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/all_test_previous_0aa301a52639e25a.csv.gz",
+        "bytes": 696528,
+        "id": "reports_forecasts_immutable_all_test_previous_0aa301a52639e25a_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.gz",
+        "bytes": 349210,
+        "id": "reports_forecasts_immutable_baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3.csv.manifest.json",
+        "bytes": 564,
+        "id": "reports_forecasts_immutable_baselines_test_989f82d6015cce64984128859bd3b47d37857569131135d8861b0054f014e0b3_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_test_previous_074c930b888918aa.csv.gz",
+        "bytes": 349235,
+        "id": "reports_forecasts_immutable_baselines_test_previous_074c930b888918aa_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.gz",
+        "bytes": 697389,
+        "id": "reports_forecasts_immutable_baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889.csv.manifest.json",
+        "bytes": 570,
+        "id": "reports_forecasts_immutable_baselines_validation_7eb9af458ae3a8a728204939d6a70e26c9775361fdf5c81930581197ce540889_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/baselines_validation_previous_2341f5a59fe466fd.csv.gz",
+        "bytes": 697420,
+        "id": "reports_forecasts_immutable_baselines_validation_previous_2341f5a59fe466fd_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.gz",
+        "bytes": 252573,
+        "id": "reports_forecasts_immutable_calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a.csv.manifest.json",
+        "bytes": 831,
+        "id": "reports_forecasts_immutable_calendar_validation_3f193e542fb9c5158a6ad60c463d15921cbf6b26e54413d66f98d9512bff165a_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/calendar_validation_previous_426407a34dd5e383.csv.gz",
+        "bytes": 252604,
+        "id": "reports_forecasts_immutable_calendar_validation_previous_426407a34dd5e383_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.gz",
+        "bytes": 423236,
+        "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.manifest.json",
+        "bytes": 583,
+        "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/candidate_empirical_intervals_test_previous_2d9a271e06f7ec27.csv.gz",
+        "bytes": 423281,
+        "id": "reports_forecasts_immutable_candidate_empirical_intervals_test_previous_2d9a271e06f7ec27_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.gz",
+        "bytes": 278305,
+        "id": "reports_forecasts_immutable_history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b.csv.manifest.json",
+        "bytes": 837,
+        "id": "reports_forecasts_immutable_history_365_validation_82a8d053cff0ff8581c1fc3628d9b4ede4d45a348d7d2db939cdeeafb442920b_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_365_validation_previous_d92f5444fdd6dede.csv.gz",
+        "bytes": 278339,
+        "id": "reports_forecasts_immutable_history_365_validation_previous_d92f5444fdd6dede_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.gz",
+        "bytes": 279009,
+        "id": "reports_forecasts_immutable_history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7.csv.manifest.json",
+        "bytes": 837,
+        "id": "reports_forecasts_immutable_history_730_validation_25af7cc8b83b1325c22922cd99d186bd5df60048fc6e257fd801fb7b68ab2ac7_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_730_validation_previous_fe692030261a0563.csv.gz",
+        "bytes": 279042,
+        "id": "reports_forecasts_immutable_history_730_validation_previous_fe692030261a0563_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.gz",
+        "bytes": 282591,
+        "id": "reports_forecasts_immutable_history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5.csv.manifest.json",
+        "bytes": 849,
+        "id": "reports_forecasts_immutable_history_expanding_validation_820c52f89d33b3133f7c47739a4354a33c3119e6d81b8ce327e152b1538c19d5_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_expanding_validation_previous_2983282db856664e.csv.gz",
+        "bytes": 282630,
+        "id": "reports_forecasts_immutable_history_expanding_validation_previous_2983282db856664e_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.gz",
+        "bytes": 289822,
+        "id": "reports_forecasts_immutable_history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389.csv.manifest.json",
+        "bytes": 853,
+        "id": "reports_forecasts_immutable_history_more_leaves_validation_3e0c1cb4ddbba79445fbceddae0e84bd19f50dd3cb380527bfdcecd9f2627389_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_more_leaves_validation_previous_48454dfd5ff56fff.csv.gz",
+        "bytes": 289863,
+        "id": "reports_forecasts_immutable_history_more_leaves_validation_previous_48454dfd5ff56fff_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.gz",
+        "bytes": 283694,
+        "id": "reports_forecasts_immutable_history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b.csv.manifest.json",
+        "bytes": 855,
+        "id": "reports_forecasts_immutable_history_past_weather_validation_115b665da9dda35b7189c386d584488e0a20a11120f67cc5e967f4e987eb452b_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_past_weather_validation_previous_6eedd56567aacc62.csv.gz",
+        "bytes": 283737,
+        "id": "reports_forecasts_immutable_history_past_weather_validation_previous_6eedd56567aacc62_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.gz",
+        "bytes": 284123,
+        "id": "reports_forecasts_immutable_history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e.csv.manifest.json",
+        "bytes": 851,
+        "id": "reports_forecasts_immutable_history_weekly_fit_validation_48f9da1af358e6dc202fed1eda725a24060efaee2b5ba126852c5a2e03b10e8e_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/history_weekly_fit_validation_previous_d42028942defd67f.csv.gz",
+        "bytes": 284164,
+        "id": "reports_forecasts_immutable_history_weekly_fit_validation_previous_d42028942defd67f_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.gz",
+        "bytes": 285738,
+        "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0.csv.manifest.json",
+        "bytes": 881,
+        "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_09c089c6c2ef6aa0690fcf4e5b64e31e0df010ebf715760c2ed140904d177fa0_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/oracle_weather_sensitivity_oracle_validation_previous_87d7be1b93c88176.csv.gz",
+        "bytes": 285794,
+        "id": "reports_forecasts_immutable_oracle_weather_sensitivity_oracle_validation_previous_87d7be1b93c88176_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.gz",
+        "bytes": 346157,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0.csv.manifest.json",
+        "bytes": 842,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_test_eda9316d00bb3affb92fc739f5047b8d8efe8b5db182c423ffc25816f764ebb0_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_test_previous_398a22c261c65c81.csv.gz",
+        "bytes": 346193,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_test_previous_398a22c261c65c81_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.gz",
+        "bytes": 287118,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18_csv"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18.csv.manifest.json",
+        "bytes": 855,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_validation_990a4b4371571a6830bcf1589801345418b36dbe6a90aa5bb1d197f7e4769f18_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/immutable/rte_correction_proxy_validation_previous_19c37bc6ebf6bc14.csv.gz",
+        "bytes": 287161,
+        "id": "reports_forecasts_immutable_rte_correction_proxy_validation_previous_19c37bc6ebf6bc14_csv"
+      },
+      {
+        "path": "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.gz",
+        "bytes": 285738,
+        "id": "reports_forecasts_oracle_weather_sensitivity_oracle_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/oracle_weather_sensitivity_oracle_validation.csv.manifest.json",
+        "bytes": 881,
+        "id": "reports_forecasts_oracle_weather_sensitivity_oracle_validation_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/origin_events/calendar_validation_08ade1f865d14c3f91d17fd1db6f698e.jsonl.gz",
+        "bytes": 537742,
+        "id": "reports_forecasts_origin_events_calendar_validation_08ade1f865d14c3f91d17fd1db6f698e_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_365_validation_025f3ec5425a4f8291a8d828c51f9d8c.jsonl.gz",
+        "bytes": 541062,
+        "id": "reports_forecasts_origin_events_history_365_validation_025f3ec5425a4f8291a8d828c51f9d8c_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_730_validation_5a5cb5d3806b400f8df8f1f3cbf4e38f.jsonl.gz",
+        "bytes": 539001,
+        "id": "reports_forecasts_origin_events_history_730_validation_5a5cb5d3806b400f8df8f1f3cbf4e38f_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_expanding_validation_9484be46354341b58c12a9e47804a203.jsonl.gz",
+        "bytes": 552125,
+        "id": "reports_forecasts_origin_events_history_expanding_validation_9484be46354341b58c12a9e47804a203_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_more_leaves_validation_539edce8713c4079b1a56cb6b0f12ae3.jsonl.gz",
+        "bytes": 557582,
+        "id": "reports_forecasts_origin_events_history_more_leaves_validation_539edce8713c4079b1a56cb6b0f12ae3_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753.jsonl.gz",
+        "bytes": 554794,
+        "id": "reports_forecasts_origin_events_history_past_weather_validation_f43ebb51cd334b2588c6bcbfbf8a4753_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/history_weekly_fit_validation_233048c33d4a4af5b3931e08e50a4a26.jsonl.gz",
+        "bytes": 550869,
+        "id": "reports_forecasts_origin_events_history_weekly_fit_validation_233048c33d4a4af5b3931e08e50a4a26_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9.jsonl.gz",
+        "bytes": 556902,
+        "id": "reports_forecasts_origin_events_oracle_weather_sensitivity_oracle_validation_d503593e45b64a668257b7b9f176e6b9_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/rte_correction_proxy_test_f8fe0c5614a34564af1aa50dc4748e94.jsonl.gz",
+        "bytes": 516589,
+        "id": "reports_forecasts_origin_events_rte_correction_proxy_test_f8fe0c5614a34564af1aa50dc4748e94_jsonl"
+      },
+      {
+        "path": "reports/forecasts/origin_events/rte_correction_proxy_validation_9580a0bdd9424127a341eaedb7228e8e.jsonl.gz",
+        "bytes": 555808,
+        "id": "reports_forecasts_origin_events_rte_correction_proxy_validation_9580a0bdd9424127a341eaedb7228e8e_jsonl"
+      },
+      {
+        "path": "reports/forecasts/rte_correction_proxy_test.csv.gz",
+        "bytes": 346157,
+        "id": "reports_forecasts_rte_correction_proxy_test_csv"
+      },
+      {
+        "path": "reports/forecasts/rte_correction_proxy_test.csv.manifest.json",
+        "bytes": 842,
+        "id": "reports_forecasts_rte_correction_proxy_test_csv_manifest"
+      },
+      {
+        "path": "reports/forecasts/rte_correction_proxy_validation.csv.gz",
+        "bytes": 287118,
+        "id": "reports_forecasts_rte_correction_proxy_validation_csv"
+      },
+      {
+        "path": "reports/forecasts/rte_correction_proxy_validation.csv.manifest.json",
+        "bytes": 855,
+        "id": "reports_forecasts_rte_correction_proxy_validation_csv_manifest"
+      },
+      {
+        "path": "reports/hypothesis_register.csv",
+        "bytes": 1011,
+        "id": "reports_hypothesis_register"
+      },
+      {
+        "path": "reports/implementation_review.md",
+        "bytes": 3136,
+        "id": "reports_implementation_review"
+      },
+      {
+        "path": "reports/models/calendar_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_calendar_validation_fits"
+      },
+      {
+        "path": "reports/models/calendar_validation_pipelines.joblib",
+        "bytes": 133550,
+        "id": "reports_models_calendar_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_365_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_history_365_validation_fits"
+      },
+      {
+        "path": "reports/models/history_365_validation_pipelines.joblib",
+        "bytes": 141106,
+        "id": "reports_models_history_365_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_730_validation_fits.csv",
+        "bytes": 1768,
+        "id": "reports_models_history_730_validation_fits"
+      },
+      {
+        "path": "reports/models/history_730_validation_pipelines.joblib",
+        "bytes": 141093,
+        "id": "reports_models_history_730_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_expanding_validation_fits.csv",
+        "bytes": 1768,
+        "id": "reports_models_history_expanding_validation_fits"
+      },
+      {
+        "path": "reports/models/history_expanding_validation_pipelines.joblib",
+        "bytes": 141094,
+        "id": "reports_models_history_expanding_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_more_leaves_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_history_more_leaves_validation_fits"
+      },
+      {
+        "path": "reports/models/history_more_leaves_validation_pipelines.joblib",
+        "bytes": 266543,
+        "id": "reports_models_history_more_leaves_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_past_weather_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_history_past_weather_validation_fits"
+      },
+      {
+        "path": "reports/models/history_past_weather_validation_pipelines.joblib",
+        "bytes": 142381,
+        "id": "reports_models_history_past_weather_validation_pipelines"
+      },
+      {
+        "path": "reports/models/history_weekly_fit_validation_fits.csv",
+        "bytes": 6577,
+        "id": "reports_models_history_weekly_fit_validation_fits"
+      },
+      {
+        "path": "reports/models/history_weekly_fit_validation_pipelines.joblib",
+        "bytes": 141095,
+        "id": "reports_models_history_weekly_fit_validation_pipelines"
+      },
+      {
+        "path": "reports/models/oracle_weather_sensitivity_oracle_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_oracle_weather_sensitivity_oracle_validation_fits"
+      },
+      {
+        "path": "reports/models/oracle_weather_sensitivity_oracle_validation_pipelines.joblib",
+        "bytes": 142418,
+        "id": "reports_models_oracle_weather_sensitivity_oracle_validation_pipelines"
+      },
+      {
+        "path": "reports/models/rte_correction_proxy_test_fits.csv",
+        "bytes": 3434,
+        "id": "reports_models_rte_correction_proxy_test_fits"
+      },
+      {
+        "path": "reports/models/rte_correction_proxy_test_pipelines.joblib",
+        "bytes": 559708,
+        "id": "reports_models_rte_correction_proxy_test_pipelines"
+      },
+      {
+        "path": "reports/models/rte_correction_proxy_validation_fits.csv",
+        "bytes": 1741,
+        "id": "reports_models_rte_correction_proxy_validation_fits"
+      },
+      {
+        "path": "reports/models/rte_correction_proxy_validation_pipelines.joblib",
+        "bytes": 142353,
+        "id": "reports_models_rte_correction_proxy_validation_pipelines"
+      },
+      {
+        "path": "reports/monitoring_specification.csv",
+        "bytes": 971,
+        "id": "reports_monitoring_specification"
+      },
+      {
+        "path": "reports/notebook_previews/01_data_audit.html",
+        "bytes": 419140,
+        "id": "reports_notebook_previews_01_data_audit"
+      },
+      {
+        "path": "reports/notebook_previews/02_development_eda.html",
+        "bytes": 759589,
+        "id": "reports_notebook_previews_02_development_eda"
+      },
+      {
+        "path": "reports/notebook_previews/03_backtest_and_baselines.html",
+        "bytes": 340097,
+        "id": "reports_notebook_previews_03_backtest_and_baselines"
+      },
+      {
+        "path": "reports/notebook_previews/04_model_comparison.html",
+        "bytes": 376615,
+        "id": "reports_notebook_previews_04_model_comparison"
+      },
+      {
+        "path": "reports/notebook_previews/05_uncertainty_and_failures.html",
+        "bytes": 521468,
+        "id": "reports_notebook_previews_05_uncertainty_and_failures"
+      },
+      {
+        "path": "reports/notebook_previews/06_business_and_deployment.html",
+        "bytes": 354707,
+        "id": "reports_notebook_previews_06_business_and_deployment"
+      },
+      {
+        "path": "reports/risk_register.csv",
+        "bytes": 1037,
+        "id": "reports_risk_register"
+      },
+      {
+        "path": "reports/run_summary.json",
+        "bytes": 368,
+        "id": "reports_run_summary"
+      },
+      {
+        "path": "reports/scorecards/baselines_validation_common.csv",
+        "bytes": 567,
+        "id": "reports_scorecards_baselines_validation_common"
+      },
+      {
+        "path": "reports/scorecards/baselines_validation_policy.csv",
+        "bytes": 567,
+        "id": "reports_scorecards_baselines_validation_policy"
+      },
+      {
+        "path": "reports/scorecards/baselines_validation_raw_availability.csv",
+        "bytes": 582,
+        "id": "reports_scorecards_baselines_validation_raw_availability"
+      },
+      {
+        "path": "reports/scorecards/development_temperature_bands.csv",
+        "bytes": 601,
+        "id": "reports_scorecards_development_temperature_bands"
+      },
+      {
+        "path": "reports/scorecards/input_stress_tests.csv",
+        "bytes": 263,
+        "id": "reports_scorecards_input_stress_tests"
+      },
+      {
+        "path": "reports/scorecards/model_validation_common_raw.csv",
+        "bytes": 1479,
+        "id": "reports_scorecards_model_validation_common_raw"
+      },
+      {
+        "path": "reports/scorecards/model_validation_policy.csv",
+        "bytes": 1478,
+        "id": "reports_scorecards_model_validation_policy"
+      },
+      {
+        "path": "reports/scorecards/model_validation_segments.csv",
+        "bytes": 54455,
+        "id": "reports_scorecards_model_validation_segments"
+      },
+      {
+        "path": "reports/scorecards/oracle_weather_sensitivity.csv",
+        "bytes": 307,
+        "id": "reports_scorecards_oracle_weather_sensitivity"
+      },
+      {
+        "path": "reports/scorecards/paired_block_bootstrap.csv",
+        "bytes": 566,
+        "id": "reports_scorecards_paired_block_bootstrap"
+      },
+      {
+        "path": "reports/scorecards/selection_guardrails.csv",
+        "bytes": 1261,
+        "id": "reports_scorecards_selection_guardrails"
+      },
+      {
+        "path": "reports/scorecards/test_common.csv",
+        "bytes": 672,
+        "id": "reports_scorecards_test_common"
+      },
+      {
+        "path": "reports/scorecards/test_common_raw.csv",
+        "bytes": 671,
+        "id": "reports_scorecards_test_common_raw"
+      },
+      {
+        "path": "reports/scorecards/test_daily.csv",
+        "bytes": 170415,
+        "id": "reports_scorecards_test_daily"
+      },
+      {
+        "path": "reports/scorecards/test_policy.csv",
+        "bytes": 672,
+        "id": "reports_scorecards_test_policy"
+      },
+      {
+        "path": "reports/scorecards/test_segments.csv",
+        "bytes": 22689,
+        "id": "reports_scorecards_test_segments"
+      },
+      {
+        "path": "reports/scorecards/validation_by_fold.csv",
+        "bytes": 3255,
+        "id": "reports_scorecards_validation_by_fold"
+      },
+      {
+        "path": "reports/uncertainty/daily_trajectory_evaluation.csv",
+        "bytes": 54577,
+        "id": "reports_uncertainty_daily_trajectory_evaluation"
+      },
+      {
+        "path": "reports/uncertainty/daily_trajectory_predictions.csv",
+        "bytes": 43987,
+        "id": "reports_uncertainty_daily_trajectory_predictions"
+      },
+      {
+        "path": "reports/uncertainty/empirical_calibration.csv",
+        "bytes": 5252,
+        "id": "reports_uncertainty_empirical_calibration"
+      },
+      {
+        "path": "reports/uncertainty/quantile_calibration.csv",
+        "bytes": 5223,
+        "id": "reports_uncertainty_quantile_calibration"
+      },
+      {
+        "path": "requirements-validated.txt",
+        "bytes": 263,
+        "id": "requirements_validated"
+      },
+      {
+        "path": "requirements.txt",
+        "bytes": 144,
+        "id": "requirements"
+      },
+      {
+        "path": "scripts/build_notebooks.py",
+        "bytes": 37670,
+        "id": "scripts_build_notebooks"
+      },
+      {
+        "path": "scripts/execute_notebooks.py",
+        "bytes": 1972,
+        "id": "scripts_execute_notebooks"
+      },
+      {
+        "path": "scripts/validate_artifacts.py",
+        "bytes": 4625,
+        "id": "scripts_validate_artifacts"
+      },
+      {
+        "path": "src/__init__.py",
+        "bytes": 61,
+        "id": "src_init"
+      },
+      {
+        "path": "src/backtest.py",
+        "bytes": 14193,
+        "id": "src_backtest"
+      },
+      {
+        "path": "src/common.py",
+        "bytes": 4045,
+        "id": "src_common"
+      },
+      {
+        "path": "src/data.py",
+        "bytes": 14390,
+        "id": "src_data"
+      },
+      {
+        "path": "src/eda.py",
+        "bytes": 2793,
+        "id": "src_eda"
+      },
+      {
+        "path": "src/features.py",
+        "bytes": 8150,
+        "id": "src_features"
+      },
+      {
+        "path": "src/metrics.py",
+        "bytes": 6698,
+        "id": "src_metrics"
+      },
+      {
+        "path": "src/pipeline.py",
+        "bytes": 3261,
+        "id": "src_pipeline"
+      },
+      {
+        "path": "src/storage.py",
+        "bytes": 712,
+        "id": "src_storage"
+      },
+      {
+        "path": "src/uncertainty.py",
+        "bytes": 5557,
+        "id": "src_uncertainty"
+      },
+      {
+        "path": "tests/__init__.py",
+        "bytes": 0,
+        "id": "tests_init"
+      },
+      {
+        "path": "tests/test_integrity.py",
+        "bytes": 10867,
+        "id": "tests_test_integrity"
+      }
+    ],
+    "notebooks": [
+      "notebooks/01_data_audit.ipynb",
+      "notebooks/02_development_eda.ipynb",
+      "notebooks/03_backtest_and_baselines.ipynb",
+      "notebooks/04_model_comparison.ipynb",
+      "notebooks/05_uncertainty_and_failures.ipynb",
+      "notebooks/06_business_and_deployment.ipynb"
+    ],
+    "notebook_imports": {
+      "notebooks/01_data_audit.ipynb": [
+        "src/common.py",
+        "src/data.py"
+      ],
+      "notebooks/02_development_eda.ipynb": [
+        "src/common.py",
+        "src/data.py",
+        "src/eda.py"
+      ],
+      "notebooks/03_backtest_and_baselines.ipynb": [
+        "src/backtest.py",
+        "src/common.py",
+        "src/data.py",
+        "src/features.py",
+        "src/metrics.py"
+      ],
+      "notebooks/04_model_comparison.ipynb": [
+        "src/backtest.py",
+        "src/common.py",
+        "src/data.py",
+        "src/features.py",
+        "src/metrics.py",
+        "src/storage.py"
+      ],
+      "notebooks/05_uncertainty_and_failures.ipynb": [
+        "src/backtest.py",
+        "src/common.py",
+        "src/metrics.py",
+        "src/storage.py",
+        "src/uncertainty.py"
+      ],
+      "notebooks/06_business_and_deployment.ipynb": [
+        "src/common.py",
+        "src/data.py",
+        "src/metrics.py",
+        "src/pipeline.py",
+        "src/storage.py"
+      ]
+    },
+    "notebook_calls": {
+      "notebooks/01_data_audit.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        }
+      ],
+      "notebooks/02_development_eda.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        },
+        {
+          "symbol": "read_audited",
+          "cell": 3,
+          "line": 3
+        },
+        {
+          "symbol": "development_frame",
+          "cell": 3,
+          "line": 4
+        }
+      ],
+      "notebooks/03_backtest_and_baselines.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        },
+        {
+          "symbol": "read_audited",
+          "cell": 6,
+          "line": 3
+        },
+        {
+          "symbol": "build_supervised",
+          "cell": 6,
+          "line": 4
+        },
+        {
+          "symbol": "availability_gate",
+          "cell": 6,
+          "line": 11
+        },
+        {
+          "symbol": "baseline_replay",
+          "cell": 8,
+          "line": 5
+        },
+        {
+          "symbol": "scorecard",
+          "cell": 8,
+          "line": 6
+        },
+        {
+          "symbol": "scorecard",
+          "cell": 8,
+          "line": 7
+        },
+        {
+          "symbol": "matched_scorecard",
+          "cell": 8,
+          "line": 8
+        }
+      ],
+      "notebooks/04_model_comparison.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        },
+        {
+          "symbol": "read_features",
+          "cell": 3,
+          "line": 5
+        },
+        {
+          "symbol": "read_labels",
+          "cell": 3,
+          "line": 6
+        },
+        {
+          "symbol": "experiments",
+          "cell": 3,
+          "line": 7
+        },
+        {
+          "symbol": "prediction_fallback",
+          "cell": 9,
+          "line": 11
+        },
+        {
+          "symbol": "read_audited",
+          "cell": 11,
+          "line": 2
+        }
+      ],
+      "notebooks/05_uncertainty_and_failures.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        },
+        {
+          "symbol": "read_features",
+          "cell": 3,
+          "line": 5
+        },
+        {
+          "symbol": "read_labels",
+          "cell": 3,
+          "line": 6
+        },
+        {
+          "symbol": "Experiment",
+          "cell": 3,
+          "line": 9
+        }
+      ],
+      "notebooks/06_business_and_deployment.ipynb": [
+        {
+          "symbol": "load_contract",
+          "cell": 2,
+          "line": 11
+        },
+        {
+          "symbol": "prepare_directories",
+          "cell": 2,
+          "line": 12
+        },
+        {
+          "symbol": "plotting_style",
+          "cell": 2,
+          "line": 13
+        },
+        {
+          "symbol": "read_predictions",
+          "cell": 3,
+          "line": 8
+        },
+        {
+          "symbol": "read_labels",
+          "cell": 3,
+          "line": 9
+        }
+      ]
+    },
+    "io": [
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "config/evaluation_lock.json",
+        "relation": "references",
+        "location": "cell 4, L2"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "checks_hash",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "data/france_regional_electricity_hourly.csv",
+        "relation": "checks_hash",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "references",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "data/france_regional_electricity_hourly.csv",
+        "relation": "references",
+        "location": "cell 4, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/availability_register.csv",
+        "relation": "reads",
+        "location": "cell 6, L4"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/availability_register.csv",
+        "relation": "references",
+        "location": "cell 6, L4"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/frequency_intervals.csv",
+        "relation": "reads",
+        "location": "cell 8, L2"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/overlap.csv",
+        "relation": "reads",
+        "location": "cell 8, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/frequency_intervals.csv",
+        "relation": "references",
+        "location": "cell 8, L2"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/overlap.csv",
+        "relation": "references",
+        "location": "cell 8, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/missingness.csv",
+        "relation": "reads",
+        "location": "cell 8, L1"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/missingness.csv",
+        "relation": "references",
+        "location": "cell 8, L1"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/limitations.md",
+        "relation": "reads",
+        "location": "cell 12, L3"
+      },
+      {
+        "source": "notebooks/01_data_audit.ipynb",
+        "target": "reports/audit/limitations.md",
+        "relation": "references",
+        "location": "cell 12, L3"
+      },
+      {
+        "source": "notebooks/02_development_eda.ipynb",
+        "target": "reports/scorecards/development_temperature_bands.csv",
+        "relation": "writes",
+        "location": "cell 9, L4"
+      },
+      {
+        "source": "notebooks/02_development_eda.ipynb",
+        "target": "reports/scorecards/development_temperature_bands.csv",
+        "relation": "references",
+        "location": "cell 9, L4"
+      },
+      {
+        "source": "notebooks/02_development_eda.ipynb",
+        "target": "reports/hypothesis_register.csv",
+        "relation": "writes",
+        "location": "cell 13, L2"
+      },
+      {
+        "source": "notebooks/02_development_eda.ipynb",
+        "target": "reports/hypothesis_register.csv",
+        "relation": "references",
+        "location": "cell 13, L2"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "tests",
+        "relation": "references",
+        "location": "cell 4, L2"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "writes",
+        "location": "cell 6, L5"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "writes",
+        "location": "cell 6, L6"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/origin_snapshots/manifest.json",
+        "relation": "writes",
+        "location": "cell 6, L7"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "references",
+        "location": "cell 6, L5"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "references",
+        "location": "cell 6, L6"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "data/origin_snapshots/manifest.json",
+        "relation": "references",
+        "location": "cell 6, L7"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "cell 6, L7"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "cell 6, L7"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_policy.csv",
+        "relation": "writes",
+        "location": "cell 8, L9"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_raw_availability.csv",
+        "relation": "writes",
+        "location": "cell 8, L10"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_common.csv",
+        "relation": "writes",
+        "location": "cell 8, L11"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_policy.csv",
+        "relation": "references",
+        "location": "cell 8, L9"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_raw_availability.csv",
+        "relation": "references",
+        "location": "cell 8, L10"
+      },
+      {
+        "source": "notebooks/03_backtest_and_baselines.ipynb",
+        "target": "reports/scorecards/baselines_validation_common.csv",
+        "relation": "references",
+        "location": "cell 8, L11"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/experiment_register.csv",
+        "relation": "writes",
+        "location": "cell 3, L9"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/experiment_register.csv",
+        "relation": "references",
+        "location": "cell 3, L9"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/forecasts/all_validation.csv.gz",
+        "relation": "writes",
+        "location": "cell 5, L8"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/forecasts/baselines_validation.csv.gz",
+        "relation": "reads",
+        "location": "cell 5, L2"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/forecasts/all_validation.csv.gz",
+        "relation": "references",
+        "location": "cell 5, L8"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/forecasts/baselines_validation.csv.gz",
+        "relation": "references",
+        "location": "cell 5, L2"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_policy.csv",
+        "relation": "writes",
+        "location": "cell 7, L5"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_segments.csv",
+        "relation": "writes",
+        "location": "cell 7, L6"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_common_raw.csv",
+        "relation": "writes",
+        "location": "cell 7, L7"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/selection_guardrails.csv",
+        "relation": "writes",
+        "location": "cell 7, L8"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/validation_by_fold.csv",
+        "relation": "writes",
+        "location": "cell 7, L14"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "writes",
+        "location": "cell 7, L18"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_policy.csv",
+        "relation": "references",
+        "location": "cell 7, L5"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_segments.csv",
+        "relation": "references",
+        "location": "cell 7, L6"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/model_validation_common_raw.csv",
+        "relation": "references",
+        "location": "cell 7, L7"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/selection_guardrails.csv",
+        "relation": "references",
+        "location": "cell 7, L8"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/validation_by_fold.csv",
+        "relation": "references",
+        "location": "cell 7, L14"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "cell 7, L17"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "references",
+        "location": "cell 7, L18"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "cell 7, L17"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/input_stress_tests.csv",
+        "relation": "writes",
+        "location": "cell 9, L14"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/input_stress_tests.csv",
+        "relation": "references",
+        "location": "cell 9, L14"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/oracle_weather_sensitivity.csv",
+        "relation": "writes",
+        "location": "cell 11, L11"
+      },
+      {
+        "source": "notebooks/04_model_comparison.ipynb",
+        "target": "reports/scorecards/oracle_weather_sensitivity.csv",
+        "relation": "references",
+        "location": "cell 11, L11"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "data/origin_snapshots/history_features.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "reads",
+        "location": "cell 3, L7"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "cell 3, L8"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "cell 3, L8"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "references",
+        "location": "cell 3, L7"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/scorecards/paired_block_bootstrap.csv",
+        "relation": "writes",
+        "location": "cell 7, L10"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/scorecards/paired_block_bootstrap.csv",
+        "relation": "references",
+        "location": "cell 7, L10"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/forecasts/all_validation.csv.gz",
+        "relation": "reads",
+        "location": "cell 9, L1"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/quantile_calibration.csv",
+        "relation": "writes",
+        "location": "cell 9, L7"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/empirical_calibration.csv",
+        "relation": "writes",
+        "location": "cell 9, L8"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/forecasts/all_validation.csv.gz",
+        "relation": "references",
+        "location": "cell 9, L1"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/quantile_calibration.csv",
+        "relation": "references",
+        "location": "cell 9, L7"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/empirical_calibration.csv",
+        "relation": "references",
+        "location": "cell 9, L8"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/daily_trajectory_predictions.csv",
+        "relation": "writes",
+        "location": "cell 11, L2"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/daily_trajectory_evaluation.csv",
+        "relation": "writes",
+        "location": "cell 11, L9"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/daily_trajectory_predictions.csv",
+        "relation": "references",
+        "location": "cell 11, L2"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/uncertainty/daily_trajectory_evaluation.csv",
+        "relation": "references",
+        "location": "cell 11, L9"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/failure_catalogue.csv",
+        "relation": "writes",
+        "location": "cell 13, L7"
+      },
+      {
+        "source": "notebooks/05_uncertainty_and_failures.ipynb",
+        "target": "reports/failure_catalogue.csv",
+        "relation": "references",
+        "location": "cell 13, L7"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/test_common.csv",
+        "relation": "reads",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/paired_block_bootstrap.csv",
+        "relation": "reads",
+        "location": "cell 3, L7"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/forecasts/all_test.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L8"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "reads",
+        "location": "cell 3, L9"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "reads",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/test_common.csv",
+        "relation": "references",
+        "location": "cell 3, L6"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/paired_block_bootstrap.csv",
+        "relation": "references",
+        "location": "cell 3, L7"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/forecasts/all_test.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L8"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "data/processed/evaluation_labels.csv.gz",
+        "relation": "references",
+        "location": "cell 3, L9"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "config/frozen_candidate.json",
+        "relation": "references",
+        "location": "cell 3, L5"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/uncertainty/quantile_calibration.csv",
+        "relation": "reads",
+        "location": "cell 7, L1"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/test_daily.csv",
+        "relation": "reads",
+        "location": "cell 7, L4"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/uncertainty/quantile_calibration.csv",
+        "relation": "references",
+        "location": "cell 7, L1"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/scorecards/test_daily.csv",
+        "relation": "references",
+        "location": "cell 7, L4"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/failure_catalogue.csv",
+        "relation": "reads",
+        "location": "cell 7, L3"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/failure_catalogue.csv",
+        "relation": "references",
+        "location": "cell 7, L3"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/monitoring_specification.csv",
+        "relation": "writes",
+        "location": "cell 9, L7"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/risk_register.csv",
+        "relation": "writes",
+        "location": "cell 9, L8"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/monitoring_specification.csv",
+        "relation": "references",
+        "location": "cell 9, L7"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/risk_register.csv",
+        "relation": "references",
+        "location": "cell 9, L8"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/uncertainty/empirical_calibration.csv",
+        "relation": "reads",
+        "location": "cell 11, L2"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/final_recommendation.md",
+        "relation": "writes",
+        "location": "cell 11, L20"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/run_summary.json",
+        "relation": "writes",
+        "location": "cell 11, L21"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/uncertainty/empirical_calibration.csv",
+        "relation": "references",
+        "location": "cell 11, L2"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/run_summary.json",
+        "relation": "references",
+        "location": "cell 11, L21"
+      },
+      {
+        "source": "notebooks/06_business_and_deployment.ipynb",
+        "target": "reports/final_recommendation.md",
+        "relation": "references",
+        "location": "cell 11, L20"
+      },
+      {
+        "source": "scripts/build_notebooks.py",
+        "target": "notebooks",
+        "relation": "references",
+        "location": "L9"
+      },
+      {
+        "source": "scripts/execute_notebooks.py",
+        "target": ".runtime/kernels",
+        "relation": "references",
+        "location": "L20"
+      },
+      {
+        "source": "scripts/execute_notebooks.py",
+        "target": "notebooks",
+        "relation": "references",
+        "location": "L25"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/notebook_previews",
+        "relation": "references",
+        "location": "L18"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/figures",
+        "relation": "references",
+        "location": "L19"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "reads",
+        "location": "L43"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "reads",
+        "location": "L44"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/forecasts/all_test.csv.gz",
+        "relation": "reads",
+        "location": "L77"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/execution_validation.json",
+        "relation": "writes",
+        "location": "L81"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/raw/source_manifest.json",
+        "relation": "reads",
+        "location": "L40"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "references",
+        "location": "L43"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "references",
+        "location": "L44"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/forecasts/all_test.csv.gz",
+        "relation": "references",
+        "location": "L77"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/execution_validation.json",
+        "relation": "references",
+        "location": "L81"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/forecasts",
+        "relation": "references",
+        "location": "L47"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/forecasts",
+        "relation": "references",
+        "location": "L53"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "reports/models",
+        "relation": "references",
+        "location": "L71"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "notebooks",
+        "relation": "references",
+        "location": "L23"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data/raw/source_manifest.json",
+        "relation": "references",
+        "location": "L40"
+      },
+      {
+        "source": "scripts/validate_artifacts.py",
+        "target": "data",
+        "relation": "references",
+        "location": "L42"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "reports/forecasts/origin_events",
+        "relation": "references",
+        "location": "L137"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "reports/forecasts",
+        "relation": "references",
+        "location": "L88"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "L106"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "L106"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "reports/models",
+        "relation": "references",
+        "location": "L190"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "L191"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "reports/models",
+        "relation": "references",
+        "location": "L191"
+      },
+      {
+        "source": "src/backtest.py",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "L191"
+      },
+      {
+        "source": "src/common.py",
+        "target": "config/forecast_contract.json",
+        "relation": "reads",
+        "location": "L23"
+      },
+      {
+        "source": "src/common.py",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "L23"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "reads",
+        "location": "L13"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/france_regional_electricity_hourly.csv",
+        "relation": "reads",
+        "location": "L14"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "writes",
+        "location": "L78"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/data_dictionary.csv",
+        "relation": "writes",
+        "location": "L80"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/availability_register.csv",
+        "relation": "writes",
+        "location": "L81"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/missingness.csv",
+        "relation": "writes",
+        "location": "L83"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/missing_observations.csv",
+        "relation": "writes",
+        "location": "L85"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/frequency_intervals.csv",
+        "relation": "writes",
+        "location": "L88"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/regional_frequency_and_missingness.csv",
+        "relation": "writes",
+        "location": "L99"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/regional_suspicious_retained.csv",
+        "relation": "writes",
+        "location": "L100"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/overlap.csv",
+        "relation": "writes",
+        "location": "L102"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/audit_summary.json",
+        "relation": "writes",
+        "location": "L105"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/raw/source_manifest.json",
+        "relation": "writes",
+        "location": "L107"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/operational_gate.csv",
+        "relation": "writes",
+        "location": "L108"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/limitations.md",
+        "relation": "writes",
+        "location": "L120"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "reads",
+        "location": "L125"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/france_electricity_hourly.csv",
+        "relation": "references",
+        "location": "L13"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/france_regional_electricity_hourly.csv",
+        "relation": "references",
+        "location": "L14"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "references",
+        "location": "L78"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/data_dictionary.csv",
+        "relation": "references",
+        "location": "L80"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/availability_register.csv",
+        "relation": "references",
+        "location": "L81"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/missingness.csv",
+        "relation": "references",
+        "location": "L83"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/missing_observations.csv",
+        "relation": "references",
+        "location": "L85"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/frequency_intervals.csv",
+        "relation": "references",
+        "location": "L88"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/regional_frequency_and_missingness.csv",
+        "relation": "references",
+        "location": "L99"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/regional_suspicious_retained.csv",
+        "relation": "references",
+        "location": "L100"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/overlap.csv",
+        "relation": "references",
+        "location": "L102"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/audit_summary.json",
+        "relation": "references",
+        "location": "L105"
+      },
+      {
+        "source": "src/data.py",
+        "target": "config/forecast_contract.json",
+        "relation": "checks_hash",
+        "location": "L106"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/raw/source_manifest.json",
+        "relation": "references",
+        "location": "L107"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/operational_gate.csv",
+        "relation": "references",
+        "location": "L108"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/processed/audited_country.csv.gz",
+        "relation": "references",
+        "location": "L125"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data/raw",
+        "relation": "references",
+        "location": "L35"
+      },
+      {
+        "source": "src/data.py",
+        "target": "config/forecast_contract.json",
+        "relation": "references",
+        "location": "L106"
+      },
+      {
+        "source": "src/data.py",
+        "target": "reports/audit/limitations.md",
+        "relation": "references",
+        "location": "L120"
+      },
+      {
+        "source": "src/data.py",
+        "target": "data",
+        "relation": "references",
+        "location": "L106"
+      }
+    ],
+    "external_modules_materialized": [
+      "pathlib",
+      "shutil",
+      "textwrap",
+      "nbformat",
+      "argparse",
+      "json",
+      "sys",
+      "nbclient",
+      "jupyter_client",
+      "jupyter_client_kernelspec",
+      "base64",
+      "gzip",
+      "pandas",
+      "nbconvert",
+      "dataclasses",
+      "hashlib",
+      "uuid",
+      "numpy",
+      "joblib",
+      "sklearn_ensemble",
+      "sklearn_impute",
+      "sklearn_pipeline",
+      "tempfile",
+      "unittest",
+      "pandas_testing"
+    ],
+    "scope": "Source-level imports/calls, rooted literal path references, notebook code cells and full file inventory. CSV contents, serialized models and generated plot pixels are not semantically interpreted.",
+    "issues": [
+      "readme.md references notebooks/legacy/01_data_audit_original.ipynb, but that file is absent in the current filesystem."
+    ]
+  },
+  "root": "/Users/alivakof/Desktop/Time Series/Project"
+}

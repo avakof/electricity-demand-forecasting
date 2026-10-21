@@ -1,0 +1,15 @@
+{
+  "sha256": "a3dfe1ae19f010980a5bd87be35e4d278a5beb02f7d55814d5fdeb55c69f4aa6",
+  "rows": 8760,
+  "ledger_sha256": "82d700ffea623ffe07d62af2cdfb79ac85bff3771d28080075a1ded2a6628bad",
+  "predictions_archived_before_scoring": true,
+  "signature": "911a01a6df39",
+  "family": "gam",
+  "params": {
+    "n_knots": 4,
+    "degree": 3,
+    "alpha": 20.0
+  },
+  "arm": "national",
+  "phase": "test"
+}

@@ -1,0 +1,25 @@
+{
+  "run": "reports/rte_risk/20261020T213640021260Z",
+  "purpose": "Standalone scientific figure exports from frozen results; no training or selection",
+  "inputs": {
+    "reports/manager_report_20261021/diagnostics/monthly_mae.csv": "3d92b9c5b83b5e05c93feaf6f7356514a237b64ecd0c2216ef2bc93469ff3ffd",
+    "reports/manager_report_20261021/diagnostics/worst_cold_day_hourly.csv": "3bbc7ea4194320a4cd90604d21d06f92cae2d853c6441456ccab60715b3cf860",
+    "reports/rte_risk/20261020T213640021260Z/tables/bootstrap.csv": "bc0e248251c0d526c96595b6985983c90aef8615d9eadebe64dd06b6d4c3943e",
+    "reports/rte_risk/20261020T213640021260Z/tables/cold_interval_scorecard.csv": "eaa18f5238f4ce031b37430a3232745ec2408b0a10965afaaec037638be49811",
+    "reports/rte_risk/20261020T213640021260Z/tables/feature_ablation.csv": "98dc2dd34391ad9c76d1e3f7d8d40cd836de6954bce166737d02762f2e692ea8",
+    "reports/rte_risk/20261020T213640021260Z/tables/quantile_decision_risk_scenarios.csv": "b84211ce53454683bc1dc5e4d712d870bbcd0f1ad242012b4db9aef14d323c5a",
+    "reports/rte_risk/20261020T213640021260Z/tables/test_scorecard.csv": "88c6142ba363d1e9644ca522993e2931484d78f1fd7eedff58e55ae4f2ed2216",
+    "reports/rte_risk/20261020T213640021260Z/tables/test_segments.csv": "784a0c23f5acbb53e24c0abd190cecaa08081462a2ec2aff0740657476b0b7a7",
+    "reports/rte_risk/20261020T213640021260Z/tables/uncertainty_scorecard.csv": "3893d78e867d5ccd02b0757fdfedddc9924981f8fe76e66f223779edf68f98f6"
+  },
+  "figures": [
+    "01_accuracy.png",
+    "02_improvement_uncertainty.png",
+    "03_feature_ablation.png",
+    "04_interval_failure.png",
+    "05_hour_season.png",
+    "06_risk_scenarios.png",
+    "07_worst_cold_day.png",
+    "08_monthly_errors.png"
+  ]
+}

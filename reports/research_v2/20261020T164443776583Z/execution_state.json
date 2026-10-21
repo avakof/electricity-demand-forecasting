@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "updated_utc": "2026-10-20T20:05:44.839353+00:00",
+  "run_dir": "/Users/alivakof/Desktop/Time Series/Project/reports/research_v2/20261020T164443776583Z",
+  "stage": "Both notebooks fully executed; affected presentation cell re-executed; final artifacts verified",
+  "remaining": [],
+  "complete_policy": "rte_bias_proxy",
+  "independent_model": "gam__national",
+  "tests": {
+    "passed": 76,
+    "skipped": 1,
+    "failed": 0
+  },
+  "integrity": {
+    "status": "passed",
+    "forecast_files": 272,
+    "forecast_rows": 1779353,
+    "origin_ledgers": 267
+  },
+  "notebooks": [
+    {
+      "notebook": "notebooks/07_statistical_and_boosting_models.ipynb",
+      "code_cells": 8,
+      "saved_image_outputs": 2,
+      "html_embedded_pngs": 3,
+      "format_valid": true,
+      "all_code_executed_without_errors": true,
+      "sha256": "829ee52b24eb4347f9080e5de3dcdf080811aa8fb47deca29b73d9da2cda2580"
+    },
+    {
+      "notebook": "notebooks/08_deep_learning_and_uncertainty.ipynb",
+      "code_cells": 10,
+      "saved_image_outputs": 8,
+      "html_embedded_pngs": 9,
+      "format_valid": true,
+      "all_code_executed_without_errors": true,
+      "sha256": "0685f20c022f34f691f8e2b7ebfee3502936da5253c2b0e2368d38e587d54edc"
+    }
+  ],
+  "source_stability": "Frozen predictor/config sources, selections and forecasts unchanged during final presentation fixes",
+  "validation_gap": "HTML previews structurally checked/exported; browser visual inspection unavailable because no enabled CUA browser. PNG figures inspected directly.",
+  "resume_note": "No paused or unfinished model work remains. Historical pause checkpoints are retained as execution provenance."
+}

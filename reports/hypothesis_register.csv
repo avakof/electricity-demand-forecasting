@@ -1,0 +1,7 @@
+id,question,feature,experiment,status
+H1,Do calendar cycles explain demand?,hour/weekend/season/public holiday interactions,calendar,test on chronological validation
+H2,Does recent demand track structural changes?,known weekly lags and pre-cutoff rolling summaries,history_365 versus calendar,test on chronological validation
+H3,Does prior temperature add thermal-memory information?,last available temperature and past 24h mean,history_past_weather,observation vintage approximation applies
+H4,Does cold-evening RTE bias recur?,pre-cutoff calendar/history and historical errors,rte_correction_proxy versus rte_bias_proxy,RTE vintage unverified; retrospective only
+H5,Does authentic weather improve operational forecasts?,"archived forecast run, lead time, heating/cooling transforms",weather_archive,gated: archive missing
+H6,How sensitive is skill to future weather knowledge?,recorded delivery-temperature heating/cooling transforms,oracle_weather_sensitivity,oracle; never eligible for selection/deployment

@@ -1,0 +1,17 @@
+{
+  "sha256": "a30f3cde9ad3563518217d61f0a221c959ef43a757928c5ea6102ee90f6e8bf5",
+  "rows": 2208,
+  "ledger_sha256": "c01eac4762262f317f5ee785dc6fdbd3049917faa618089fafa272345f1c6ac3",
+  "predictions_archived_before_scoring": true,
+  "signature": "95648b2d259d",
+  "family": "dlinear",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "sensitivity_2024_Q3"
+}

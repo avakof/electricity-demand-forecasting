@@ -1,0 +1,21 @@
+{
+  "graph.json": "6367b540cabc53af2c307bdc2253748cc6b3ac16ca0e7130becd812410766884",
+  "graph.html": "b43ff48e03c078eba471d16283bbdc4ad2cb09f2c60da4dbb24dd267bd214fcb",
+  "GRAPH_REPORT.md": "e5aec77b1fb7dd6393f6759a9a669c3d784e285e290120df6b6881d3aecb0702",
+  "CODE_DOCUMENTATION.md": "e1ab976a848367c147c73f942e4cc057619a4cf6f54d1942ecfbb070b8489a88",
+  "architecture.html": "05f9a0457b5bf9918a5e05c46d334a84f984701c20c69b1037a77b41b14c25e0",
+  "architecture_overview.json": "285d2528ed1e6acf3b5840f6552ddd1ade86440565d1777a283db56a39486bc8",
+  "architecture_evidence.json": "2fb1fd4927c2a12fe56dddd8aeadb702c3d478c6ff1231139c5008b59075516e",
+  "architecture_inventory.json": "48e550349f9fc23e69659b0747f2c0e0a48c480a92bece29be1ba1aa17b244bd",
+  "architecture.png": "a8d2cb71f8c1ea75c1e785d06a3274ac5f72c2fa145a937595cbe78b6d8f69ac",
+  "architecture.svg": "c203e7714304927a4129412976cac0f112249aab506c6d96e3892ac2fec42190",
+  "semantic_evidence.json": "5bd86a62b8bc60855e2b4ad13f52b9da5472243f71b7a522fd07c32bc04338cf",
+  "verification.json": "61684a40f755bdee6e9204e5db2a975d4286f0a404101b64df9267b89db1c498",
+  "browser_validation.json": "af61f28c8348371e7ace60f38acfd531a20f423a5f594eaf2e023039c30e304a",
+  "interaction_validation.json": "b6b27e36b17bcd5fc86eaceac6bc5cd83ea652c6f73dbe5453ab322d1afa5422",
+  "readme.md": "c1206ce0ceada4358c384c99288cfb7d29ba8c9ead648da2dcd65fbd1e7b6403",
+  "overview_template.html": "f94641b290e7b71761300dd74d216e4aa75b5db8b1ddc4502a938a19356f7f81",
+  "hook_review.json": "97e643f3b2cfdee6b61d4b6d432082c3ae3a2193c80f42d0be1822c0b5c17024",
+  "final_refresh_review.md": "154ad9577fe5bab5bd1f236e67ddac9cb5477054b7d3bf4c0c82466c9b3aef5c",
+  "design_hook_review_20261021.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+}

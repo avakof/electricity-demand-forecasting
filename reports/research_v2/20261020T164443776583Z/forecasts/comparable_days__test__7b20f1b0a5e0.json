@@ -1,0 +1,11 @@
+{
+  "sha256": "8991cd1b62984b68e6ae03174fd3670824ed00ac968c68e2bc30f7e61db87869",
+  "rows": 8760,
+  "ledger_sha256": "7f125476f2877bb3e802170d36e1231e957ef59aa29bf81919d77298a0e8a89f",
+  "predictions_archived_before_scoring": true,
+  "signature": "7b20f1b0a5e0",
+  "family": "comparable_days",
+  "params": {},
+  "arm": "national",
+  "phase": "test"
+}

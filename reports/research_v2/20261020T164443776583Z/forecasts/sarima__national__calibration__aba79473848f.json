@@ -1,0 +1,25 @@
+{
+  "sha256": "2af0edb7aeef532d9632214090c44a3ebef9ae57175bdb553d3c696056dc2d0a",
+  "rows": 4295,
+  "ledger_sha256": "3781f5cbf9603280ac24b34b95ac764fba87b43babdec08c1ff3d43c7c2cb6f8",
+  "predictions_archived_before_scoring": true,
+  "signature": "aba79473848f",
+  "family": "sarima",
+  "params": {
+    "order": [
+      1,
+      0,
+      0
+    ],
+    "seasonal_order": [
+      1,
+      0,
+      0,
+      24
+    ],
+    "maxiter": 40,
+    "window_days": 56
+  },
+  "arm": "national",
+  "phase": "calibration"
+}

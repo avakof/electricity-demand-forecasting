@@ -1,0 +1,17 @@
+,missing_count,missing_fraction
+load_mw,7,0.0001065286866534774
+rte_forecast_d1_mw,7,0.0001065286866534774
+temperature_c,0,0.0
+source_timestamp_present,0,0.0
+target_missing,0,0.0
+load_suspicious,0,0.0
+temperature_suspicious,0,0.0
+label_available_at_assumed,0,0.0
+regional_load_mw,35067,0.5336630649824988
+regional_temperature_mean_c,35064,0.533617409831076
+n_regions,35064,0.533617409831076
+n_loads,35064,0.533617409831076
+n_temperatures,35064,0.533617409831076
+regional_temperature_load_weighted_c,35067,0.5336630649824988
+load_country_minus_regions_mw,35067,0.5336630649824988
+reconciliation_flag,0,0.0

@@ -1,0 +1,15 @@
+{
+  "selected_quantile_model": "lab__lightgbm_quantile__combined__stacked__w5__residual",
+  "calibration_n": 2136,
+  "calibration_latest_available_at": "2025-06-30 00:00:00+00:00",
+  "first_test_origin": "2025-06-30 09:00:00+00:00",
+  "fixed_fit_origin": "2025-04-01 09:00:00+00:00",
+  "split_radius_MW": 1293.1792148017412,
+  "CQR_central_expansion_MW": 357.4473879071229,
+  "CQR_lower_expansion_MW": 134.32324969272304,
+  "CQR_upper_expansion_MW": 354.7360550247322,
+  "fixed_comparator": "Separate engineered-only predictor, all fitted parameters frozen before calibration; no learned-feature monthly updates",
+  "native_asymmetric_interval": "q.075 to q.975 has nominal90% mass:7.5% below and2.5% above",
+  "coverage_guarantee": "No exchangeability or conditional coverage guarantee established for this dependent series",
+  "selection": "All methods predeclared; none selected or retuned using test outcomes"
+}

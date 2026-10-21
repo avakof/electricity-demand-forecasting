@@ -1,0 +1,47 @@
+{
+  "inspected_at_utc": "2026-10-20T20:05:44.838545+00:00",
+  "both_notebooks_executed": true,
+  "inspected_images": [
+    "point_validation.png",
+    "neural_learning_curves.png",
+    "development_fit_gaps.png",
+    "development_quarter_dispersion.png",
+    "cold_evening_upper_tail.png",
+    "final_comparison.png",
+    "failure_cases/worst_policy_MAE__2025-11-01.png",
+    "failure_cases/worst_cold_evening_upper_miss__2025-12-24.png",
+    "failure_cases/worst_absolute_daily_energy__2025-11-24.png"
+  ],
+  "HTML_previews_exported": true,
+  "HTML_browser_inspection": "Unavailable: CUA reports no enabled browsers; IAB create returned browser unavailable; PNG figures inspected directly",
+  "failure_case_legend_overlap": "Resolved; cold-day PNG visually rechecked; affected cell16 genuinely re-executed from saved score tables.",
+  "non_cold_failure_case_values": "Markdown displays not applicable; CSV missing values preserved.",
+  "HTML_previews_reexported_after_fix": true,
+  "presentation_refresh": {
+    "bootstrap": "run = ResearchRun.latest(ROOT)\npoint_scores = pd.read_csv(run.path / \"tables/test_scorecard.csv\")\npeak_tables = {\"scorecard\": pd.read_csv(run.path / \"tables/peak_risk_scorecard.csv\")}\nfrom scripts.research_comparison_plots import predeclared_plot_roles\nplot_roles = predeclared_plot_roles(run.path)\nfrom IPython.display import Image as ComparisonImage",
+    "cell_index": 16,
+    "executed_utc": "2026-10-20T20:04:30.275154+00:00",
+    "protected_artifacts_unchanged": true,
+    "scope": "Style-only failure-case legend fix; cell genuinely rerun from saved score tables. Full notebook previously passed top-to-bottom."
+  },
+  "format_and_output_checks": [
+    {
+      "notebook": "notebooks/07_statistical_and_boosting_models.ipynb",
+      "code_cells": 8,
+      "saved_image_outputs": 2,
+      "html_embedded_pngs": 3,
+      "format_valid": true,
+      "all_code_executed_without_errors": true,
+      "sha256": "829ee52b24eb4347f9080e5de3dcdf080811aa8fb47deca29b73d9da2cda2580"
+    },
+    {
+      "notebook": "notebooks/08_deep_learning_and_uncertainty.ipynb",
+      "code_cells": 10,
+      "saved_image_outputs": 8,
+      "html_embedded_pngs": 9,
+      "format_valid": true,
+      "all_code_executed_without_errors": true,
+      "sha256": "0685f20c022f34f691f8e2b7ebfee3502936da5253c2b0e2368d38e587d54edc"
+    }
+  ]
+}

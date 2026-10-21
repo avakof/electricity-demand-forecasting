@@ -1,0 +1,51 @@
+{
+  "run_directory": "/Users/alivakof/Desktop/Time Series/Project/reports/research_v2/20261020T164443776583Z",
+  "finalized_utc": "2026-10-20T20:04:49.089143+00:00",
+  "scope": "reporting only; no training, predictor, manifest, selection or forecast changes",
+  "notebooks": [
+    {
+      "notebook": "07_statistical_and_boosting_models.ipynb",
+      "code_cells": 8,
+      "image_outputs": 2,
+      "executed_without_errors": true
+    },
+    {
+      "notebook": "08_deep_learning_and_uncertainty.ipynb",
+      "code_cells": 10,
+      "image_outputs": 8,
+      "executed_without_errors": true
+    }
+  ],
+  "updated_notebook08_markdown_indices": [],
+  "execution_limitations_appended": false,
+  "execution_notes_sha256": "51ace95954700f3eeeb34d7c416a2b3570981d49f52db9ebae0da574f3a4d91b",
+  "investigated_families": [
+    "arima",
+    "dlinear",
+    "gam",
+    "gru",
+    "hist_gradient_boosting",
+    "lightgbm",
+    "lightgbm_quantile",
+    "nbeats",
+    "nhits",
+    "patchtst",
+    "sarima",
+    "sarimax",
+    "tft"
+  ],
+  "experiment_arms_investigated": 23,
+  "selected_arms": 23,
+  "point_scorecard_rows": 27,
+  "fit_event_status_counts": {
+    "fit": 1308
+  },
+  "primary_candidate_from_validation": "gam__national",
+  "selected_complete_policy_from_development": "rte_bias_proxy",
+  "independent_model_from_development": "gam__national",
+  "complete_policy_reporting_added": true,
+  "html_previews": [
+    "/Users/alivakof/Desktop/Time Series/Project/reports/notebook_previews/07_statistical_and_boosting_models.html",
+    "/Users/alivakof/Desktop/Time Series/Project/reports/notebook_previews/08_deep_learning_and_uncertainty.html"
+  ]
+}

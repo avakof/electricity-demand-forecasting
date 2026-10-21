@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-20T23:41:59.682948+00:00",
+  "figures": {
+    "risk_cold_intervals.png": "84997d64cbf8ecfb4489c01980bb841ce9f5d4f53ec7d58c01740f0c7580db23",
+    "risk_error_tradeoff.png": "f16d7cc28d2061c7e6388235515288e8a586e39ad0ede65e99c052d15c255cf8",
+    "risk_feature_ablation.png": "6a85dfb4b882902e444dcd4a536e85cfe91f55eeae0bb5253adfb9b90e1572f4",
+    "risk_point_comparison.png": "1a6bd6ca9018ef2034b8cbf8ac95692eb439d626adfd1d49044d2c19cb2154f9"
+  },
+  "findings": [
+    "Prior selected policy included in point and tradeoff charts",
+    "Full overview and reference-defined zoom retained",
+    "Cold coverage chart includes fixed/native/split/CQR methods and critical support counts",
+    "Labels, legends and units readable; no visible clipping or overlap",
+    "Feature ablation distinguishes training weights from common scoring weights"
+  ],
+  "html_visual_inspection": true,
+  "html_structural_check": "passed",
+  "previous_standalone_figure_hashes": {
+    "risk_cold_intervals.png": "2af334ebbc321521e02c70f50e13337c630d02cdda2cc6443b11b2bd20f87033",
+    "risk_error_tradeoff.png": "20a05d8a0ce4626e267d9370097f4788f87872a55253900634ce32d8160555ba",
+    "risk_feature_ablation.png": "db49c547588fa6a1fa572fc35e04e2e1c225c35f511965e59dfb61ebd48e58d4",
+    "risk_point_comparison.png": "7d844dd9919e40948d226d50e989d6d1217a55514873f694071923912de44395"
+  },
+  "browser": "Chrome; localhost-only temporary preview",
+  "browser_views_checked": [
+    "Notebook07 expanded feature-engineering section",
+    "Notebook08 scorecard and comparison narrative",
+    "Notebook08 cold-interval figure",
+    "Notebook08 point comparison figure",
+    "Notebook08 final recommendation"
+  ],
+  "notebook_checks": [
+    {
+      "notebook": "07_statistical_and_boosting_models.ipynb",
+      "executed_cells": 3,
+      "html_bytes": 514564,
+      "html_sha256": "d0669f8ce3b8a8136d191cacd57fd1b7b0f1469fff92640a625f637cabc02f85",
+      "required_rendered_content": [
+        "</html>",
+        "RTE D1, expanded features and cold-evening risk",
+        "20261020T213640021260Z"
+      ]
+    },
+    {
+      "notebook": "08_deep_learning_and_uncertainty.ipynb",
+      "executed_cells": 3,
+      "html_bytes": 3448378,
+      "html_sha256": "d2d413de4e95e22ceea9895420484acc08c1083efc3c98bdb9e4c90e27256005",
+      "required_rendered_content": [
+        "</html>",
+        "Expanded RTE feature/risk evaluation",
+        "719.631",
+        "Additional cold-evening point improvement over the prior policy is not established."
+      ]
+    }
+  ],
+  "final_figure_review": "All four final notebook-generated PNGs visually re-inspected; notebook plotting defaults added gridlines relative to standalone rendering; metrics and selections unchanged"
+}

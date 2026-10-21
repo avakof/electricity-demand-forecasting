@@ -1,0 +1,13 @@
+requested_evening,requested_cold_proxy,interval_policy,pool,pool_nobs,pool_ndays,fallback_reason,model,phase,selected_by_2024_validation,latest_allowed_calibration_available_at
+False,False,pooled,overall,4295,179,requested_pool_supported,gam__national,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+True,False,pooled,overall,4295,179,requested_pool_supported,gam__national,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+True,True,pooled,overall,4295,179,requested_pool_supported,gam__national,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+False,False,conditional,overall,4295,179,requested_pool_supported,gam__national,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00
+True,False,conditional,evening,537,179,requested_pool_supported,gam__national,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00
+True,True,conditional,coldrisk_evening,96,32,requested_pool_supported,gam__national,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00
+False,False,pooled,overall,4295,179,requested_pool_supported,rte_proxy,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+True,False,pooled,overall,4295,179,requested_pool_supported,rte_proxy,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+True,True,pooled,overall,4295,179,requested_pool_supported,rte_proxy,2025_calibration_to_test,True,2025-06-30 00:00:00+00:00
+False,False,conditional,overall,4295,179,requested_pool_supported,rte_proxy,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00
+True,False,conditional,evening,537,179,requested_pool_supported,rte_proxy,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00
+True,True,conditional,coldrisk_evening,96,32,requested_pool_supported,rte_proxy,2025_calibration_to_test,False,2025-06-30 00:00:00+00:00

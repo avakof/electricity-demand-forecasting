@@ -1,0 +1,9 @@
+dataset,field,issued_at,available_at,revision_status,retrospective_assumption,operational_before_cutoff
+country,datetime_utc,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+country,load_mw,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+country,rte_forecast_d1_mw,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+country,temperature_c,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+regional,region,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+regional,datetime_utc,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+regional,load_mw,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified
+regional,temperature_c,not supplied,not supplied,unknown,interval end + 2 hours for observed history; RTE column assumed at origin ONLY in proxy experiment,unverified

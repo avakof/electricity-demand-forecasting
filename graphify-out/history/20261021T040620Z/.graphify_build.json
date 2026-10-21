@@ -1,0 +1,1 @@
+{"excludes": ["reports/figures/**", "reports/notebook_previews/**"], "gitignore": true, "scope_note": "Generated plot pixels and duplicate HTML previews excluded from semantic extraction; file inventory still includes their architecture."}

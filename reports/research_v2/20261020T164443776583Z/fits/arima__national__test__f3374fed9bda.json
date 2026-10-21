@@ -1,0 +1,716 @@
+[
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-06-30T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-05-05 05:00:00+00:00",
+      "training_end":"2025-06-30 05:00:00+00:00",
+      "fit_seconds":0.075981207,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":6,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001281887,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":0,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-06-30T08:00:00.000Z",
+    "elapsed_seconds":0.079024398
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-07-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-05-06 05:00:00+00:00",
+      "training_end":"2025-07-01 05:00:00+00:00",
+      "fit_seconds":0.169693209,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":7,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001416563,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-07-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-07-01T08:00:00.000Z",
+    "elapsed_seconds":0.173121882
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-08-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-06-06 05:00:00+00:00",
+      "training_end":"2025-08-01 05:00:00+00:00",
+      "fit_seconds":0.224541843,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":11,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001918631,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-08-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-08-01T08:00:00.000Z",
+    "elapsed_seconds":0.227246266
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-09-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-07-07 05:00:00+00:00",
+      "training_end":"2025-09-01 05:00:00+00:00",
+      "fit_seconds":0.172193633,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":10,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001923708,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":29,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-09-30 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-09-01T08:00:00.000Z",
+    "elapsed_seconds":0.174978284
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-10-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-08-06 05:00:00+00:00",
+      "training_end":"2025-10-01 05:00:00+00:00",
+      "fit_seconds":0.070052871,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":7,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001960542,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-10-31 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-10-01T08:00:00.000Z",
+    "elapsed_seconds":0.0755057
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-11-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1344,
+      "missing_training_rows":1,
+      "training_start":"2025-09-06 06:00:00+00:00",
+      "training_end":"2025-11-01 06:00:00+00:00",
+      "fit_seconds":0.053215588,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":4,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0000040989,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":29,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-11-30 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-11-01T09:00:00.000Z",
+    "elapsed_seconds":0.055877793
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2025-12-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1344,
+      "missing_training_rows":1,
+      "training_start":"2025-10-06 06:00:00+00:00",
+      "training_end":"2025-12-01 06:00:00+00:00",
+      "fit_seconds":0.067815421,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":6,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0000058757,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2025-12-31 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2025-12-01T09:00:00.000Z",
+    "elapsed_seconds":0.071089247
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-01-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-11-06 06:00:00+00:00",
+      "training_end":"2026-01-01 06:00:00+00:00",
+      "fit_seconds":0.038423702,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":2,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001960713,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-01-31 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-01-01T09:00:00.000Z",
+    "elapsed_seconds":0.041277697
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-02-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2025-12-07 06:00:00+00:00",
+      "training_end":"2026-02-01 06:00:00+00:00",
+      "fit_seconds":0.040999946,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":2,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0002999607,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":27,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-02-28 06:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-02-01T09:00:00.000Z",
+    "elapsed_seconds":0.043751049
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-03-01T10:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2026-01-04 06:00:00+00:00",
+      "training_end":"2026-03-01 06:00:00+00:00",
+      "fit_seconds":0.039558647,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":2,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0002375377,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-03-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-03-01T09:00:00.000Z",
+    "elapsed_seconds":0.042174751
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-04-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2026-02-04 05:00:00+00:00",
+      "training_end":"2026-04-01 05:00:00+00:00",
+      "fit_seconds":0.062187774,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":5,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0000054579,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":29,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-04-30 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-04-01T08:00:00.000Z",
+    "elapsed_seconds":0.065038139
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-05-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2026-03-06 05:00:00+00:00",
+      "training_end":"2026-05-01 05:00:00+00:00",
+      "fit_seconds":0.072173595,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":6,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.000105476,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":30,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-05-31 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-05-01T08:00:00.000Z",
+    "elapsed_seconds":0.075169164
+  },
+  {
+    "model":"arima__national",
+    "phase":"test",
+    "origin":"2026-06-01T09:00:00.000Z",
+    "params":{
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "maxiter":40
+    },
+    "arm":"national",
+    "seed":42,
+    "fixed_parameters":false,
+    "status":"fit",
+    "metadata":{
+      "family":"arima",
+      "training_rows":1345,
+      "observed_training_rows":1345,
+      "missing_training_rows":0,
+      "training_start":"2026-04-06 05:00:00+00:00",
+      "training_end":"2026-06-01 05:00:00+00:00",
+      "fit_seconds":0.044752798,
+      "warnings":[
+
+      ],
+      "converged":true,
+      "optimizer_iterations":2,
+      "optimizer_options":{
+        "maxiter":40
+      },
+      "optimizer_gradient_max_abs":0.0001441931,
+      "optimizer_cap_does_not_prove_underfit":true,
+      "state_updates":28,
+      "parameter_refits":1,
+      "memory_policy":"conserve smoothing\/filter storage; retain predicted states for extend",
+      "order":[
+        2,
+        1,
+        0
+      ],
+      "seasonal_order":[
+        0,
+        0,
+        0,
+        0
+      ],
+      "objective":"Gaussian likelihood; conditional mean",
+      "latest_state_timestamp":"2026-06-29 05:00:00+00:00"
+    },
+    "training_rows":1345,
+    "latest_label_available_at":"2026-06-01T08:00:00.000Z",
+    "elapsed_seconds":0.048695249
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "sha256": "17ba7680465367d68531c4b839dc8c14a3ca41cbc11344f9a7556e7f9b80665f",
+  "rows": 8760,
+  "ledger_sha256": "8e713e804b4079064c90e7fbeef2b619a8639c118cc7c6995be28a68ee3d7ed7",
+  "predictions_archived_before_scoring": true,
+  "signature": "1aa6f29611a7",
+  "family": "gru",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "test"
+}

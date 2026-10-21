@@ -1,0 +1,105 @@
+{
+  "run_dir": "/Users/alivakof/Desktop/Time Series/Project/reports/research_v2/20261020T164443776583Z",
+  "allow_incomplete": false,
+  "manifest_raw_files_checked": 2,
+  "manifest_source_files_checked": 14,
+  "forecast_csvs_checked": 272,
+  "forecast_rows_checked": 1779353,
+  "verified_origin_ledgers": 267,
+  "fit_counts_by_family": {
+    "arima": {
+      "trained_fits": 51,
+      "failed_fits": 0
+    },
+    "dlinear": {
+      "trained_fits": 134,
+      "failed_fits": 0
+    },
+    "gam": {
+      "trained_fits": 205,
+      "failed_fits": 0
+    },
+    "gru": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "hist_gradient_boosting": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "lightgbm": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "lightgbm_quantile": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "nbeats": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "nhits": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "patchtst": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    },
+    "sarima": {
+      "trained_fits": 51,
+      "failed_fits": 0
+    },
+    "sarimax": {
+      "trained_fits": 51,
+      "failed_fits": 0
+    },
+    "tft": {
+      "trained_fits": 102,
+      "failed_fits": 0
+    }
+  },
+  "investigated_families": [
+    "arima",
+    "dlinear",
+    "gam",
+    "gru",
+    "hist_gradient_boosting",
+    "lightgbm",
+    "lightgbm_quantile",
+    "nbeats",
+    "nhits",
+    "patchtst",
+    "sarima",
+    "sarimax",
+    "tft"
+  ],
+  "notebooks": [
+    {
+      "notebook": "07_statistical_and_boosting_models.ipynb",
+      "code_cells": 8,
+      "unexecuted_cells": [],
+      "error_cells": []
+    },
+    {
+      "notebook": "08_deep_learning_and_uncertainty.ipynb",
+      "code_cells": 10,
+      "unexecuted_cells": [],
+      "error_cells": []
+    }
+  ],
+  "common_eligible_test_hours": 8759,
+  "scorecard_models_checked": 27,
+  "development_complete_policy": {
+    "selected_policy": "rte_bias_proxy",
+    "selected_independent_model": "gam__national",
+    "alternatives": 27,
+    "frozen_utc": "2026-10-20T19:10:58.022056+00:00"
+  },
+  "peak_extension_source_checked": true,
+  "errors": [],
+  "pending": [],
+  "warnings": [],
+  "status": "passed"
+}

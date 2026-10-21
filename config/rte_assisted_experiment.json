@@ -1,0 +1,20 @@
+{
+  "version": "rte-assisted-v1",
+  "reference_run": "reports/research_v2/20261020T164443776583Z",
+  "families": ["hist_gradient_boosting", "lightgbm", "lightgbm_quantile", "gam"],
+  "arms": ["national", "regional"],
+  "modes": ["direct", "residual"],
+  "features": "Original national/regional feature groups plus rte_at_origin_mw and rte_bias_recent_mw",
+  "direct_target": "actual_mw",
+  "residual_target": "actual_mw minus rte_at_origin_mw; add the predicted correction to RTE",
+  "search": "Same two fast configurations per family as the independent experiment; all four chronological 2024 folds; monthly parameter fits; no random split",
+  "selection": "Select each variant's configuration using pooled 2024 MAE with raw forecast availability >= 0.99; freeze best assisted variant and best complete policy across the 16 assisted and 27 original policies before new calibration/test replay",
+  "cold_guardrail": "Report realized-temperature<5 C delivery hours18/19/20 separately; require >=60 hours and20 days to interpret the upper-tail diagnostic. No realized future weather enters predictors. Overall MAE improvement does not establish adequate cold-evening protection.",
+  "point_fallback": "Require target-interval RTE for assisted raw predictions; if unavailable/invalid/failed, fall back to RTE, then weekly persistence, comparable-day mean, latest observation; report all availability/fallbacks",
+  "uncertainty": "All policies: fixed empirical distribution of past out-of-sample calibration residuals. Quantile LightGBM: native q05/q50/q95. Best development-selected assisted variant: separate single-fit split-conformal comparator; no exchangeability or conditional guarantees",
+  "interval_policy_selection": "No interval method selected from the historical test; all methods reported with method-specific labels and availability",
+  "critical_risk_scenarios": {"cold_weights": [1, 3, 5], "shortage_surplus_ratios": [1, 3, 9, 19], "interpretation": "Dimensionless weights times MW error; not euros, realized financial savings or optimal procurement"},
+  "test_previously_explored": true,
+  "original_issue_vintages_verified": false,
+  "scope": "Research extension in existing notebooks07/08. Neural and univariate statistical models are not silently given unsupported exogenous inputs. No production implementation."
+}

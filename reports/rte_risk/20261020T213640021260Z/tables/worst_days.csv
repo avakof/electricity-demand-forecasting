@@ -1,0 +1,11 @@
+model,day,hours,absolute_daily_energy_error_MWh,absolute_daily_peak_error_MW,ramp_MAE_MW,shortage_proxy_MWh,surplus_proxy_MWh,cause
+lab__lightgbm__combined__stacked__w1__residual,2025-12-01,24,63654.85476452985,3492.4411500334245,354.1984405530083,63654.85476452985,0.0,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2025-11-29,24,54449.40079490628,2667.2894869387164,248.18755531111674,0.0,54449.40079490628,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2025-11-01,24,50172.12083997242,3225.048147251051,286.8477508004482,50172.12083997242,0.0,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2026-01-05,24,49230.80902986608,2800.072400905163,499.69249979754767,49742.9461554078,512.137125541718,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2026-02-01,24,47992.30174175032,1725.7110604245827,212.79857881078763,0.0,47992.30174175032,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2026-01-08,24,43807.41689204668,2035.038273948565,398.16962113799957,0.0,43807.41689204668,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2026-02-14,24,41323.63757630397,2699.273380634935,280.4674927221612,41432.88040008967,109.24282378570206,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2025-11-10,24,41275.49993998448,1751.237872628939,372.81487224429196,0.0,41275.49993998448,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2025-12-12,24,41240.42471026486,1554.476864347249,227.87759415095996,0.0,41240.42471026486,Unexplained; calendar/weather/shift/input attribution requires separate evidence
+lab__lightgbm__combined__stacked__w1__residual,2026-01-14,24,38830.701870161894,1615.7801368891087,438.9227341951248,0.0,38830.701870161894,Unexplained; calendar/weather/shift/input attribution requires separate evidence

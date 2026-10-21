@@ -1,0 +1,86 @@
+{
+  "run": "20261020T164443776583Z",
+  "created_utc": "2026-10-20T16:55:37.225982+00:00",
+  "purpose": "Disjoint-family validation workers; no final test access",
+  "stopped_prior_worker_pid": 60596,
+  "nbeats_status": "both arms selected and persisted before redistribution",
+  "environment_threads": {
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "NUMEXPR_NUM_THREADS": 1
+  },
+  "torch_threads_cap": 2,
+  "workers": [
+    {
+      "name": "A",
+      "families": [
+        "nhits",
+        "tft"
+      ],
+      "pid": 62748,
+      "exec_session": 79525,
+      "log": "/Users/alivakof/Desktop/Time Series/Project/.runtime/research_neural_A.log",
+      "status": "terminated_SIGKILL_completed_caches_retained"
+    },
+    {
+      "name": "B",
+      "families": [
+        "gru"
+      ],
+      "pid": 62749,
+      "exec_session": 99958,
+      "log": "/Users/alivakof/Desktop/Time Series/Project/.runtime/research_neural_B.log",
+      "status": "terminated_SIGKILL_completed_caches_retained"
+    },
+    {
+      "name": "C",
+      "families": [
+        "patchtst",
+        "dlinear"
+      ],
+      "pid": 62750,
+      "exec_session": 24954,
+      "log": "/Users/alivakof/Desktop/Time Series/Project/.runtime/research_neural_C.log",
+      "status": "terminated_SIGKILL_completed_caches_retained"
+    }
+  ],
+  "scheduling_events": [
+    {
+      "utc": "2026-10-20T17:07:41.992184+00:00",
+      "worker": "C",
+      "pid": 62750,
+      "signal": "SIGSTOP",
+      "reason": "Limit active neural workers to A+B while notebook07 completes; preserve partial replay. Resume when B completes or root instructs."
+    },
+    {
+      "utc": "2026-10-20T17:10:21.213357+00:00",
+      "worker": "B",
+      "pid": 62749,
+      "signal": "SIGSTOP",
+      "reason": "Two-minute check: swap rose from4.53GB to5.07GB; active A/B CPU fell13%/23%, progress stalled. Root instruction permits pausing B until notebook07 finishes."
+    },
+    {
+      "utc": "2026-10-20T17:12:09.731447+00:00",
+      "worker": "A",
+      "pid": 62748,
+      "signal": "SIGSTOP",
+      "reason": "Root instruction: prioritize notebook07 completion and kernel shutdown; all neural workers paused intact until notified."
+    },
+    {
+      "utc": "2026-10-20T17:24:41.453080+00:00",
+      "workers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "pids": [
+        62748,
+        62749,
+        62750
+      ],
+      "signal": "SIGKILL",
+      "reason": "Root instruction: reclaim swapped/compressed memory from paused research processes. Preserve completed caches/selections; unfinished quarters will replay under unchanged source hash after notebook07 kernel shutdown, sequential execution."
+    }
+  ]
+}

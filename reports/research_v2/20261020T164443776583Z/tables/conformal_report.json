@@ -1,0 +1,10 @@
+{
+  "point_model": "gam__national",
+  "calibration_rows": 4295,
+  "radius_MW": 4511.902233595953,
+  "single_parameter_fit_origin": "2025-01-01 10:00:00+00:00",
+  "latest_calibration_available_at": "2025-06-30 00:00:00+00:00",
+  "first_test_origin": "2025-06-30 09:00:00+00:00",
+  "guarantee": "No exchangeability/conditional coverage guarantee established for these dependent time series",
+  "calibration_seasons": "winter/spring and part of June; not a full seasonal cycle"
+}

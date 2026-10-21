@@ -1,0 +1,17 @@
+{
+  "sha256": "130e6e7b2d3debd7b5115843f23e32ff8946a095c03d89f50a3b6a21997b913d",
+  "rows": 2208,
+  "ledger_sha256": "177be19a556ad3edf5642d7cd25e4a23877de11a49f4542ac613f890667a6696",
+  "predictions_archived_before_scoring": true,
+  "signature": "2da7fe2e50a9",
+  "family": "nbeats",
+  "params": {
+    "h": 48,
+    "input_size": 168,
+    "max_steps": 20,
+    "learning_rate": 0.001,
+    "val_check_steps": 10
+  },
+  "arm": "national",
+  "phase": "2024_Q3_trial0"
+}

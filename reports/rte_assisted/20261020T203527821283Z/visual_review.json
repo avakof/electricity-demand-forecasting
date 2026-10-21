@@ -1,0 +1,11 @@
+{
+  "status": "passed_with_browser_limitation",
+  "updated_utc": "2026-10-20T21:57:29.029986+00:00",
+  "png_visual_inspection": [
+    "rte_feature_ablation.png",
+    "rte_assisted_cold_risk.png"
+  ],
+  "correction": "Cold-risk x-axis labels shortened; affected notebook08 cell genuinely re-executed against archived tables.",
+  "html": "Both previews exported and structurally checked. No browser visual inspection claimed.",
+  "prediction_changes": false
+}

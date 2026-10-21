@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "updated_utc": "2026-10-20T21:57:29.031507+00:00",
+  "run_dir": "/Users/alivakof/Desktop/Time Series/Project/reports/rte_assisted/20261020T203527821283Z",
+  "stage": "Executed, independently audited and PNGs visually checked",
+  "training_session_id": null,
+  "variants": 16,
+  "configuration_quarter_replays": 128,
+  "models": [
+    "hist_gradient_boosting",
+    "lightgbm",
+    "lightgbm_quantile",
+    "gam"
+  ],
+  "modes": [
+    "direct RTE features",
+    "residual correction"
+  ],
+  "arms": [
+    "national",
+    "regional"
+  ],
+  "notebooks": "Appended RTE-assisted sections in existing07/08; preserve original executed content",
+  "remaining": [],
+  "frozen_source_policy": "Do not edit src/rte_assisted.py, config/rte_assisted_experiment.json, original predictors/config/raw inputs during this run; create a fresh run if they change.",
+  "completed_variants": 16,
+  "completed_development_fold_replays": 128,
+  "training_pid": null,
+  "tests": {
+    "passed": 123,
+    "skipped": 1,
+    "failed": 0
+  },
+  "selected_assisted_model": "lightgbm_quantile__regional__rte_residual",
+  "selected_complete_policy": "lightgbm_quantile__regional__rte_residual",
+  "executor_pid": null,
+  "stopped_pids": [],
+  "artifact_verification": "passed"
+}

@@ -1,0 +1,17 @@
+{
+  "sha256": "195ea7b9c965dca86edfc95421febc1de60f66a1ed3585db24a901a977dfbde3",
+  "rows": 2208,
+  "ledger_sha256": "5c51fd8cfe65d61bfb0fc8d7cf04213b91afa44fb854767dabfe7ff554b750f6",
+  "predictions_archived_before_scoring": true,
+  "signature": "f295b32df679",
+  "family": "nhits",
+  "params": {
+    "h": 48,
+    "input_size": 336,
+    "max_steps": 40,
+    "learning_rate": 0.0005,
+    "val_check_steps": 10
+  },
+  "arm": "regional",
+  "phase": "2024_Q3_trial1"
+}

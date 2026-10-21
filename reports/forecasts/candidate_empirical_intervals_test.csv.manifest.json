@@ -1,0 +1,10 @@
+{
+  "forecast_sha256": "ae79469c5e3a5e137e9378b70db5d27e18abf86f695804e5cfe7ca9113cf6f94",
+  "csv_payload_sha256": "b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a",
+  "immutable_archive": "reports/forecasts/immutable/candidate_empirical_intervals_test_b27af597f1f18dc331584516bc9e621dc67305788e7f3aa5c5ea1e3eb3aebd3a.csv.gz",
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad",
+  "rows": 8760,
+  "predictions_archived_before_scoring": true,
+  "regime": "retrospective_assumed_availability",
+  "test_previously_explored": true
+}

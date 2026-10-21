@@ -1,0 +1,22 @@
+{
+  "experiment": {
+    "name": "rte_correction_proxy",
+    "hypothesis": "Calendar/history predict residual RTE errors beyond trailing bias.",
+    "groups": [
+      "calendar",
+      "history",
+      "rte"
+    ],
+    "window_days": 365,
+    "retrain_days": 28,
+    "max_leaf_nodes": 15,
+    "max_iter": 70,
+    "correction": true,
+    "oracle": false,
+    "status": "retrospective"
+  },
+  "contract_sha256": "39315df88ce5a06ecd39c0c319596b3bd2a2dd1f811468f09ad38676770bcbad",
+  "selection_rule": "validation MAE, guardrails, 0.5% simplicity tolerance",
+  "oracle_ineligible": true,
+  "test_previously_explored": true
+}

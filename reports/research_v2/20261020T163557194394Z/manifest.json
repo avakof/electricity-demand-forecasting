@@ -1,0 +1,130 @@
+{
+  "run_directory": "/Users/alivakof/Desktop/Time Series/Project/reports/research_v2/20261020T163557194394Z",
+  "profile": "compact",
+  "created_utc": "2026-10-20T16:35:57.197835+00:00",
+  "python": "3.12.14 (main, Sep  1 2026, 14:09:53) [Clang 22.1.3 ]",
+  "platform": "macOS-15.8.1-x86_64-i386-64bit",
+  "contract": {
+    "version": "research-v2.0",
+    "status": "retrospective_assumed_availability",
+    "timezone": "Europe/Paris",
+    "origin_hour_local": 11,
+    "origin_minute_local": 0,
+    "interval_duration_hours": 1,
+    "demand_publication_delay_hours": 2,
+    "maximum_feature_lookback_days": 35,
+    "minimum_training_days": 270,
+    "minimum_training_note": "New experiment: nine-month minimum replaces legacy 365-day guard. First matched fold has about 328 usable days after warm-up.",
+    "matched_history_start": "2023-01-02",
+    "bias_window_days": 28,
+    "weather_archive_max_age_hours": 24,
+    "primary_metric": "MAE_MW",
+    "validation_folds": [
+      {
+        "name": "2024_Q1",
+        "start": "2024-01-01",
+        "end": "2024-04-01"
+      },
+      {
+        "name": "2024_Q2",
+        "start": "2024-04-01",
+        "end": "2024-07-01"
+      },
+      {
+        "name": "2024_Q3",
+        "start": "2024-07-01",
+        "end": "2024-10-01"
+      },
+      {
+        "name": "2024_Q4",
+        "start": "2024-10-01",
+        "end": "2025-01-01"
+      }
+    ],
+    "calibration": {
+      "start": "2025-01-02",
+      "end": "2025-06-30",
+      "boundary_buffer_day": "2025-06-30"
+    },
+    "test": {
+      "start": "2025-07-01",
+      "end": "2026-07-01"
+    },
+    "date_endpoints": "All end dates exclusive. Date ranges are delivery labels; each used outcome must additionally be available strictly before its fit/calibration origin.",
+    "test_previously_explored": true,
+    "point_refit_policy": "calendar-month origin changes; first origin always fits",
+    "failed_fit_policy": "Record failure; use declared fallback until next scheduled parameter fit. No hidden retry or replacement architecture.",
+    "sequence_horizon_hours": 48,
+    "random_seed": 42,
+    "neural_finalist_seeds": [
+      42,
+      123,
+      2026
+    ],
+    "quantiles": [
+      0.05,
+      0.5,
+      0.95
+    ],
+    "cold_evening": {
+      "hours_local": [
+        18,
+        19,
+        20
+      ],
+      "temperature_below_c": 5
+    },
+    "extreme_temperature_c": [
+      0,
+      30
+    ],
+    "calibration_minimum_observations": 200,
+    "calibration_window_days": 180,
+    "bootstrap_block_days": [
+      7,
+      14,
+      28
+    ],
+    "bootstrap_repetitions": 500,
+    "profiles": {
+      "compact": {
+        "description": "Executed bounded CPU research search: two configurations per family, all four quarterly validation folds and all daily origins; neural early-stop training capped. This is not an exhaustive architecture search.",
+        "trials_per_family": 2
+      },
+      "extended": {
+        "description": "Larger development-only searches. Requires a NEW run; never tune from the prior test results.",
+        "trials_per_family": 12
+      }
+    },
+    "limitations": [
+      "Hourly interval-start and aggregation conventions are assumptions, not verified source lineage.",
+      "Original demand, RTE and weather forecast vintages are absent; no operational superiority claim.",
+      "Target-day recorded weather excluded from model inputs; realized cold conditions used only for diagnosis.",
+      "Previously exposed historical test cannot be an untouched confirmation set.",
+      "National consumption is a portfolio proxy; no euro savings without prices and decision policy.",
+      "Split-conformal fixed-model comparator separate from monthly-refitted adaptive policies; time-series exchangeability not established."
+    ]
+  },
+  "source_sha256": {
+    "config/research_experiment.json": "d935d151a101addeece8d7b1dfdd68991758ae52c2227221646ee374d9a10c2a",
+    "src/research_data.py": "7e5f293f08a95661a6502d355b5e7cb7909dfa8cca9b9d02547ab583748a50e2",
+    "src/research_experiment.py": "6e6db71540474560b8b3ce624368cddd02a3432a1f2d81b988937f57dec2d568",
+    "src/research_extensions.py": "7181f5de2dc972d450fcf7ca1d90fcace7c3c31d82a8bc681322ce6772c520ba",
+    "src/research_models.py": "f2f7be27d843e280f74f0c5e4ac4294eb1f8a8e60982c2959d9beac12878d343",
+    "src/research_neural.py": "164398c5747af355e960fcb185a74ef0668ff6d2e1533e36feef7558c721a482",
+    "src/research_risks.py": "df421d27f36096a5a80e32533ce05da1e4b152fade1613df425e5ed49d5b16c1",
+    "src/research_scores.py": "03425abccdb38e7ae97cb12525762e72aaaaf77b7f268cf56d10cf9792829c69",
+    "src/features.py": "31042712ff9622d7e1b32a57bb84581eec55eba48bad476d1706788bc97d9338",
+    "src/common.py": "389c209e4787bfa5bbacb4b479dca618705687a20c38d36e3de48ad85f6555b9",
+    "src/data.py": "a813d95730c74b597d3a4a8781a4e8f8d88f02dde47ae0648ffaa1f4b54d1adc",
+    "src/metrics.py": "971532e336365cc2d7090fefdeb08297f206e05909ebf43e4a1af84323404bf7",
+    "src/uncertainty.py": "a8aa49e1421f975dd33a53bd2cc401c513885ceb943af25b9344e26bc3f34273",
+    "requirements-research-neural.txt": "a97cb3f1cd638c499dc065b6bb1f96bc1e51700449dada34912a943777b7df6f"
+  },
+  "raw_sha256": {
+    "france_electricity_hourly.csv": "700cf5546f04ac1e677c0e161b2da7a0da65494d2cc350ec5a11309b68594123",
+    "france_regional_electricity_hourly.csv": "8b08abae3b0e3d92099e7411cd58a9e6d556292d43bd43e8290ead22a40bc461"
+  },
+  "production_scope": false,
+  "predictions_include_outcomes": false
+}

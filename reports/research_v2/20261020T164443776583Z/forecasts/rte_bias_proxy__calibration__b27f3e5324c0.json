@@ -1,0 +1,11 @@
+{
+  "sha256": "7318cc57daca0eebe7ef64020e2616e3a5401021fc027bf0900a644de1ba9289",
+  "rows": 4295,
+  "ledger_sha256": "01bb04ac980e9b13cd1600287881a5a3c2762ae95eca545712d3785afe681c65",
+  "predictions_archived_before_scoring": true,
+  "signature": "b27f3e5324c0",
+  "family": "rte_bias_proxy",
+  "params": {},
+  "arm": "national",
+  "phase": "calibration"
+}

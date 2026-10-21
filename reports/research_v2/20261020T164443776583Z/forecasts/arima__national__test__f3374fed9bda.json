@@ -1,0 +1,19 @@
+{
+  "sha256": "3dceac0568288ed61cb2c90cd670295e9a112a47b368a3f45e98f9e048de9a40",
+  "rows": 8760,
+  "ledger_sha256": "47f19d7b7c788a020da98d7323752458ce84ac6e794b8804c669361f70b8165d",
+  "predictions_archived_before_scoring": true,
+  "signature": "f3374fed9bda",
+  "family": "arima",
+  "params": {
+    "order": [
+      2,
+      1,
+      0
+    ],
+    "maxiter": 40,
+    "window_days": 56
+  },
+  "arm": "national",
+  "phase": "test"
+}
